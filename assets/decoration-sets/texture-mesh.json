@@ -1,0 +1,144 @@
+{
+  "id": "texture-mesh",
+  "label": "网格纹理",
+  "note": "页边距内的细线矩阵与顶部刻度，模拟案例底图上的网格 / 岩层纹理（低透明度，不抢内容）",
+  "canvas_in": {
+    "w": 13.333,
+    "h": 7.5
+  },
+  "zone": "页边距装饰（不进入内容安全区 x 1.38–12.73 / y 0.30–6.95，除非计划显式指定）",
+  "shape_count": 14,
+  "fill_tokens": [
+    "primary",
+    "accent",
+    "text_light"
+  ],
+  "shapes": [
+    {
+      "shape_type": "rect",
+      "x_in": 0.12,
+      "y_in": 0.4,
+      "w_in": 0.014,
+      "h_in": 6.7,
+      "fill": "text_light",
+      "fill_transparency": 78
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0.24,
+      "y_in": 0.4,
+      "w_in": 0.014,
+      "h_in": 6.7,
+      "fill": "text_light",
+      "fill_transparency": 78
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0.36,
+      "y_in": 0.4,
+      "w_in": 0.014,
+      "h_in": 6.7,
+      "fill": "text_light",
+      "fill_transparency": 78
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0.48,
+      "y_in": 0.4,
+      "w_in": 0.014,
+      "h_in": 6.7,
+      "fill": "text_light",
+      "fill_transparency": 78
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0.6,
+      "y_in": 0.4,
+      "w_in": 0.014,
+      "h_in": 6.7,
+      "fill": "text_light",
+      "fill_transparency": 78
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0.72,
+      "y_in": 0.4,
+      "w_in": 0.014,
+      "h_in": 6.7,
+      "fill": "text_light",
+      "fill_transparency": 78
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 2.1,
+      "y_in": 0.02,
+      "w_in": 0.018,
+      "h_in": 0.16,
+      "fill": "text_light",
+      "fill_transparency": 70
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 3.4,
+      "y_in": 0.02,
+      "w_in": 0.018,
+      "h_in": 0.16,
+      "fill": "text_light",
+      "fill_transparency": 70
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 4.7,
+      "y_in": 0.02,
+      "w_in": 0.018,
+      "h_in": 0.16,
+      "fill": "text_light",
+      "fill_transparency": 70
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 6.0,
+      "y_in": 0.02,
+      "w_in": 0.018,
+      "h_in": 0.16,
+      "fill": "text_light",
+      "fill_transparency": 70
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 7.3,
+      "y_in": 0.02,
+      "w_in": 0.018,
+      "h_in": 0.16,
+      "fill": "text_light",
+      "fill_transparency": 70
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 8.6,
+      "y_in": 0.02,
+      "w_in": 0.018,
+      "h_in": 0.16,
+      "fill": "text_light",
+      "fill_transparency": 70
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 9.9,
+      "y_in": 0.02,
+      "w_in": 0.018,
+      "h_in": 0.16,
+      "fill": "text_light",
+      "fill_transparency": 70
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 11.2,
+      "y_in": 0.02,
+      "w_in": 0.018,
+      "h_in": 0.16,
+      "fill": "text_light",
+      "fill_transparency": 70
+    }
+  ]
+}

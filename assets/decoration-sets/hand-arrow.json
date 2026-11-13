@@ -1,0 +1,65 @@
+{
+  "id": "hand-arrow",
+  "label": "手绘箭头 / 标注线",
+  "note": "去 AI 感：两段折线（−4°/+3° 不等角）+ 两条箭头短线 + 起点圆点，模拟手绘指向标注；建议指向数据或结论",
+  "canvas_in": {
+    "w": 13.333,
+    "h": 7.5
+  },
+  "zone": "贴纸类：可压在内容区边缘或角落，但不得压住正文文字",
+  "shape_count": 5,
+  "fill_tokens": [
+    "accent"
+  ],
+  "shapes": [
+    {
+      "shape_type": "line",
+      "x_in": 9.9,
+      "y_in": 5.92,
+      "w_in": 1.3,
+      "h_in": 0.06,
+      "line_color": "accent",
+      "line_width_pt": 1.5,
+      "rotation": -4
+    },
+    {
+      "shape_type": "line",
+      "x_in": 11.14,
+      "y_in": 5.86,
+      "w_in": 0.46,
+      "h_in": 0.05,
+      "line_color": "accent",
+      "line_width_pt": 1.2,
+      "rotation": 3
+    },
+    {
+      "shape_type": "line",
+      "x_in": 11.46,
+      "y_in": 5.72,
+      "w_in": 0.2,
+      "h_in": 0.02,
+      "line_color": "accent",
+      "line_width_pt": 1.3,
+      "rotation": -28
+    },
+    {
+      "shape_type": "line",
+      "x_in": 11.46,
+      "y_in": 5.98,
+      "w_in": 0.2,
+      "h_in": 0.02,
+      "line_color": "accent",
+      "line_width_pt": 1.3,
+      "rotation": 26
+    },
+    {
+      "shape_type": "ellipse",
+      "x_in": 9.86,
+      "y_in": 5.9,
+      "w_in": 0.06,
+      "h_in": 0.06,
+      "fill": "accent",
+      "fill_transparency": 15
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "_note": "配图风格预设。整份 PPT 必须只用同一套预设（红线第 13 条）。build_pptx.js 用 theme 字段决定底色与蒙版，generate_assets.js 用 style_prompt/background_prompt 拼接生图 prompt。",
+  "business": {
+    "label": "商务",
+    "style_prompt": "商务极简风格，蓝灰配色，几何线条，专业感",
+    "background_prompt": "抽象渐变背景，低饱和度，留白充足，适合叠加白色文字",
+    "illustration_prompt": "扁平化概念示意图，几何图形与线条，蓝灰配色，无写实人物，右侧留白",
+    "theme": { "primary": "1F4E79", "accent": "2E75B6", "overlay_color": "0F2E4C", "overlay_alpha": 55 }
+  },
+  "tech": {
+    "label": "科技",
+    "style_prompt": "科技感，深色背景，光线效果，未来感",
+    "background_prompt": "深蓝色科技背景，光点与线条，左侧留白",
+    "illustration_prompt": "等距视角科技示意图，数据流与节点，蓝紫渐变，深色底，无写实人物",
+    "theme": { "primary": "0B2A4A", "accent": "2E75B6", "overlay_color": "06192E", "overlay_alpha": 60 }
+  },
+  "humanities": {
+    "label": "人文",
+    "style_prompt": "人文社科，暖色调，柔和质感，书卷气",
+    "background_prompt": "米白暖色背景，纸张纹理，淡雅",
+    "illustration_prompt": "手绘质感概念插图，暖色调，柔和笔触，米白底，无写实人物",
+    "theme": { "primary": "8C5A2B", "accent": "C08A4E", "overlay_color": "3A2A18", "overlay_alpha": 45 }
+  },
+  "minimal": {
+    "label": "极简",
+    "style_prompt": "极简主义，大面积留白，单一主色，克制",
+    "background_prompt": "纯色或极轻渐变背景，几乎无元素，中心或左侧大面积留白",
+    "illustration_prompt": "单色线条示意图，最简几何，留白极多，无写实人物",
+    "theme": { "primary": "2A2A2A", "accent": "1F4E79", "overlay_color": "000000", "overlay_alpha": 35 }
+  }
+}

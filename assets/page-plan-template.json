@@ -1,0 +1,53 @@
+{
+  "_note": "页面计划空白模板（v5.2）。以下划线开头的键是说明字段，校验脚本忽略；candidates 必须恰好 2 套（A/B）且结构不同。每个元素必须声明 z_index（L2 装饰 10–19 / L3 内容 20–29 / L4 标题 30–39）。字段定义见 references/page-plan-schema.md。",
+  "_example_slide": {
+    "slide_id": 1,
+    "slide_type": "content",
+    "section_name": "方案设计",
+    "layout_template": "sidebar-nav",
+    "card_used": "layout-two-column",
+    "claim": "一句话主张（≤40 字）",
+    "notes": "页面主张：…\n选中卡片：layout-two-column（两个平级对象，结构对等）\n背景素材：无配图\n讲述提示：先讲左栏现状，再讲右栏方案，停顿 2 秒让评委看对比",
+    "image_required": false,
+    "image_type": null,
+    "image_prompt": null,
+    "image_path": null,
+    "photo_source": null,
+    "effects": [],
+    "elements": [
+      { "type": "shape", "role": "decoration", "shape_type": "rect", "x_in": 1.38, "y_in": 1.72, "w_in": 0.08, "h_in": 0.5, "fill": "secondary", "z_index": 10 },
+      { "type": "icon", "role": "module_title", "icon": "chart-column", "color": "primary", "x_in": 1.5, "y_in": 1.75, "w_in": 0.5, "h_in": 0.5, "z_index": 23 },
+      { "type": "text", "role": "module_title", "text": "模块小标题", "x_in": 2.15, "y_in": 1.75, "w_in": 4.6, "h_in": 0.5, "font_pt": 17, "font": "微软雅黑", "color": "primary", "bold": true, "valign": "middle", "z_index": 26 },
+      { "type": "text", "role": "title", "text": "页面标题", "x_in": 1.38, "y_in": 0.42, "w_in": 11.45, "h_in": 0.95, "font_pt": 26, "font": "微软雅黑", "color": "primary", "bold": true, "align": "left", "valign": "middle", "z_index": 30 },
+      { "type": "text", "role": "body", "text": "正文内容（16pt）", "x_in": 1.38, "y_in": 2.5, "w_in": 6.6, "h_in": 3.3, "font_pt": 16, "font": "微软雅黑", "color": "text", "valign": "top", "z_index": 20 },
+      { "type": "table", "role": "body", "x_in": 8.65, "y_in": 3.3, "w_in": 3.8, "h_in": 2.6, "font_pt": 11, "z_index": 24,
+        "table": { "header_row": true, "col_widths_in": [1.8, 2.0], "rows": [["指标", "数值"], ["覆盖人次", "10300"]] } },
+      { "type": "formula", "role": "body", "text": "增益率 = (本期 − 上期) ÷ 上期 × 100%", "style": "unicode", "x_in": 1.38, "y_in": 6.3, "w_in": 10.6, "h_in": 0.6, "font_pt": 14, "font": "微软雅黑", "color": "text", "z_index": 22 }
+    ]
+  },
+  "brief_intent": {
+    "communication_goal": "",
+    "relation_type": "",
+    "audience": "",
+    "style_preference": "business",
+    "deck_title": ""
+  },
+  "design_brief": {
+    "visual_system": "",
+    "style_rationale": "",
+    "navigation_mode": "sidebar",
+    "sections": [],
+    "page_count_target": 0,
+    "image_budget": 4,
+    "effect_budget": 2
+  },
+  "meta": {
+    "generated_by": "smart-ppt-designer",
+    "image_budget": 4,
+    "slide_count": 0
+  },
+  "candidates": [
+    { "candidate_id": "A", "rationale": "", "slides": [] },
+    { "candidate_id": "B", "rationale": "", "slides": [] }
+  ]
+}

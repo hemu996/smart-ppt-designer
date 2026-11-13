@@ -1,0 +1,557 @@
+{
+  "canvas": {
+    "layout": "SMART_16x9",
+    "custom_layout": "SMART_16x9",
+    "_layout_note": "pptxgenjs 内置 LAYOUT_16x9 只有 10×5.625in；这里用 defineLayout 显式定义 13.333×7.5in 标准宽屏画布",
+    "width_in": 13.333,
+    "height_in": 7.5,
+    "margin_in": {
+      "left": 0.6,
+      "right": 0.6,
+      "top": 0.5,
+      "bottom": 0.5
+    }
+  },
+  "fonts": {
+    "whitelist": [
+      "微软雅黑",
+      "Microsoft YaHei",
+      "思源黑体",
+      "Source Han Sans SC",
+      "黑体",
+      "SimHei",
+      "宋体",
+      "SimSun",
+      "Arial",
+      "Calibri"
+    ],
+    "default_cn": "微软雅黑",
+    "default_en": "Arial",
+    "min_pt": 10,
+    "display_size": [
+      120,
+      287
+    ],
+    "_display_note": "v8.7 超大字号层级：封面 / 目录页 / 章节过渡页 / 结尾页的标题可到 120–287pt（对标素材库最大字号 187–287pt）；内页仍守 page_title_size；200pt 标题需 ≥3.8in 框高（估算器按 1.35 行距推算），约半屏",
+    "body_pt": 14,
+    "caption_pt": 11,
+    "title_pt": 30,
+    "section_pt": 26
+  },
+  "layout_thresholds": {
+    "tolerance_in": 0.02,
+    "min_gap_in": 0.05,
+    "max_chars_per_textbox": 180,
+    "line_height_ratio": 1.35,
+    "overlap_ignore_ratio": 0.15,
+    "overlap_min_area_in2": 0.12,
+    "max_title_lines": 2
+  },
+  "image": {
+    "enabled": true,
+    "tool": "image_generate",
+    "provider_fallback": [
+      "dsh.image",
+      "session-image-skill（如 baidu-image-gen）",
+      "free-stock",
+      "solid_color"
+    ],
+    "_provider_note": "规格默认 dsh.image；本机 PATH 无 dsh / dsh.image（已实测），2026-11-05 用会话内生图技能产出 4 张示例配图并回填 output/images，详见 integrations/image-providers.md",
+    "max_images_per_deck": 20,
+    "min_images_per_deck": 3,
+    "max_image_ratio": 1.0,
+    "sizes": {
+      "cover_visual": [
+        1920,
+        1080
+      ],
+      "section_background": [
+        1920,
+        1080
+      ],
+      "concept_illustration": [
+        800,
+        600
+      ],
+      "closing_background": [
+        1920,
+        1080
+      ]
+    },
+    "output_dir": "output/images",
+    "on_failure": "reuse_then_generate",
+    "retry": {
+      "max_attempts": 2,
+      "backoff_ms": 1500
+    },
+    "_tool_note": "本机 image_generate 已配好：provider=qwen、模型 qwen-image-2.1-pro（maas.qianwenaiapi.com，实测 8.6s 出图）。直接调内置工具。",
+    "fallback_cli": "仅当 image_generate 不可用时兜底：python ~/.dsh/skills/ppt-master/scripts/image_gen.py --backend qwen --aspect_ratio 16:9 --image_size 2K",
+    "_budget_note": "V12：用户明确要求「可以每页都生图，但必须贴合主题」，故本稿预算由默认 5 提到 20；仅本次计划生效，生成时逐页按主题出图。",
+    "_ratio_note": "V12：用户明确要求「可以每页都生图，但必须贴合主题」，与红线 6「生图占比 ≤0.35」冲突 → 按用户口径优先，本稿放宽到 1.0；每页图必须对应本页主题，不做通用装饰图，正文/图表/表格仍原生可编辑。",
+    "_on_failure_note": "用户 2026-11-08 指定：缺图先用 AI 生成补齐（须符合本页主题、融入本稿风格、不突兀），并可优先复用本稿已有的封面/章节图；纯色背景只作最后兜底。顺序与判据见 references/image-strategy.md §一。"
+  },
+  "density_modes": {
+    "concise": {
+      "label": "简洁版",
+      "min_elements_per_content_page": 3,
+      "max_elements_per_content_page": 5,
+      "min_white_space_ratio": 0.25
+    },
+    "vivid": {
+      "label": "高级耀眼版",
+      "min_elements_per_content_page": 6,
+      "max_elements_per_content_page": 10,
+      "required_decoration_layers": 2,
+      "decoration_ratio_max": 0.333,
+      "images_per_content_page": [
+        1,
+        2
+      ],
+      "require_top_nav_label": true,
+      "min_metric_pt": 36,
+      "max_metric_pt": 60,
+      "title_decoration_line": true,
+      "card_style": {
+        "border": "细金色或主题色边框",
+        "shadow": "轻微投影",
+        "index_badge": "左上角序号带设计感"
+      },
+      "forbid_flat_background": true,
+      "forbid_low_saturation": true,
+      "_note": "v8.0 硬指标：有效元素须与内容相关；纯装饰性线条/边框/图标 ≤ 元素总数 1/3；每页 1–2 张图片；每页顶部需篇章导航标签栏；每页至少一个大字号数据（36–60pt）；内容卡片不得是光秃秃的白方块（细边框+微投影+左上序号）；大标题下须配装饰线；背景不得纯白纯平"
+    },
+    "_note": "规格 v8.0 两种密度模式：design_brief.density_mode 二选一；vivid 为竞赛取向，红线 19/20 禁止“素”与“自动极简”，但也不得为凑数加无关元素；红线 19/20 仅约束高级耀眼版（vivid），简洁/极简版不受此约束（规格 v8.6 修订）"
+  },
+  "narrative": {
+    "pages_per_minute": 1.5,
+    "title_blacklist": [
+      "项目背景",
+      "方案设计",
+      "预期成效",
+      "目录",
+      "总结",
+      "概况",
+      "背景介绍",
+      "研究背景",
+      "项目介绍",
+      "实施方案"
+    ],
+    "action_title_min_chars": 8,
+    "cliche_title_patterns": [
+      "我最怕",
+      "我不怕",
+      "我见过",
+      "凭什么",
+      "谁告诉你",
+      "没人告诉你",
+      "才怪",
+      "你知道吗"
+    ],
+    "cliche_exempt_patterns": [
+      "凝心聚力",
+      "砥砺奋进",
+      "奋楫争先",
+      "勇毅前行",
+      "踔厉奋发",
+      "团结奋斗",
+      "锐意进取",
+      "笃行不怠"
+    ],
+    "qa_min_questions": 5,
+    "_note": "金字塔叙事与行动标题（规格第七节）：页数按 1.5 页/分钟推算；标题必须是完整结论句，不得用空标题；讲者备注里附 5–10 条 Q&A 预测；标题不得文学化/情绪化（规格 v8.4 红线第 21 条：禁止短剧式标题，命中 cliche_title_patterns 时校验器给 warning）"
+  },
+  "body_style": {
+    "_note": "规格 v8.6 红线第 22 条：正文禁止 AI 味。ai_flavor_patterns 一律告警；escalation_patterns 单次 info、同页 >= escalation_per_page_warn 次告警；hollow_word_patterns 仅在非党建/政务/乡村振兴语境告警（这些语境里属正式政治语言）；escalation_patterns 在党建/政务/乡村振兴语境视为规范结尾（escalation_exempt_in_context=true），仅商业/科技语境按空泛升华告警",
+    "ai_flavor_patterns": [
+      "家人们",
+      "宝子",
+      "姐妹们",
+      "谁懂啊",
+      "绝绝子",
+      "yyds",
+      "破防",
+      "真的会谢",
+      "快收藏",
+      "火速",
+      "闭眼冲",
+      "咱就是说",
+      "狠狠"
+    ],
+    "escalation_patterns": [
+      "未来可期",
+      "我们坚信",
+      "让我们",
+      "携手",
+      "砥砺前行",
+      "再创辉煌",
+      "共赴",
+      "不负韶华",
+      "共创",
+      "谱写新篇"
+    ],
+    "hollow_word_patterns": [
+      "赋能",
+      "打造",
+      "构建",
+      "引领"
+    ],
+    "context_exempt_keywords": [
+      "党建",
+      "政务",
+      "党委",
+      "党员",
+      "党组织",
+      "乡村振兴",
+      "乡村",
+      "振兴",
+      "帮扶",
+      "驻村",
+      "基层",
+      "民生",
+      "脱贫",
+      "村",
+      "乡"
+    ],
+    "escalation_per_page_warn": 2,
+    "escalation_exempt_in_context": true,
+    "fragmented_min_segments": 4,
+    "fragmented_avg_chars": 10
+  },
+  "gsl_alignment": {
+    "_note": "国赛水准对齐口径（v8.7）：目标值取自素材库 10 份参考稿的逐页实测基线（knowledge/reference_analysis/craft-ledger.md），由 score_deck.py 的「国赛对齐度」分项按同一度量方法打分；口径说明见 references/gsl-alignment.md",
+    "baseline_source": "knowledge/reference_analysis/craft-ledger.md",
+    "reference_ranges": {
+      "shapes_per_page": [
+        53.5,
+        122.9
+      ],
+      "groups_per_page": [
+        2.6,
+        31.5
+      ],
+      "pics_per_page": [
+        1.0,
+        15.4
+      ],
+      "colors_per_page": [
+        2.2,
+        11.6
+      ],
+      "max_font_pt": [
+        187,
+        287
+      ],
+      "font_span_x": [
+        5.7,
+        31.9
+      ]
+    },
+    "targets": {
+      "content_shapes_per_page_min": 50,
+      "content_shapes_per_page_avg_min": 55,
+      "cover_section_shapes_per_page_min": 40,
+      "groups_per_page_min": 3,
+      "pics_per_page": [
+        0.2,
+        2
+      ],
+      "colors_per_page_max": 12,
+      "cover_section_max_font_pt_min": 187,
+      "font_span_x_min": 5.7,
+      "decoration_ratio_max": 0.333
+    },
+    "_calibration": "参考稿主体区间 53.5–122.9；本包 v8.7 装饰组落地后实测内页平均 63.1、单页 53–83、组/页 3.4（2026-11-05，见 knowledge/reference_analysis/self-baseline.md）",
+    "self_baseline_20261105": {
+      "shapes_per_page": 18.1,
+      "groups_per_page": 0.0,
+      "pics_per_page": 0.0,
+      "colors_per_page": 6.0,
+      "max_font_pt": 120,
+      "font_span_x": 12.0
+    }
+  },
+  "composition": {
+    "_note": "v8.9 页面构图两硬约束（用户指定，校验器 error 级）：① 大小对比：每页至少 1 个非装饰元素面积 ≥ 页面面积的 1/3 ② 叠压关系：每页至少 2 个元素前后叠压（即 ≥1 对，几何重叠 > 0.15in² 且 z_index 不同）。role=decoration 与装饰组不计入大元素判定；装饰组不参与叠压配对。第 3 条「错落感」按用户指示不启用（阈值、校验与手法已移除）",
+    "min_big_element_area_ratio": 0.333,
+    "min_overlap_pairs": 1,
+    "min_overlap_area_in2": 0.15,
+    "big_element_exclude_roles": [
+      "decoration",
+      "background"
+    ]
+  },
+  "layout_fallback": {
+    "_note": "v9.0.2 模板校验兜底（规格 v9.3 L663）：布局接近常见布局库时正常；素材不合法、元素量极端偏离或几何极端散乱时判 deviated，并给出退回最接近布局的建议；check_layout_similarity.py --fix 可自动改判 card_used / layout_template。库由 scripts/build_layout_library.py 从样本提炼（35 条）",
+    "enabled": true,
+    "shape_factor": 3.0,
+    "size_tolerance": 0.6,
+    "extreme_over": 2.0,
+    "extreme_under": 0.3,
+    "max_col_bands": 8,
+    "max_row_bands": 12,
+    "band_tolerance_in": 0.3,
+    "on_deviation": "warn"
+  },
+  "visual_motifs": {
+    "_note": "v9.0.2 视觉母题（规格 v9.3 L258-266）：初始化阶段选定 3-5 种装饰性母题（1 主母题 + 2-4 次母题），整份复用；只约束装饰元素（role=decoration 或 z_index 10-19），内容元素不受限；不同页可用不同组合，不必每页堆满；母题面积 <= 页面 1/5，只做点缀不抢内容。规范见 references/visual-motifs.md",
+    "min_count": 3,
+    "max_count": 5,
+    "primary_count": 1,
+    "secondary_range": [
+      2,
+      4
+    ],
+    "max_area_ratio": 0.2,
+    "applies_to": "decoration_only",
+    "element_field": "motif",
+    "validation_mode": "declared_only"
+  },
+  "background_rule": {
+    "_note": "v9.0 背景禁令（规格第 3 步硬指标）：封面 / 章节 / 结尾页的背景不能是纯白或纯平——必须有渐变、纹理或淡纹样之一；只有生图与图库都不可用时才允许纯色降级（并在构建报告里标记 fallback）",
+    "forbid_flat_background_on": [
+      "cover",
+      "section_divider",
+      "closing"
+    ],
+    "allowed_when": "image_provider_unavailable",
+    "texture_options": [
+      "渐变底（primary→background）",
+      "淡纹样（accent 透明度 8–14）",
+      "网格纹理（texture-mesh 装饰组）"
+    ]
+  },
+  "creative_level": {
+    "_note": "创意度开关（v8.9）：off / conservative / balanced / expressive 四档，默认 off 与既有行为完全一致。档位只影响三处——① 内容页装饰组组数上限（校验器按档位判定）② 卡片圆角 rectRadius（构建层）③ 构建日志里的档位追溯。不改配色、不改字体。",
+    "default": "off",
+    "levels": {
+      "off": {
+        "label": "关闭（默认，圆角保持 PptxGenJS 默认）",
+        "sets_per_content_page": [
+          2,
+          3
+        ],
+        "card_radius_in": null
+      },
+      "conservative": {
+        "label": "保守：卡片更方正",
+        "sets_per_content_page": [
+          2,
+          3
+        ],
+        "card_radius_in": 0.18
+      },
+      "balanced": {
+        "label": "均衡：允许 4 组装饰与明显圆角",
+        "sets_per_content_page": [
+          2,
+          4
+        ],
+        "card_radius_in": 0.28
+      },
+      "expressive": {
+        "label": "表现：允许 5 组装饰与大圆角",
+        "sets_per_content_page": [
+          3,
+          5
+        ],
+        "card_radius_in": 0.45
+      }
+    }
+  },
+  "decoration_sets": {
+    "_note": "v8.7 装饰组库：1 个计划元素 → 多个基础图元，绘制后由 build_pptx.js 的 XML 后处理包成真实 <p:grpSp> 组；用于把内页密度提到国赛区间（口径见 references/gsl-alignment.md）",
+    "dir": "assets/decoration-sets",
+    "sets_per_content_page": [
+      2,
+      3
+    ],
+    "z_index_range": [
+      10,
+      19
+    ],
+    "rule": "框架类装饰组（left-rail-geometry / right-rail-ruler / top-rule-band / bottom-rule-band / corner-ticks / side-dots-grid / texture-mesh / glow-orbs / section-rail）只占页边距，不得进入内容安全区 x 1.38–12.73 / y 0.30–6.95；贴纸类手工感装饰组（hand-drawn-lines / stamp-seal / sticky-note / paper-tape / hand-arrow，v8.9 去 AI 感）可压在内容区边缘或角落作贴纸，但**不得压住正文文字**（检测器会把压字判 error）。装饰组不参与点缀型装饰占比口径（该口径只统计 role=decoration 且非装饰组的元素，红线 19/20），但受组数上限约束（内容页 2–3 组）；装饰组元素的外框填该组外框"
+  },
+  "target_cases": {
+    "_note": "国金成品观感基准（用户提供的 8 张案例图）：写计划前对照 10 条共性，生成后做人工观感对照；仅在包内本地留档，不对外分发",
+    "dir": "assets/target-cases",
+    "baseline_doc": "assets/target-cases/_README.md",
+    "sources_doc": "knowledge/target_cases/public-sources.md",
+    "common_features": 10,
+    "copyright_note": "第三方案例截图与模板原件仅本地对照使用"
+  },
+  "scoring": {
+    "pass_score": 75,
+    "rewrite_weakest_n": 2,
+    "max_rewrite_rounds": 2,
+    "_note": "生成后自我评分（scripts/score_deck.py）：低于 pass_score 时重写最弱 rewrite_weakest_n 页，最多 max_rewrite_rounds 轮。v9.0.2：按规格 v9.3 §七验收表口径改为 1-2 页（默认 2）；规格正文第 11 步写作 3 页，两处冲突的取用依据见 knowledge/spec-audit-v93.md §三"
+  },
+  "visual_system": {
+    "require_explicit": true,
+    "dir": "assets/visual-systems",
+    "index": "assets/style-index.json",
+    "_note": "不设默认风格（v5.6）：必须在 design_brief.visual_system 显式指定并写明 style_rationale；缺失或未知一律报错，脚本不做兜底回落。检索用 scripts/find_style.py，提取用 scripts/extract_style.py",
+    "allow_custom_extract": true
+  },
+  "footer": {
+    "enabled": true,
+    "left_source": "deck_title",
+    "left_pt": 10,
+    "right_pt": 10,
+    "left_color": "text_light",
+    "page_number_format": "{n}",
+    "_note": "页脚规范（v5.5）：底部左侧放项目/团队名（10–11pt 浅灰），右侧放页码（10–11pt），位置固定不随内容变化；封面用信息行替代页脚"
+  },
+  "grid": {
+    "columns": 12,
+    "margin_cols": 1,
+    "unit_in": 0.1181,
+    "unit_cm": 0.3,
+    "tolerance_in": 0.02,
+    "_note": "12 列网格（v5.5）：左右边距各占 1 列，元素间距取 0.3cm（0.1181in）整数倍；基线对齐在 references/visual-system.md 说明"
+  },
+  "navigation": {
+    "enabled": false,
+    "mode": "sidebar",
+    "scope": "sparse",
+    "_scope_note": "v9.0 导航范围（仅在开关开启后生效）：full = 非封面页都画；sparse = 开启后的默认档，只画每章首个内容页（章节过渡页不画——左侧留给 section-rail 装饰轨道，避免重叠）；none = 都不画。逐页可用 slides[].show_navigation（布尔）显式覆盖，显式值优先于总开关与范围。总开关默认关闭",
+    "side_width_in": 1.18,
+    "top_height_in": 0.59,
+    "inactive_color": "C9D3DD",
+    "title_pt": 11,
+    "_note": "章节导航由母版内置，当前章节用 accent 高亮（规格 4.2）。v9.0.1：本字段为包级默认，现为 false（**默认关闭**）——计划级 design_brief.navigation_enabled 缺省即按此关闭，要开必须显式写 true；为 false 时全篇不画（含母版侧栏底板）"
+  },
+  "notes": {
+    "enabled": true,
+    "required": true,
+    "_note": "红线：每页都必须有讲者备注（speaker notes）；内容 = 页面主张 + 选中卡片 + 背景说明 + 讲述提示"
+  },
+  "layout_templates": {
+    "dir": "assets/layout-templates",
+    "default": "sidebar-nav"
+  },
+  "icons": {
+    "library": "assets/icon-library/icons.json",
+    "default_pt": 24,
+    "default_color": "accent",
+    "_note": "图标用原生形状组合绘制，保持可编辑；不用图片贴图标"
+  },
+  "effects": {
+    "templates_dir": "assets/effect-templates",
+    "max_per_deck": 3,
+    "_note": "烫金标题/发光装饰/纹样边框/科技粒子只能用生图 PNG 嵌入（红线第 9 条），不计入 3-5 张配图预算但总数仍克制"
+  },
+  "photos": {
+    "enabled": true,
+    "provider": "pexels",
+    "providers": [
+      "pexels",
+      "pixabay"
+    ],
+    "api_key_env": {
+      "pexels": "PEXELS_API_KEY",
+      "pixabay": "PIXABAY_API_KEY"
+    },
+    "min_width": 1600,
+    "orientation": "landscape",
+    "license_note": "只用免费图库的免费授权图片，且必须在交付说明中记录来源与授权；无 Key 时跳过图库层，直接降级纯色背景",
+    "_note": "三级降级：千问生图 → 免费图库 → 纯色背景"
+  },
+  "advanced_design": {
+    "_note": "v8.8 高级设计口径（来源见 references/advanced-design.md §八）：亲密性、层级跨度、留白率、字体族上限、每页文字量；由 score_deck.py「国赛对齐度」的留白率体检项读取",
+    "group_gap_ratio_min": 1.8,
+    "hierarchy_size_ratio_min": 1.6,
+    "whitespace_ratio_min": 0.35,
+    "max_color_families": 4,
+    "max_font_families": 2,
+    "max_chars_per_page": 180
+  },
+  "theme": {
+    "primary": "1F4E79",
+    "accent": "2E75B6",
+    "text": "1F2933",
+    "muted": "6B7280",
+    "background": "FFFFFF",
+    "cover_bg": "1F4E79",
+    "divider_bg": "0F2E4C",
+    "chart_palette": [
+      "1F4E79",
+      "2E75B6",
+      "7FB2E5",
+      "F2A03D",
+      "9AA7B4"
+    ]
+  },
+  "deck_rules": {
+    "max_slides": 30,
+    "min_slides": 6,
+    "candidates_per_round": 2,
+    "cards_retrieved": [
+      3,
+      5
+    ]
+  },
+  "cover_mask": {
+    "mode": "light",
+    "color": "FFFFFF",
+    "stops": [
+      {
+        "pos": 0,
+        "alpha": 20
+      },
+      {
+        "pos": 30,
+        "alpha": 14
+      },
+      {
+        "pos": 55,
+        "alpha": 16
+      },
+      {
+        "pos": 100,
+        "alpha": 26
+      }
+    ],
+    "_note": "亮场封面蒙版：浅色低透明。深色系统删掉本段即恢复原深色蒙版。"
+  },
+  "cover_title": {
+    "mode": "ai_calligraphy",
+    "require_image": true,
+    "prompt_template": "手写书法字“{text}”，四个汉字横排，字体狂野奔放，笔画飘逸，富有动感张力，飞白，国风，中国书法，笔触流畅，白底黑字。纯白背景，纯黑墨迹，不要彩色，不要阴影，不要立体，不要透视，不要样机，不要边框，不要印章，不要落款，画面内不出现任何其他文字或图形，四周大幅留白，16:9 横版",
+    "prompt_template_note": "用户 2026-11-05 指定「以后优先用这个」；2026-11-08 升级为强制。详见 assets/calligraphy-prompt.md",
+    "color_by_background": {
+      "light": [
+        "#1A3A5C 深靛蓝（WCAG 6.5）",
+        "#1F1B16 墨褐（9.5）"
+      ],
+      "dark": [
+        "#C9A227 金渐变"
+      ],
+      "warn": "金色 #C9A227 在亮米白底上 WCAG 仅 1.38，禁止直接用；坚持用金须配 ≥6px 深墨描边"
+    },
+    "enforced": true,
+    "allow_fallback_to_text": false,
+    "note": "用户 2026-11-08 指定「以后 PPT 封面强制使用 AI 生成的书法体」。强制 = 不可关闭、不可降级为系统字：缺透明底书法 PNG 时 validate_plan.py 报 error、build_pptx.js 抛错退出，不产出残稿；必须由生图插件生成后再构建。仅封面主标为图片，其余文字仍原生可编辑。"
+  },
+  "template_mode": {
+    "_note": "v9.0.3 模板生成二选一（规格 v9.9 前置功能）：free = 自由生成（默认，按素材库检索风格自由设计 + 模板校验兜底）；fill = 模板填充（照搬用户在 assets/user-templates/ 索引中选定的模板，只替换文字/数据/图片，版式不动）。生成前必须先问用户用哪种模式；fill 模式必须写明 user_template。规范见 references/user-templates.md",
+    "default": "free",
+    "modes": [
+      "free",
+      "fill"
+    ],
+    "fill_flow": [
+      "询问用哪份模板（先读索引，挑 2-3 份候选给用户定）",
+      "封面字体：保持原样 或 升级为书法烫金",
+      "读取选定模板（只读这一份）",
+      "填充内容（保持版式与母版不动）",
+      "素材补充（生图 → 图库 → 纯色三级降级）",
+      "风格锁定（不引入第二套配色/字体/图标风格）"
+    ],
+    "index": "assets/user-templates/index.json",
+    "spec": "references/user-templates.md",
+    "validation_mode": "declared_only",
+    "_v906_note": "v9.0.6 适配：模板填充(fill)模式下，封面 AI 书法强制(红线28)仍生效——若用户选「升级为书法烫金」则按 assets/calligraphy-prompt.md；选「保持原样」则沿用模板封面，但不得用系统字体冒充 AI 书法（红线28 不可关闭）。"
+  },
+  "version": "9.0.6",
+  "_version_note": "v9.0.6 = 官方完整包(v9.9 前置功能，版本号误标 9.0.3) + 本机 9.0.5 全部适配，段落级合并；官方版本号标错已按功能识别。"
+}

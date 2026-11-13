@@ -1,0 +1,57 @@
+{
+  "id": "sticky-note",
+  "label": "便签（贴角）",
+  "note": "去 AI 感：半透明便签纸 + 右下折角三角 + 两条示意文字短线，整体 −3° 轻斜，贴在左下页边",
+  "canvas_in": {
+    "w": 13.333,
+    "h": 7.5
+  },
+  "zone": "贴纸类：可压在内容区边缘或角落，但不得压住正文文字",
+  "shape_count": 4,
+  "fill_tokens": [
+    "accent",
+    "text_light"
+  ],
+  "shapes": [
+    {
+      "shape_type": "rect",
+      "x_in": 0.3,
+      "y_in": 6.22,
+      "w_in": 1.42,
+      "h_in": 1.02,
+      "fill": "accent",
+      "fill_transparency": 62,
+      "rotation": -3
+    },
+    {
+      "shape_type": "triangle",
+      "x_in": 1.48,
+      "y_in": 7.0,
+      "w_in": 0.24,
+      "h_in": 0.24,
+      "fill": "text_light",
+      "fill_transparency": 30,
+      "rotation": -3
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0.46,
+      "y_in": 6.47,
+      "w_in": 0.92,
+      "h_in": 0.03,
+      "fill": "text_light",
+      "fill_transparency": 20,
+      "rotation": -3
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0.46,
+      "y_in": 6.7,
+      "w_in": 0.62,
+      "h_in": 0.03,
+      "fill": "text_light",
+      "fill_transparency": 35,
+      "rotation": -3
+    }
+  ]
+}

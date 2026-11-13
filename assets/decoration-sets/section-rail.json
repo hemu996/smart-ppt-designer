@@ -1,0 +1,115 @@
+{
+  "id": "section-rail",
+  "label": "竖排章节标签轨道",
+  "note": "左栏章节标签底板：浅色竖条 + 金色边线 + 分隔刻线 + 当前项高亮块 + 序号圆点；标签文字用 rotation=270 的文本框叠加（与 sidebar 导航二选一）",
+  "canvas_in": {
+    "w": 13.333,
+    "h": 7.5
+  },
+  "zone": "页边距装饰（不进入内容安全区 x 1.38–12.73 / y 0.30–6.95，除非计划显式指定）",
+  "shape_count": 11,
+  "fill_tokens": [
+    "primary",
+    "accent",
+    "text_light"
+  ],
+  "shapes": [
+    {
+      "shape_type": "rect",
+      "x_in": 0,
+      "y_in": 0,
+      "w_in": 1.05,
+      "h_in": 7.5,
+      "fill": "text_light",
+      "fill_transparency": 86
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 1.05,
+      "y_in": 0,
+      "w_in": 0.028,
+      "h_in": 7.5,
+      "fill": "accent"
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0,
+      "y_in": 2.05,
+      "w_in": 1.05,
+      "h_in": 0.5,
+      "fill": "accent",
+      "fill_transparency": 78
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0,
+      "y_in": 2.05,
+      "w_in": 0.06,
+      "h_in": 0.5,
+      "fill": "accent"
+    },
+    {
+      "shape_type": "ellipse",
+      "x_in": 0.16,
+      "y_in": 0.6,
+      "w_in": 0.22,
+      "h_in": 0.22,
+      "fill": "accent",
+      "fill_transparency": 40
+    },
+    {
+      "shape_type": "ellipse",
+      "x_in": 0.16,
+      "y_in": 6.85,
+      "w_in": 0.22,
+      "h_in": 0.22,
+      "fill": "accent",
+      "fill_transparency": 40
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0.12,
+      "y_in": 1.45,
+      "w_in": 0.72,
+      "h_in": 0.02,
+      "fill": "text_light",
+      "fill_transparency": 60
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0.12,
+      "y_in": 2.6,
+      "w_in": 0.72,
+      "h_in": 0.02,
+      "fill": "text_light",
+      "fill_transparency": 60
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0.12,
+      "y_in": 3.75,
+      "w_in": 0.72,
+      "h_in": 0.02,
+      "fill": "text_light",
+      "fill_transparency": 60
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0.12,
+      "y_in": 4.9,
+      "w_in": 0.72,
+      "h_in": 0.02,
+      "fill": "text_light",
+      "fill_transparency": 60
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0.12,
+      "y_in": 6.05,
+      "w_in": 0.72,
+      "h_in": 0.02,
+      "fill": "text_light",
+      "fill_transparency": 60
+    }
+  ]
+}

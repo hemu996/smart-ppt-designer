@@ -1,0 +1,1042 @@
+{
+  "_note": "v9.0.2 常见布局特征库（规格 v9.3 L663 模板校验兜底的依据）：由 scripts/build_layout_library.py 从素材库样本逐页明细（data/ 覆盖 9 份 153 页）提炼；样本逐页无元素坐标，故以「角色 × 映射卡片 × 元素量分箱」为布局指纹，并记录组内形数 / 图数 / 文本块数实测区间。计划侧由 scripts/check_layout_similarity.py 判定接近度。",
+  "generated_from": "9 份样本 / 153 页（knowledge/reference_analysis/data）",
+  "min_count": 2,
+  "pattern_count": 35,
+  "patterns": [
+    {
+      "id": "concept|layout-image-bleed|sh0|pic1",
+      "name": "图主导页｜layout-image-bleed｜少量元素·少图",
+      "role": "concept",
+      "card": "layout-image-bleed",
+      "layout_template": "image-bleed",
+      "shape_band": [
+        0,
+        20
+      ],
+      "pic_band": [
+        1,
+        4
+      ],
+      "shape_range": [
+        0,
+        0
+      ],
+      "pic_range": [
+        1,
+        1
+      ],
+      "tblk_range": [
+        0,
+        0
+      ],
+      "count": 35,
+      "sources": [
+        "ref-airflow-medical-blue#p2",
+        "ref-airflow-medical-blue#p3",
+        "ref-airflow-medical-blue#p4",
+        "ref-airflow-medical-blue#p5",
+        "ref-airflow-medical-blue#p6",
+        "ref-airflow-medical-blue#p7"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "content|layout-sidebar-nav|sh1|pic3",
+      "name": "内容页｜layout-sidebar-nav｜中量元素·多图",
+      "role": "content",
+      "card": "layout-sidebar-nav",
+      "layout_template": "sidebar-nav",
+      "shape_band": [
+        20,
+        50
+      ],
+      "pic_band": [
+        9,
+        1000000000
+      ],
+      "shape_range": [
+        21,
+        48
+      ],
+      "pic_range": [
+        10,
+        32
+      ],
+      "tblk_range": [
+        11,
+        24
+      ],
+      "count": 12,
+      "sources": [
+        "ref-award-red-gold#p2",
+        "ref-award-red-gold#p3",
+        "ref-award-red-gold#p10",
+        "ref-award-red-gold#p11",
+        "ref-award-red-gold#p14",
+        "ref-award-red-gold#p16"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "content|layout-sidebar-nav|sh2|pic3",
+      "name": "内容页｜layout-sidebar-nav｜较多元素·多图",
+      "role": "content",
+      "card": "layout-sidebar-nav",
+      "layout_template": "sidebar-nav",
+      "shape_band": [
+        50,
+        90
+      ],
+      "pic_band": [
+        9,
+        1000000000
+      ],
+      "shape_range": [
+        51,
+        79
+      ],
+      "pic_range": [
+        9,
+        17
+      ],
+      "tblk_range": [
+        17,
+        39
+      ],
+      "count": 12,
+      "sources": [
+        "ref-award-red-gold#p4",
+        "ref-award-red-gold#p5",
+        "ref-award-red-gold#p8",
+        "ref-award-red-gold#p13",
+        "ref-blackgold-tech#p7",
+        "ref-blackgold-tech#p19"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "content|layout-sidebar-nav|sh2|pic2",
+      "name": "内容页｜layout-sidebar-nav｜较多元素·中图",
+      "role": "content",
+      "card": "layout-sidebar-nav",
+      "layout_template": "sidebar-nav",
+      "shape_band": [
+        50,
+        90
+      ],
+      "pic_band": [
+        4,
+        9
+      ],
+      "shape_range": [
+        51,
+        79
+      ],
+      "pic_range": [
+        4,
+        8
+      ],
+      "tblk_range": [
+        7,
+        28
+      ],
+      "count": 12,
+      "sources": [
+        "ref-chip-industrial#p2",
+        "ref-chip-industrial#p10",
+        "ref-heritage-earth#p3",
+        "ref-heritage-earth#p4",
+        "ref-heritage-earth#p8",
+        "ref-medical-blue#p8"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "content|layout-sidebar-nav|sh1|pic1",
+      "name": "内容页｜layout-sidebar-nav｜中量元素·少图",
+      "role": "content",
+      "card": "layout-sidebar-nav",
+      "layout_template": "sidebar-nav",
+      "shape_band": [
+        20,
+        50
+      ],
+      "pic_band": [
+        1,
+        4
+      ],
+      "shape_range": [
+        21,
+        45
+      ],
+      "pic_range": [
+        1,
+        3
+      ],
+      "tblk_range": [
+        7,
+        17
+      ],
+      "count": 9,
+      "sources": [
+        "ref-blackgold-tech#p13",
+        "ref-blackgold-tech#p23",
+        "ref-chip-industrial#p13",
+        "ref-heritage-earth#p2",
+        "ref-heritage-earth#p7",
+        "ref-heritage-earth#p11"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "content|layout-sidebar-nav|sh1|pic2",
+      "name": "内容页｜layout-sidebar-nav｜中量元素·中图",
+      "role": "content",
+      "card": "layout-sidebar-nav",
+      "layout_template": "sidebar-nav",
+      "shape_band": [
+        20,
+        50
+      ],
+      "pic_band": [
+        4,
+        9
+      ],
+      "shape_range": [
+        24,
+        49
+      ],
+      "pic_range": [
+        4,
+        8
+      ],
+      "tblk_range": [
+        10,
+        20
+      ],
+      "count": 8,
+      "sources": [
+        "ref-blackgold-tech#p15",
+        "ref-chip-industrial#p3",
+        "ref-chip-industrial#p12",
+        "ref-heritage-earth#p16",
+        "ref-medical-blue#p15",
+        "ref-medical-blue#p18"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "content|layout-sidebar-nav|sh2|pic1",
+      "name": "内容页｜layout-sidebar-nav｜较多元素·少图",
+      "role": "content",
+      "card": "layout-sidebar-nav",
+      "layout_template": "sidebar-nav",
+      "shape_band": [
+        50,
+        90
+      ],
+      "pic_band": [
+        1,
+        4
+      ],
+      "shape_range": [
+        55,
+        67
+      ],
+      "pic_range": [
+        1,
+        3
+      ],
+      "tblk_range": [
+        11,
+        34
+      ],
+      "count": 6,
+      "sources": [
+        "ref-blackgold-tech#p8",
+        "ref-blackgold-tech#p14",
+        "ref-blackgold-tech#p17",
+        "ref-blackgold-tech#p18",
+        "ref-heritage-earth#p9",
+        "ref-medical-blue#p9"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "content|layout-sidebar-nav|sh0|pic2",
+      "name": "内容页｜layout-sidebar-nav｜少量元素·中图",
+      "role": "content",
+      "card": "layout-sidebar-nav",
+      "layout_template": "sidebar-nav",
+      "shape_band": [
+        0,
+        20
+      ],
+      "pic_band": [
+        4,
+        9
+      ],
+      "shape_range": [
+        12,
+        18
+      ],
+      "pic_range": [
+        5,
+        8
+      ],
+      "tblk_range": [
+        7,
+        12
+      ],
+      "count": 5,
+      "sources": [
+        "ref-blackgold-tech#p2",
+        "ref-blackgold-tech#p3",
+        "ref-redtour-red#p2",
+        "ref-tea-green#p2",
+        "ref-tea-green#p3"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "cover|cover-title|sh0|pic1",
+      "name": "封面｜cover-title｜少量元素·少图",
+      "role": "cover",
+      "card": "cover-title",
+      "layout_template": "cover-full-image",
+      "shape_band": [
+        0,
+        20
+      ],
+      "pic_band": [
+        1,
+        4
+      ],
+      "shape_range": [
+        0,
+        17
+      ],
+      "pic_range": [
+        1,
+        2
+      ],
+      "tblk_range": [
+        0,
+        13
+      ],
+      "count": 4,
+      "sources": [
+        "ref-airflow-medical-blue#p1",
+        "ref-blackgold-tech#p1",
+        "ref-redtour-red#p1",
+        "ref-typo-closing#p1"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "closing|cover-title|sh0|pic1",
+      "name": "结尾页｜cover-title｜少量元素·少图",
+      "role": "closing",
+      "card": "cover-title",
+      "layout_template": "cover-full-image",
+      "shape_band": [
+        0,
+        20
+      ],
+      "pic_band": [
+        1,
+        4
+      ],
+      "shape_range": [
+        0,
+        0
+      ],
+      "pic_range": [
+        1,
+        1
+      ],
+      "tblk_range": [
+        0,
+        0
+      ],
+      "count": 4,
+      "sources": [
+        "ref-airflow-medical-blue#p35",
+        "ref-blackgold-tech#p24",
+        "ref-chip-industrial#p22",
+        "ref-medical-blue#p22"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "data_chart|layout-data-dash|sh3|pic1",
+      "name": "数据页｜layout-data-dash｜大量元素·少图",
+      "role": "data_chart",
+      "card": "layout-data-dash",
+      "layout_template": "data-dashboard",
+      "shape_band": [
+        90,
+        140
+      ],
+      "pic_band": [
+        1,
+        4
+      ],
+      "shape_range": [
+        91,
+        109
+      ],
+      "pic_range": [
+        1,
+        1
+      ],
+      "tblk_range": [
+        20,
+        52
+      ],
+      "count": 4,
+      "sources": [
+        "ref-blackgold-tech#p9",
+        "ref-blackgold-tech#p21",
+        "ref-medical-blue#p4",
+        "ref-medical-blue#p6"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "data_chart|layout-data-dash|sh1|pic3",
+      "name": "数据页｜layout-data-dash｜中量元素·多图",
+      "role": "data_chart",
+      "card": "layout-data-dash",
+      "layout_template": "data-dashboard",
+      "shape_band": [
+        20,
+        50
+      ],
+      "pic_band": [
+        9,
+        1000000000
+      ],
+      "shape_range": [
+        33,
+        40
+      ],
+      "pic_range": [
+        10,
+        16
+      ],
+      "tblk_range": [
+        12,
+        22
+      ],
+      "count": 3,
+      "sources": [
+        "ref-award-red-gold#p6",
+        "ref-award-red-gold#p15",
+        "ref-chip-industrial#p14"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "data_chart|layout-data-dash|sh1|pic2",
+      "name": "数据页｜layout-data-dash｜中量元素·中图",
+      "role": "data_chart",
+      "card": "layout-data-dash",
+      "layout_template": "data-dashboard",
+      "shape_band": [
+        20,
+        50
+      ],
+      "pic_band": [
+        4,
+        9
+      ],
+      "shape_range": [
+        30,
+        46
+      ],
+      "pic_range": [
+        5,
+        7
+      ],
+      "tblk_range": [
+        5,
+        18
+      ],
+      "count": 3,
+      "sources": [
+        "ref-chip-industrial#p8",
+        "ref-heritage-earth#p5",
+        "ref-medical-blue#p11"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "cover|cover-title|sh1|pic3",
+      "name": "封面｜cover-title｜中量元素·多图",
+      "role": "cover",
+      "card": "cover-title",
+      "layout_template": "cover-full-image",
+      "shape_band": [
+        20,
+        50
+      ],
+      "pic_band": [
+        9,
+        1000000000
+      ],
+      "shape_range": [
+        21,
+        25
+      ],
+      "pic_range": [
+        16,
+        17
+      ],
+      "tblk_range": [
+        11,
+        12
+      ],
+      "count": 2,
+      "sources": [
+        "ref-award-red-gold#p1",
+        "ref-heritage-earth#p1"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "content|layout-sidebar-nav|sh3|pic3",
+      "name": "内容页｜layout-sidebar-nav｜大量元素·多图",
+      "role": "content",
+      "card": "layout-sidebar-nav",
+      "layout_template": "sidebar-nav",
+      "shape_band": [
+        90,
+        140
+      ],
+      "pic_band": [
+        9,
+        1000000000
+      ],
+      "shape_range": [
+        105,
+        128
+      ],
+      "pic_range": [
+        10,
+        19
+      ],
+      "tblk_range": [
+        14,
+        30
+      ],
+      "count": 2,
+      "sources": [
+        "ref-award-red-gold#p9",
+        "ref-award-red-gold#p12"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "concept|layout-image-bleed|sh1|pic2",
+      "name": "图主导页｜layout-image-bleed｜中量元素·中图",
+      "role": "concept",
+      "card": "layout-image-bleed",
+      "layout_template": "image-bleed",
+      "shape_band": [
+        20,
+        50
+      ],
+      "pic_band": [
+        4,
+        9
+      ],
+      "shape_range": [
+        26,
+        32
+      ],
+      "pic_range": [
+        4,
+        8
+      ],
+      "tblk_range": [
+        14,
+        16
+      ],
+      "count": 2,
+      "sources": [
+        "ref-blackgold-tech#p4",
+        "ref-blackgold-tech#p5"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "content|layout-sidebar-nav|sh4|pic2",
+      "name": "内容页｜layout-sidebar-nav｜极密元素·中图",
+      "role": "content",
+      "card": "layout-sidebar-nav",
+      "layout_template": "sidebar-nav",
+      "shape_band": [
+        140,
+        1000000000
+      ],
+      "pic_band": [
+        4,
+        9
+      ],
+      "shape_range": [
+        156,
+        352
+      ],
+      "pic_range": [
+        8,
+        8
+      ],
+      "tblk_range": [
+        12,
+        17
+      ],
+      "count": 2,
+      "sources": [
+        "ref-blackgold-tech#p6",
+        "ref-blackgold-tech#p10"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "content|layout-sidebar-nav|sh4|pic1",
+      "name": "内容页｜layout-sidebar-nav｜极密元素·少图",
+      "role": "content",
+      "card": "layout-sidebar-nav",
+      "layout_template": "sidebar-nav",
+      "shape_band": [
+        140,
+        1000000000
+      ],
+      "pic_band": [
+        1,
+        4
+      ],
+      "shape_range": [
+        161,
+        1273
+      ],
+      "pic_range": [
+        1,
+        2
+      ],
+      "tblk_range": [
+        16,
+        17
+      ],
+      "count": 2,
+      "sources": [
+        "ref-blackgold-tech#p11",
+        "ref-heritage-earth#p14"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "data_chart|layout-data-dash|sh4|pic1",
+      "name": "数据页｜layout-data-dash｜极密元素·少图",
+      "role": "data_chart",
+      "card": "layout-data-dash",
+      "layout_template": "data-dashboard",
+      "shape_band": [
+        140,
+        1000000000
+      ],
+      "pic_band": [
+        1,
+        4
+      ],
+      "shape_range": [
+        145,
+        189
+      ],
+      "pic_range": [
+        1,
+        1
+      ],
+      "tblk_range": [
+        35,
+        51
+      ],
+      "count": 2,
+      "sources": [
+        "ref-blackgold-tech#p12",
+        "ref-heritage-earth#p15"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "data_chart|layout-data-dash|sh1|pic1",
+      "name": "数据页｜layout-data-dash｜中量元素·少图",
+      "role": "data_chart",
+      "card": "layout-data-dash",
+      "layout_template": "data-dashboard",
+      "shape_band": [
+        20,
+        50
+      ],
+      "pic_band": [
+        1,
+        4
+      ],
+      "shape_range": [
+        31,
+        32
+      ],
+      "pic_range": [
+        1,
+        1
+      ],
+      "tblk_range": [
+        7,
+        10
+      ],
+      "count": 2,
+      "sources": [
+        "ref-blackgold-tech#p16",
+        "ref-medical-blue#p16"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "data_chart|layout-data-dash|sh2|pic2",
+      "name": "数据页｜layout-data-dash｜较多元素·中图",
+      "role": "data_chart",
+      "card": "layout-data-dash",
+      "layout_template": "data-dashboard",
+      "shape_band": [
+        50,
+        90
+      ],
+      "pic_band": [
+        4,
+        9
+      ],
+      "shape_range": [
+        50,
+        60
+      ],
+      "pic_range": [
+        4,
+        8
+      ],
+      "tblk_range": [
+        8,
+        16
+      ],
+      "count": 2,
+      "sources": [
+        "ref-chip-industrial#p4",
+        "ref-heritage-earth#p6"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "content|layout-sidebar-nav|sh3|pic2",
+      "name": "内容页｜layout-sidebar-nav｜大量元素·中图",
+      "role": "content",
+      "card": "layout-sidebar-nav",
+      "layout_template": "sidebar-nav",
+      "shape_band": [
+        90,
+        140
+      ],
+      "pic_band": [
+        4,
+        9
+      ],
+      "shape_range": [
+        95,
+        103
+      ],
+      "pic_range": [
+        8,
+        8
+      ],
+      "tblk_range": [
+        16,
+        19
+      ],
+      "count": 2,
+      "sources": [
+        "ref-chip-industrial#p5",
+        "ref-medical-blue#p12"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "data_chart|layout-data-dash|sh2|pic3",
+      "name": "数据页｜layout-data-dash｜较多元素·多图",
+      "role": "data_chart",
+      "card": "layout-data-dash",
+      "layout_template": "data-dashboard",
+      "shape_band": [
+        50,
+        90
+      ],
+      "pic_band": [
+        9,
+        1000000000
+      ],
+      "shape_range": [
+        57,
+        65
+      ],
+      "pic_range": [
+        9,
+        11
+      ],
+      "tblk_range": [
+        7,
+        19
+      ],
+      "count": 2,
+      "sources": [
+        "ref-chip-industrial#p18",
+        "ref-medical-blue#p5"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "cover|cover-title|sh0|pic2",
+      "name": "封面｜cover-title｜少量元素·中图",
+      "role": "cover",
+      "card": "cover-title",
+      "layout_template": "cover-full-image",
+      "shape_band": [
+        0,
+        20
+      ],
+      "pic_band": [
+        4,
+        9
+      ],
+      "shape_range": [
+        9,
+        13
+      ],
+      "pic_range": [
+        4,
+        8
+      ],
+      "tblk_range": [
+        8,
+        9
+      ],
+      "count": 2,
+      "sources": [
+        "ref-medical-blue#p1",
+        "ref-tea-green#p1"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "content|layout-sidebar-nav|sh0|pic1",
+      "name": "内容页｜layout-sidebar-nav｜少量元素·少图",
+      "role": "content",
+      "card": "layout-sidebar-nav",
+      "layout_template": "sidebar-nav",
+      "shape_band": [
+        0,
+        20
+      ],
+      "pic_band": [
+        1,
+        4
+      ],
+      "shape_range": [
+        15,
+        19
+      ],
+      "pic_range": [
+        3,
+        3
+      ],
+      "tblk_range": [
+        7,
+        10
+      ],
+      "count": 2,
+      "sources": [
+        "ref-tea-green#p5",
+        "ref-tea-green#p6"
+      ],
+      "source": "sample"
+    },
+    {
+      "id": "package|section_divider",
+      "name": "章节过渡页（五要素：全屏背景图 / 超大编号 / 章节标题 / 一句话说明 / 装饰线）（包内规范补条目）",
+      "role": "section_divider",
+      "card": "cover-title",
+      "layout_template": "cover-full-image",
+      "shape_band": null,
+      "pic_band": null,
+      "shape_range": null,
+      "pic_range": null,
+      "tblk_range": null,
+      "count": 0,
+      "sources": [
+        "包内规范（样本未覆盖）"
+      ],
+      "source": "package"
+    },
+    {
+      "id": "package|toc",
+      "name": "目录页（编号网格）（包内规范补条目）",
+      "role": "toc",
+      "card": "layout-toc-number-grid",
+      "layout_template": "toc-number-grid",
+      "shape_band": null,
+      "pic_band": null,
+      "shape_range": null,
+      "pic_range": null,
+      "tblk_range": null,
+      "count": 0,
+      "sources": [
+        "包内规范（样本未覆盖）"
+      ],
+      "source": "package"
+    },
+    {
+      "id": "package|layout-four-grid",
+      "name": "包内版式：layout-four-grid（four-grid）",
+      "role": "*",
+      "card": "layout-four-grid",
+      "layout_template": "four-grid",
+      "shape_band": null,
+      "pic_band": null,
+      "shape_range": null,
+      "pic_range": null,
+      "tblk_range": null,
+      "count": 0,
+      "sources": [
+        "包内版式模板 / 设计卡片"
+      ],
+      "source": "package"
+    },
+    {
+      "id": "package|layout-two-column",
+      "name": "包内版式：layout-two-column（sidebar-nav）",
+      "role": "*",
+      "card": "layout-two-column",
+      "layout_template": "sidebar-nav",
+      "shape_band": null,
+      "pic_band": null,
+      "shape_range": null,
+      "pic_range": null,
+      "tblk_range": null,
+      "count": 0,
+      "sources": [
+        "包内版式模板 / 设计卡片"
+      ],
+      "source": "package"
+    },
+    {
+      "id": "package|timeline-horizontal",
+      "name": "包内版式：timeline-horizontal（sidebar-nav）",
+      "role": "*",
+      "card": "timeline-horizontal",
+      "layout_template": "sidebar-nav",
+      "shape_band": null,
+      "pic_band": null,
+      "shape_range": null,
+      "pic_range": null,
+      "tblk_range": null,
+      "count": 0,
+      "sources": [
+        "包内版式模板 / 设计卡片"
+      ],
+      "source": "package"
+    },
+    {
+      "id": "package|hierarchy-tree",
+      "name": "包内版式：hierarchy-tree（sidebar-nav）",
+      "role": "*",
+      "card": "hierarchy-tree",
+      "layout_template": "sidebar-nav",
+      "shape_band": null,
+      "pic_band": null,
+      "shape_range": null,
+      "pic_range": null,
+      "tblk_range": null,
+      "count": 0,
+      "sources": [
+        "包内版式模板 / 设计卡片"
+      ],
+      "source": "package"
+    },
+    {
+      "id": "package|funnel-conversion",
+      "name": "包内版式：funnel-conversion（sidebar-nav）",
+      "role": "*",
+      "card": "funnel-conversion",
+      "layout_template": "sidebar-nav",
+      "shape_band": null,
+      "pic_band": null,
+      "shape_range": null,
+      "pic_range": null,
+      "tblk_range": null,
+      "count": 0,
+      "sources": [
+        "包内版式模板 / 设计卡片"
+      ],
+      "source": "package"
+    },
+    {
+      "id": "package|metric-highlight",
+      "name": "包内版式：metric-highlight（data-dashboard）",
+      "role": "*",
+      "card": "metric-highlight",
+      "layout_template": "data-dashboard",
+      "shape_band": null,
+      "pic_band": null,
+      "shape_range": null,
+      "pic_range": null,
+      "tblk_range": null,
+      "count": 0,
+      "sources": [
+        "包内版式模板 / 设计卡片"
+      ],
+      "source": "package"
+    },
+    {
+      "id": "package|problem-solution",
+      "name": "包内版式：problem-solution（four-grid）",
+      "role": "*",
+      "card": "problem-solution",
+      "layout_template": "four-grid",
+      "shape_band": null,
+      "pic_band": null,
+      "shape_range": null,
+      "pic_range": null,
+      "tblk_range": null,
+      "count": 0,
+      "sources": [
+        "包内版式模板 / 设计卡片"
+      ],
+      "source": "package"
+    },
+    {
+      "id": "package|comparison-matrix",
+      "name": "包内版式：comparison-matrix（four-grid）",
+      "role": "*",
+      "card": "comparison-matrix",
+      "layout_template": "four-grid",
+      "shape_band": null,
+      "pic_band": null,
+      "shape_range": null,
+      "pic_range": null,
+      "tblk_range": null,
+      "count": 0,
+      "sources": [
+        "包内版式模板 / 设计卡片"
+      ],
+      "source": "package"
+    }
+  ]
+}

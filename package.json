@@ -1,0 +1,14 @@
+{
+  "name": "smart-ppt-designer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Native PPTX build & asset-pipeline scripts for the smart-ppt-designer skill package.",
+  "scripts": {
+    "build": "node scripts/build_pptx.js",
+    "assets": "node scripts/generate_assets.js"
+  },
+  "dependencies": {
+    "jszip": "^3.10.2",
+    "pptxgenjs": "^3.12.0"
+  }
+}

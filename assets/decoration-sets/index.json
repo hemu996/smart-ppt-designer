@@ -1,0 +1,80 @@
+{
+  "_note": "装饰组库索引：计划里用 {\"type\":\"decoration_set\",\"set_id\":\"<id>\",\"z_index\":10-19} 引用。分为「框架类」（页边距几何）与「手工感/贴纸类」（v8.9 去 AI 感：手绘线条、印章、便签、纸胶带、手绘箭头——可压在内容区边缘，但不得压住正文文字）",
+  "sets": [
+    {
+      "id": "left-rail-geometry",
+      "label": "左侧竖轨几何",
+      "shape_count": 13
+    },
+    {
+      "id": "right-rail-ruler",
+      "label": "右侧细线标尺",
+      "shape_count": 13
+    },
+    {
+      "id": "top-rule-band",
+      "label": "顶部规则带",
+      "shape_count": 14
+    },
+    {
+      "id": "bottom-rule-band",
+      "label": "底部规则带",
+      "shape_count": 12
+    },
+    {
+      "id": "corner-ticks",
+      "label": "四角刻线",
+      "shape_count": 12
+    },
+    {
+      "id": "side-dots-grid",
+      "label": "侧边点阵",
+      "shape_count": 14
+    },
+    {
+      "id": "texture-mesh",
+      "label": "网格纹理",
+      "shape_count": 14
+    },
+    {
+      "id": "glow-orbs",
+      "label": "光斑辉光",
+      "shape_count": 12
+    },
+    {
+      "id": "section-rail",
+      "label": "竖排章节标签轨道",
+      "shape_count": 11
+    },
+    {
+      "id": "hand-drawn-lines",
+      "label": "手绘线条（不笔直）",
+      "shape_count": 6,
+      "group": "手工感（去 AI 感，v8.9）"
+    },
+    {
+      "id": "stamp-seal",
+      "label": "印章 / 邮戳（不规整）",
+      "shape_count": 5,
+      "group": "手工感（去 AI 感，v8.9）"
+    },
+    {
+      "id": "sticky-note",
+      "label": "便签（贴角）",
+      "shape_count": 4,
+      "group": "手工感（去 AI 感，v8.9）"
+    },
+    {
+      "id": "paper-tape",
+      "label": "纸胶带（贴边）",
+      "shape_count": 3,
+      "group": "手工感（去 AI 感，v8.9）"
+    },
+    {
+      "id": "hand-arrow",
+      "label": "手绘箭头 / 标注线",
+      "shape_count": 5,
+      "group": "手工感（去 AI 感，v8.9）"
+    }
+  ]
+}

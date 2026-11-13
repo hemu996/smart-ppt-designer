@@ -1,0 +1,27 @@
+{
+  "name": "four-grid",
+  "label": "四宫格",
+  "use_when": "痛点分析、优势对比、四条并列举措、四类人群、四步闭环",
+  "canvas": { "width_in": 13.333, "height_in": 7.5 },
+  "_nav_note": "坐标已按导航式内页留出左侧导航栏（0–1.18in），内容区从 1.38in 起、到 12.83in 止；无论 navigation_mode 为 sidebar 还是 top 都沿用本坐标，保证跨页一致。",
+  "zones": {
+    "header": { "x_in": 1.38, "y_in": 0.45, "w_in": 11.45, "h_in": 0.9, "role": "页面标题" },
+    "cell_1": { "x_in": 1.38, "y_in": 1.75, "w_in": 5.55, "h_in": 2.3, "role": "模块一" },
+    "cell_2": { "x_in": 7.28, "y_in": 1.75, "w_in": 5.55, "h_in": 2.3, "role": "模块二" },
+    "cell_3": { "x_in": 1.38, "y_in": 4.2, "w_in": 5.55, "h_in": 2.3, "role": "模块三" },
+    "cell_4": { "x_in": 7.28, "y_in": 4.2, "w_in": 5.55, "h_in": 2.3, "role": "模块四" },
+    "footer": { "x_in": 1.38, "y_in": 6.2, "w_in": 11.45, "h_in": 0.85, "role": "结论行 / 口径（页脚左下）" }
+  },
+  "slots": {
+    "cells": 4,
+    "icon_supported": true,
+    "cell_title_pt": [16, 18],
+    "cell_body_pt": [12, 14],
+    "bullets_per_cell": [2, 3]
+  },
+  "notes": [
+    "四格等大才表达并列；出现主次关系时改 sidebar-nav",
+    "每格内容高度差不要超过一格高度的 30%，否则改 2 格或 3 格布局",
+    "对象数量恰好 3 个时不要用四宫格硬凑，改用 data-dashboard 的 3 卡布局"
+  ]
+}

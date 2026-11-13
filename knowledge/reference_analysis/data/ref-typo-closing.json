@@ -1,0 +1,61 @@
+{
+  "summary": {
+    "slug": "ref-typo-closing",
+    "file": "23. PPT结尾-弄潮起舞 踏浪前行.pptx",
+    "bytes": 93018209,
+    "pages": 1,
+    "avg_shapes": 15.0,
+    "avg_groups": 2.0,
+    "avg_pics": 1.0,
+    "big_pic_ratio": 0.0,
+    "avg_chars": 43.0,
+    "avg_tblocks": 11.0,
+    "avg_colors": 0.0,
+    "table_pages": 0,
+    "chart_pages": 0,
+    "chart_kinds": {},
+    "transition_pages": 0,
+    "anim_pages": 1,
+    "distinct_layouts": 1,
+    "role_sequence": [
+      "封面"
+    ],
+    "title_sizes": [
+      239.0
+    ],
+    "body_sizes": [
+      14.0
+    ],
+    "geom_top": {
+      "rect": 13,
+      "roundRect": 2
+    }
+  },
+  "slides": [
+    {
+      "页": 1,
+      "角色": "封面",
+      "映射卡片": "cover-title",
+      "版式": "slideLayout1.xml",
+      "形": 15,
+      "组": 2,
+      "图": 1,
+      "框": 0,
+      "表": 0,
+      "图表": 0,
+      "大图占比": 0.0,
+      "字": 43,
+      "文本块": 11,
+      "色数": 0,
+      "大字短文本": true,
+      "最大字号": 239.0,
+      "最小字号": 14.0,
+      "图层顺序": "图 → 形×11 → 组×2",
+      "几何": {
+        "rect": 13,
+        "roundRect": 2
+      },
+      "用色": []
+    }
+  ]
+}

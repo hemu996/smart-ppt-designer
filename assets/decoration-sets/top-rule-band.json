@@ -1,0 +1,142 @@
+{
+  "id": "top-rule-band",
+  "label": "顶部规则带",
+  "note": "页眉处的色带 + 标题装饰线 + 小方块节奏，是国赛稿最常见的横向上封边",
+  "canvas_in": {
+    "w": 13.333,
+    "h": 7.5
+  },
+  "zone": "页边距装饰（不进入内容安全区 x 1.38–12.73 / y 0.30–6.95，除非计划显式指定）",
+  "shape_count": 14,
+  "fill_tokens": [
+    "primary",
+    "accent",
+    "text_light"
+  ],
+  "shapes": [
+    {
+      "shape_type": "rect",
+      "x_in": 0,
+      "y_in": 0,
+      "w_in": 13.333,
+      "h_in": 0.2,
+      "fill": "primary",
+      "fill_transparency": 8
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 1.38,
+      "y_in": 0.155,
+      "w_in": 4.2,
+      "h_in": 0.042,
+      "fill": "accent"
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 1.38,
+      "y_in": 0.155,
+      "w_in": 1.1,
+      "h_in": 0.042,
+      "fill": "primary"
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 10.4,
+      "y_in": 0.05,
+      "w_in": 0.13,
+      "h_in": 0.13,
+      "fill": "accent",
+      "fill_transparency": 18
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 10.76,
+      "y_in": 0.05,
+      "w_in": 0.13,
+      "h_in": 0.13,
+      "fill": "accent",
+      "fill_transparency": 30
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 11.12,
+      "y_in": 0.05,
+      "w_in": 0.13,
+      "h_in": 0.13,
+      "fill": "accent",
+      "fill_transparency": 42
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 11.48,
+      "y_in": 0.05,
+      "w_in": 0.13,
+      "h_in": 0.13,
+      "fill": "accent",
+      "fill_transparency": 54
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 11.84,
+      "y_in": 0.05,
+      "w_in": 0.13,
+      "h_in": 0.13,
+      "fill": "accent",
+      "fill_transparency": 66
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 12.2,
+      "y_in": 0.05,
+      "w_in": 0.13,
+      "h_in": 0.13,
+      "fill": "accent",
+      "fill_transparency": 78
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 12.73,
+      "y_in": 0.05,
+      "w_in": 0.6,
+      "h_in": 0.028,
+      "fill": "text_light",
+      "fill_transparency": 30
+    },
+    {
+      "shape_type": "line",
+      "x_in": 0.9,
+      "y_in": 0.155,
+      "w_in": 0.42,
+      "h_in": 0,
+      "line_color": "primary",
+      "line_width_pt": 1.0
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 5.9,
+      "y_in": 0.15,
+      "w_in": 0.9,
+      "h_in": 0.05,
+      "fill": "text_light",
+      "fill_transparency": 40
+    },
+    {
+      "shape_type": "ellipse",
+      "x_in": 12.36,
+      "y_in": 0.06,
+      "w_in": 0.1,
+      "h_in": 0.1,
+      "fill": "accent",
+      "fill_transparency": 60
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 6.95,
+      "y_in": 0.15,
+      "w_in": 0.5,
+      "h_in": 0.05,
+      "fill": "primary",
+      "fill_transparency": 35
+    }
+  ]
+}

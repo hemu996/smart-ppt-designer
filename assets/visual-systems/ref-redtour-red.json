@@ -1,0 +1,178 @@
+{
+  "system_name": "ref-redtour-red",
+  "label": "红旅赛道·正红亮金",
+  "mode": "light",
+  "usage": "由参考稿《红旅赛道PPT模板.pptx》自动提取；红旅赛道·正红亮金。适合场景请对照 style-index.json 的 keywords 选用，未确认前不要当默认。",
+  "colors": {
+    "primary": "#C00000",
+    "secondary": "#8A0000",
+    "accent": "#FFC000",
+    "background": "#FFFFFF",
+    "text": "#2E2620",
+    "text_light": "#7A6A5A"
+  },
+  "fonts": {
+    "title": "微软雅黑",
+    "body": "微软雅黑",
+    "title_size": [
+      36,
+      44
+    ],
+    "section_size": [
+      28,
+      32
+    ],
+    "page_title_size": [
+      20,
+      24
+    ],
+    "module_size": [
+      16,
+      18
+    ],
+    "body_size": [
+      12,
+      14
+    ],
+    "caption_size": [
+      10,
+      11
+    ],
+    "metric_size": [
+      36,
+      60
+    ]
+  },
+  "decorations": {
+    "title_bar": "rule",
+    "card_border": "hairline",
+    "section_divider": "band"
+  },
+  "navigation": {
+    "mode": "sidebar",
+    "active_color": "#FFC000",
+    "inactive_color": "#8C6900",
+    "text_active": "#2E2620",
+    "text_inactive": "#7A6A5A"
+  },
+  "grid": {
+    "columns": 12,
+    "margin_cols": 1,
+    "unit_cm": 0.3,
+    "unit_in": 0.1181,
+    "tolerance_in": 0.02,
+    "content_x_in": 1.38,
+    "content_w_in": 11.45
+  },
+  "icon_style": "solid",
+  "transition": "fade",
+  "layers": {
+    "L1_background": 0,
+    "L2_decoration": [
+      10,
+      19
+    ],
+    "L3_content": [
+      20,
+      29
+    ],
+    "L4_title": [
+      30,
+      39
+    ],
+    "notes": "构建脚本按 z_index 升序绘制；装饰层不得高于内容层（红线第 11 条）"
+  },
+  "image_style": "humanities",
+  "chart_palette": [
+    "#FFC000",
+    "#FFFFFF",
+    "#FFFF00",
+    "#FF0000",
+    "#C00000"
+  ],
+  "density": {
+    "max_modules_per_page": 5,
+    "max_bullets_per_module": 4
+  },
+  "extraction": {
+    "source_file": "红旅赛道PPT模板.pptx",
+    "method": "zipfile/XML 频次统计（pptx）或渲染帧取色（pdf）",
+    "date": "2026-11-05",
+    "confidence": "high",
+    "signals": {
+      "pages": 7,
+      "canvas_in": [
+        13.333,
+        7.5
+      ],
+      "top_colors": [
+        {
+          "hex": "FFC000",
+          "count": 53
+        },
+        {
+          "hex": "FFFFFF",
+          "count": 50
+        },
+        {
+          "hex": "FFFF00",
+          "count": 9
+        },
+        {
+          "hex": "FF0000",
+          "count": 9
+        },
+        {
+          "hex": "C00000",
+          "count": 6
+        },
+        {
+          "hex": "33383C",
+          "count": 2
+        },
+        {
+          "hex": "CEDFBA",
+          "count": 2
+        },
+        {
+          "hex": "2E2E2E",
+          "count": 1
+        }
+      ],
+      "fonts_raw": [
+        "微软雅黑",
+        "演示新手书",
+        "演示流云楷",
+        "方正大标宋简体"
+      ],
+      "sizes_pt_top": [
+        14.0,
+        16.0,
+        20.0,
+        24.0,
+        28.0,
+        32.0,
+        36.0,
+        44.0,
+        54.0,
+        80.0
+      ],
+      "objects": {
+        "shapes": 193,
+        "tables": 0,
+        "charts": 0,
+        "media": 64
+      }
+    },
+    "note": "自动提取仅供调用起点；标签、适用场景与语义化命名建议人工校订后使用。"
+  },
+  "card_style": {
+    "icon_slot": true,
+    "title_strip": true,
+    "fill_alpha": 92,
+    "border": "hairline",
+    "corner_index": true,
+    "shadow": true,
+    "note": "v9.0 卡片精致度：浅色系统卡片 = 近白/浅灰底（92%）+ 主题色细描边 + 左上角序号带 + 标题条 + 轻微投影"
+  }
+}

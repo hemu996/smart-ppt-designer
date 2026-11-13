@@ -1,0 +1,121 @@
+{
+  "__spec_version": "v7.5",
+  "system_name": "tech-teal-green",
+  "label": "科技深青",
+  "mode": "dark",
+  "usage": "面向技术创新、检验检测、职院技能大赛类项目；深青底 + 青色发光线条 + 左侧章节导航",
+  "colors": {
+    "primary": "#004D40",
+    "secondary": "#00332B",
+    "accent": "#00BCD4",
+    "background": "#0B1E1B",
+    "surface": "#004D40",
+    "text": "#FFFFFF",
+    "text_light": "#B9C6C2"
+  },
+  "fonts": {
+    "title": "微软雅黑",
+    "body": "微软雅黑",
+    "title_size": [
+      36,
+      44
+    ],
+    "section_size": [
+      28,
+      32
+    ],
+    "page_title_size": [
+      20,
+      24
+    ],
+    "module_size": [
+      16,
+      18
+    ],
+    "body_size": [
+      12,
+      14
+    ],
+    "caption_size": [
+      10,
+      11
+    ],
+    "metric_size": [
+      36,
+      60
+    ]
+  },
+  "decorations": {
+    "title_bar": "glow_line",
+    "card_border": "hairline",
+    "section_divider": "glow_band"
+  },
+  "navigation": {
+    "mode": "sidebar",
+    "active_color": "#00BCD4",
+    "inactive_color": "#8CE0EB",
+    "text_active": "#FFFFFF",
+    "text_inactive": "#B9C6C2"
+  },
+  "grid": {
+    "columns": 12,
+    "margin_cols": 1,
+    "unit_cm": 0.3,
+    "unit_in": 0.1181,
+    "tolerance_in": 0.02,
+    "content_x_in": 1.38,
+    "content_w_in": 11.45
+  },
+  "icon_style": "solid",
+  "transition": "fade",
+  "layers": {
+    "L1_background": 0,
+    "L2_decoration": [
+      10,
+      19
+    ],
+    "L3_content": [
+      20,
+      29
+    ],
+    "L4_title": [
+      30,
+      39
+    ],
+    "notes": "构建脚本按 z_index 升序绘制；装饰层不得高于内容层（红线第 11 条）"
+  },
+  "image_style": "tech",
+  "chart_palette": [
+    "#00BCD4",
+    "#004D40",
+    "#26A69A",
+    "#80CBC4",
+    "#B9C6C2"
+  ],
+  "density": {
+    "max_modules_per_page": 6,
+    "max_bullets_per_module": 4
+  },
+  "source_samples": [],
+  "calibration_note": "**来源样本（药检先锋）本次未提供**，配色直接采用规格给定值（#004D40 / #00BCD4 / #FFFFFF），未据实样本校准；补样后应重新提取",
+  "representative_layout": "侧边栏导航 + 主内容、高密度多模块、圆形技术矩阵（规格描述）",
+  "keywords": [
+    "科技",
+    "深青",
+    "医药",
+    "检验检测",
+    "职业技能大赛",
+    "技术创新",
+    "侧边栏导航"
+  ],
+  "notes": "规格 v7.5 指定系统；**来源样本（药检先锋）本次未提供**，配色直接采用规格给定值（#004D40 / #00BCD4 / #FFFFFF），未据实样本校准；补样后应重新提取",
+  "card_style": {
+    "icon_slot": true,
+    "title_strip": true,
+    "fill_alpha": 86,
+    "border": "hairline",
+    "corner_index": true,
+    "shadow": true,
+    "note": "v9.0 卡片精致度：深色系统卡片 = 近深半透明底（86%）+ 主题色细描边 + 左上角序号带 + 标题条 + 轻微投影"
+  }
+}

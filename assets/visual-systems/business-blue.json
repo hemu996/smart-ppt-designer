@@ -1,0 +1,107 @@
+{
+  "system_name": "business-blue",
+  "label": "商务科技蓝",
+  "mode": "light",
+  "usage": "面向竞赛路演、政府/企业汇报、技术方案；理性、克制、可信",
+  "colors": {
+    "primary": "#1a3a5c",
+    "secondary": "#2e7dbb",
+    "accent": "#f39c12",
+    "background": "#f8f9fa",
+    "text": "#2c3e50",
+    "text_light": "#7f8c8d"
+  },
+  "fonts": {
+    "title": "微软雅黑",
+    "body": "微软雅黑",
+    "title_size": [
+      36,
+      44
+    ],
+    "section_size": [
+      28,
+      32
+    ],
+    "page_title_size": [
+      20,
+      24
+    ],
+    "module_size": [
+      16,
+      18
+    ],
+    "body_size": [
+      12,
+      14
+    ],
+    "caption_size": [
+      10,
+      11
+    ],
+    "metric_size": [
+      36,
+      60
+    ]
+  },
+  "decorations": {
+    "title_bar": "left_accent_bar",
+    "card_border": "rounded_light",
+    "section_divider": "thin_line"
+  },
+  "navigation": {
+    "mode": "sidebar",
+    "active_color": "#2e7dbb",
+    "inactive_color": "#c9d3dd",
+    "text_active": "#ffffff",
+    "text_inactive": "#5b6b7c"
+  },
+  "grid": {
+    "columns": 12,
+    "margin_cols": 1,
+    "unit_cm": 0.3,
+    "unit_in": 0.1181,
+    "tolerance_in": 0.02,
+    "content_x_in": 1.38,
+    "content_w_in": 11.45
+  },
+  "icon_style": "solid",
+  "transition": "fade",
+  "layers": {
+    "L1_background": 0,
+    "L2_decoration": [
+      10,
+      19
+    ],
+    "L3_content": [
+      20,
+      29
+    ],
+    "L4_title": [
+      30,
+      39
+    ],
+    "notes": "构建脚本按 z_index 升序绘制；装饰层不得高于内容层（红线第 11 条）"
+  },
+  "image_style": "business",
+  "chart_palette": [
+    "#1a3a5c",
+    "#2e7dbb",
+    "#5aa9e6",
+    "#f39c12",
+    "#9aa7b4"
+  ],
+  "density": {
+    "max_modules_per_page": 6,
+    "max_bullets_per_module": 4
+  },
+  "notes": "accent 只用于关键指标与图表第 4 系列，不允许大面积铺色（首轮视觉校验的配色建议）",
+  "card_style": {
+    "icon_slot": true,
+    "title_strip": true,
+    "fill_alpha": 92,
+    "border": "hairline",
+    "corner_index": true,
+    "shadow": true,
+    "note": "v9.0 卡片精致度：浅色系统卡片 = 近白/浅灰底（92%）+ 主题色细描边 + 左上角序号带 + 标题条 + 轻微投影"
+  }
+}

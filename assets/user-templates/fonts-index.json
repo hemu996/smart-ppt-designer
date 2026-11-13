@@ -1,0 +1,678 @@
+{
+ "_note": "随模板附带的字体清单（v9.9）：**只登记，不复制、不安装**。生成稿优先使用开源可商用字体；如需使用此处列出的字体，请自行确认授权后再安装。",
+ "count": 84,
+ "fonts": [
+  {
+   "file": "Slidefontliuyun-Regular(5).ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0-15页-国奖水准红金风格PPT-康帅制作\\使用字体（建议安装）\\Slidefontliuyun-Regular(5).ttf",
+   "ext": "ttf",
+   "size_kb": 12995.3,
+   "family": "Slidefontliuyun",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "微软雅黑.ttc",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0-15页-国奖水准红金风格PPT-康帅制作\\使用字体（建议安装）\\微软雅黑.ttc",
+   "ext": "ttc",
+   "size_kb": 23054.4,
+   "family": "Microsoft YaHei",
+   "subfamily": "Normal"
+  },
+  {
+   "file": "FZZJ-LongYTJW.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0土金色&朱红色蓝染色非遗对外传播\\土金\\使用字体【建议安装】\\FZZJ-LongYTJW.ttf",
+   "ext": "ttf",
+   "size_kb": 19005.5,
+   "family": "FZZJ-LongYTJW",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "STXINGKA.TTF",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0土金色&朱红色蓝染色非遗对外传播\\土金\\使用字体【建议安装】\\STXINGKA.TTF",
+   "ext": "ttf",
+   "size_kb": 3922.2,
+   "family": "STXingkai",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "微软雅黑.ttc",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0土金色&朱红色蓝染色非遗对外传播\\土金\\使用字体【建议安装】\\微软雅黑.ttc",
+   "ext": "ttc",
+   "size_kb": 23054.4,
+   "family": "Microsoft YaHei",
+   "subfamily": "Normal"
+  },
+  {
+   "file": "思源宋体 CN Heavy.otf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0土金色&朱红色蓝染色非遗对外传播\\土金\\使用字体【建议安装】\\思源宋体 CN Heavy.otf",
+   "ext": "otf",
+   "size_kb": 11032.4,
+   "family": "Source Han Serif CN Heavy",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "演示镇魂行楷.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0土金色&朱红色蓝染色非遗对外传播\\土金\\使用字体【建议安装】\\演示镇魂行楷.ttf",
+   "ext": "ttf",
+   "size_kb": 27049.5,
+   "family": "SlideTownsoul",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "FZZJ-LongYTJW.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0土金色&朱红色蓝染色非遗对外传播\\朱红\\使用字体【建议安装】\\FZZJ-LongYTJW.ttf",
+   "ext": "ttf",
+   "size_kb": 19005.5,
+   "family": "FZZJ-LongYTJW",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "STXINGKA.TTF",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0土金色&朱红色蓝染色非遗对外传播\\朱红\\使用字体【建议安装】\\STXINGKA.TTF",
+   "ext": "ttf",
+   "size_kb": 3922.2,
+   "family": "STXingkai",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "微软雅黑.ttc",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0土金色&朱红色蓝染色非遗对外传播\\朱红\\使用字体【建议安装】\\微软雅黑.ttc",
+   "ext": "ttc",
+   "size_kb": 23054.4,
+   "family": "Microsoft YaHei",
+   "subfamily": "Normal"
+  },
+  {
+   "file": "思源宋体 CN Heavy.otf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0土金色&朱红色蓝染色非遗对外传播\\朱红\\使用字体【建议安装】\\思源宋体 CN Heavy.otf",
+   "ext": "otf",
+   "size_kb": 11032.4,
+   "family": "Source Han Serif CN Heavy",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "演示镇魂行楷.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0土金色&朱红色蓝染色非遗对外传播\\朱红\\使用字体【建议安装】\\演示镇魂行楷.ttf",
+   "ext": "ttf",
+   "size_kb": 27049.5,
+   "family": "SlideTownsoul",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "FZZJ-LongYTJW.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0土金色&朱红色蓝染色非遗对外传播\\蓝染\\使用字体【建议安装】\\FZZJ-LongYTJW.ttf",
+   "ext": "ttf",
+   "size_kb": 19005.5,
+   "family": "FZZJ-LongYTJW",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "STXINGKA.TTF",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0土金色&朱红色蓝染色非遗对外传播\\蓝染\\使用字体【建议安装】\\STXINGKA.TTF",
+   "ext": "ttf",
+   "size_kb": 3922.2,
+   "family": "STXingkai",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "微软雅黑.ttc",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0土金色&朱红色蓝染色非遗对外传播\\蓝染\\使用字体【建议安装】\\微软雅黑.ttc",
+   "ext": "ttc",
+   "size_kb": 23054.4,
+   "family": "Microsoft YaHei",
+   "subfamily": "Normal"
+  },
+  {
+   "file": "思源宋体 CN Heavy.otf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0土金色&朱红色蓝染色非遗对外传播\\蓝染\\使用字体【建议安装】\\思源宋体 CN Heavy.otf",
+   "ext": "otf",
+   "size_kb": 11032.4,
+   "family": "Source Han Serif CN Heavy",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "演示镇魂行楷.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0土金色&朱红色蓝染色非遗对外传播\\蓝染\\使用字体【建议安装】\\演示镇魂行楷.ttf",
+   "ext": "ttf",
+   "size_kb": 27049.5,
+   "family": "SlideTownsoul",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "OPPOSans B.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0慧瞰农域（黄蓝绿）-Fonts\\OPPOSans B.ttf",
+   "ext": "ttf",
+   "size_kb": 9665.2,
+   "family": "OPPOSans B",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "OPPOSans R.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0慧瞰农域（黄蓝绿）-Fonts\\OPPOSans R.ttf",
+   "ext": "ttf",
+   "size_kb": 9914.8,
+   "family": "OPPOSans R",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "Slidexiaxing.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0慧瞰农域（黄蓝绿）-Fonts\\Slidexiaxing.ttf",
+   "ext": "ttf",
+   "size_kb": 9837.5,
+   "family": "Slidexiaxing",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "优设标题黑.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0慧瞰农域（黄蓝绿）-Fonts\\优设标题黑.ttf",
+   "ext": "ttf",
+   "size_kb": 1381.6,
+   "family": "YouSheBiaoTiHei",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "演示春风楷.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0慧瞰农域（黄蓝绿）-Fonts\\演示春风楷.ttf",
+   "ext": "ttf",
+   "size_kb": 9447.1,
+   "family": "Slidechunfeng",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "锐字潮牌真言简2.0免费 准粗.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0慧瞰农域（黄蓝绿）-Fonts\\锐字潮牌真言简2.0免费 准粗.ttf",
+   "ext": "ttf",
+   "size_kb": 1406.5,
+   "family": "REEJI-ZhenyanGB2.0 Medium",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "DingTalk JinBuTi.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0红色-非遗陶瓷传承\\字体包（打开PPT前先安装字体）\\DingTalk JinBuTi.ttf",
+   "ext": "ttf",
+   "size_kb": 2079.2,
+   "family": "DingTalk JinBuTi",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "字体圈欣意冠黑体2.0.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0红色-非遗陶瓷传承\\字体包（打开PPT前先安装字体）\\字体圈欣意冠黑体2.0.ttf",
+   "ext": "ttf",
+   "size_kb": 1416.1,
+   "family": "Fontquan-XinYiGuanHeiTi 2.0",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "思源宋体 CN Heavy.otf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0红色-非遗陶瓷传承\\字体包（打开PPT前先安装字体）\\思源宋体 CN Heavy.otf",
+   "ext": "otf",
+   "size_kb": 11032.4,
+   "family": "Source Han Serif CN Heavy",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "思源黑体 CN Bold.otf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0红色-非遗陶瓷传承\\字体包（打开PPT前先安装字体）\\思源黑体 CN Bold.otf",
+   "ext": "otf",
+   "size_kb": 8406.4,
+   "family": "Source Han Sans CN Bold",
+   "subfamily": "Bold"
+  },
+  {
+   "file": "演示悠然小楷 免商.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0红色-非遗陶瓷传承\\字体包（打开PPT前先安装字体）\\演示悠然小楷 免商.ttf",
+   "ext": "ttf",
+   "size_kb": 12343.6,
+   "family": "slideyouran",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "演示悠然小楷.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0红色-非遗陶瓷传承\\字体包（打开PPT前先安装字体）\\演示悠然小楷.ttf",
+   "ext": "ttf",
+   "size_kb": 12343.6,
+   "family": "slideyouran",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "053-上首逸飞体.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0绿色农业风水果供应\\使用字体（建议安装）\\053-上首逸飞体.ttf",
+   "ext": "ttf",
+   "size_kb": 2246.3,
+   "family": "045-SSYiFeiTi",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "Slidefontliuyun-Regular(5).ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0绿色农业风水果供应\\使用字体（建议安装）\\Slidefontliuyun-Regular(5).ttf",
+   "ext": "ttf",
+   "size_kb": 12995.3,
+   "family": "Slidefontliuyun",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "微软雅黑.ttc",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0绿色农业风水果供应\\使用字体（建议安装）\\微软雅黑.ttc",
+   "ext": "ttc",
+   "size_kb": 23054.4,
+   "family": "Microsoft YaHei",
+   "subfamily": "Normal"
+  },
+  {
+   "file": "思源宋体 CN Heavy.otf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0绿色农业风水果供应\\使用字体（建议安装）\\思源宋体 CN Heavy.otf",
+   "ext": "otf",
+   "size_kb": 11039.9,
+   "family": "Source Han Serif CN Heavy",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "演示镇魂行楷.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0绿色农业风水果供应\\使用字体（建议安装）\\演示镇魂行楷.ttf",
+   "ext": "ttf",
+   "size_kb": 27049.5,
+   "family": "SlideTownsoul",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "思源宋体 CN Heavy.otf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0蓝白医学风科技\\字体包（打开PPT前先安装字体）\\思源宋体 CN Heavy.otf",
+   "ext": "otf",
+   "size_kb": 11032.4,
+   "family": "Source Han Serif CN Heavy",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "思源黑体 CN Bold.otf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0蓝白医学风科技\\字体包（打开PPT前先安装字体）\\思源黑体 CN Bold.otf",
+   "ext": "otf",
+   "size_kb": 8406.4,
+   "family": "Source Han Sans CN Bold",
+   "subfamily": "Bold"
+  },
+  {
+   "file": "演示悠然小楷 免商.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0蓝白医学风科技\\字体包（打开PPT前先安装字体）\\演示悠然小楷 免商.ttf",
+   "ext": "ttf",
+   "size_kb": 12343.6,
+   "family": "slideyouran",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "演示悠然小楷.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0蓝白医学风科技\\字体包（打开PPT前先安装字体）\\演示悠然小楷.ttf",
+   "ext": "ttf",
+   "size_kb": 12343.6,
+   "family": "slideyouran",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "Aa烈焰隶书.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0黑色-芯片工科模板\\字体包（打开PPT前先安装字体）\\Aa烈焰隶书.ttf",
+   "ext": "ttf",
+   "size_kb": 40886.9,
+   "family": "AaLYLS",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "DingTalk JinBuTi.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0黑色-芯片工科模板\\字体包（打开PPT前先安装字体）\\DingTalk JinBuTi.ttf",
+   "ext": "ttf",
+   "size_kb": 2079.2,
+   "family": "DingTalk JinBuTi",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "思源宋体 CN Heavy.otf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0黑色-芯片工科模板\\字体包（打开PPT前先安装字体）\\思源宋体 CN Heavy.otf",
+   "ext": "otf",
+   "size_kb": 11032.4,
+   "family": "Source Han Serif CN Heavy",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "思源黑体 CN Bold.otf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0黑色-芯片工科模板\\字体包（打开PPT前先安装字体）\\思源黑体 CN Bold.otf",
+   "ext": "otf",
+   "size_kb": 8406.4,
+   "family": "Source Han Sans CN Bold",
+   "subfamily": "Bold"
+  },
+  {
+   "file": "演示悠然小楷 免商.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0黑色-芯片工科模板\\字体包（打开PPT前先安装字体）\\演示悠然小楷 免商.ttf",
+   "ext": "ttf",
+   "size_kb": 12343.6,
+   "family": "slideyouran",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "演示悠然小楷.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0黑色-芯片工科模板\\字体包（打开PPT前先安装字体）\\演示悠然小楷.ttf",
+   "ext": "ttf",
+   "size_kb": 12343.6,
+   "family": "slideyouran",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "Arial.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\Arial.ttf",
+   "ext": "ttf",
+   "size_kb": 1021.4,
+   "family": "Arial",
+   "subfamily": "Normal"
+  },
+  {
+   "file": "Bahnschrift SemiBold SemiConden.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\Bahnschrift SemiBold SemiConden.ttf",
+   "ext": "ttf",
+   "size_kb": 330.5,
+   "family": "Bahnschrift",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "Bahnschrift SemiLight.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\Bahnschrift SemiLight.ttf",
+   "ext": "ttf",
+   "size_kb": 330.5,
+   "family": "Bahnschrift",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "Bebas Neue.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\Bebas Neue.ttf",
+   "ext": "ttf",
+   "size_kb": 56.3,
+   "family": "Bebas Neue",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "Calibri.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\Calibri.ttf",
+   "ext": "ttf",
+   "size_kb": 1641.8,
+   "family": "Calibri",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "Cambria.ttc",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\Cambria.ttc",
+   "ext": "ttc",
+   "size_kb": 1750.6,
+   "family": "Cambria",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "HarmonyOS Sans SC Light.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\HarmonyOS Sans SC Light.ttf",
+   "ext": "ttf",
+   "size_kb": 8141.0,
+   "family": "HarmonyOS Sans SC Light",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "HarmonyOS Sans SC.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\HarmonyOS Sans SC.ttf",
+   "ext": "ttf",
+   "size_kb": 8067.5,
+   "family": "HarmonyOS Sans SC",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "Roboto Regular.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\Roboto Regular.ttf",
+   "ext": "ttf",
+   "size_kb": 141.9,
+   "family": "Roboto",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "Roboto.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\Roboto.ttf",
+   "ext": "ttf",
+   "size_kb": 159.1,
+   "family": "Roboto",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "Source Han Sans CN Bold.otf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\Source Han Sans CN Bold.otf",
+   "ext": "otf",
+   "size_kb": 8406.4,
+   "family": "Source Han Sans CN Bold",
+   "subfamily": "Bold"
+  },
+  {
+   "file": "Source Han Sans CN Medium.otf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\Source Han Sans CN Medium.otf",
+   "ext": "otf",
+   "size_kb": 8193.5,
+   "family": "Source Han Sans CN Medium",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "Source Han Sans CN Regular.otf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\Source Han Sans CN Regular.otf",
+   "ext": "otf",
+   "size_kb": 8168.8,
+   "family": "Source Han Sans CN Regular",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "Times New Roman.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\Times New Roman.ttf",
+   "ext": "ttf",
+   "size_kb": 1178.6,
+   "family": "Times New Roman",
+   "subfamily": "Normal"
+  },
+  {
+   "file": "优设标题黑.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\优设标题黑.ttf",
+   "ext": "ttf",
+   "size_kb": 1381.6,
+   "family": "YouSheBiaoTiHei",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "微软雅黑.ttc",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\微软雅黑.ttc",
+   "ext": "ttc",
+   "size_kb": 19239.8,
+   "family": "Microsoft YaHei",
+   "subfamily": "Normal"
+  },
+  {
+   "file": "思源宋体 CN Heavy.otf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\思源宋体 CN Heavy.otf",
+   "ext": "otf",
+   "size_kb": 13211.1,
+   "family": "Source Han Serif CN Heavy",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "思源黑体 CN Heavy.otf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\思源黑体 CN Heavy.otf",
+   "ext": "otf",
+   "size_kb": 8579.7,
+   "family": "Source Han Sans CN Heavy",
+   "subfamily": "Bold"
+  },
+  {
+   "file": "思源黑体 CN Light.otf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\思源黑体 CN Light.otf",
+   "ext": "otf",
+   "size_kb": 8103.0,
+   "family": "Source Han Sans CN Light",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "梦源黑体 CN W14.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\梦源黑体 CN W14.ttf",
+   "ext": "ttf",
+   "size_kb": 11151.0,
+   "family": "Dream Han Sans CN W14",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "梦源黑体 CN W15.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\梦源黑体 CN W15.ttf",
+   "ext": "ttf",
+   "size_kb": 11135.4,
+   "family": "Dream Han Sans CN W15",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "梦源黑体 CN W18.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\梦源黑体 CN W18.ttf",
+   "ext": "ttf",
+   "size_kb": 11095.7,
+   "family": "Dream Han Sans CN W18",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "梦源黑体 CN W20.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\梦源黑体 CN W20.ttf",
+   "ext": "ttf",
+   "size_kb": 11068.4,
+   "family": "Dream Han Sans CN W20",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "梦源黑体 CN W27.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\梦源黑体 CN W27.ttf",
+   "ext": "ttf",
+   "size_kb": 11076.3,
+   "family": "Dream Han Sans CN W27",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "演示新手书.OTF",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\演示新手书.OTF",
+   "ext": "otf",
+   "size_kb": 14822.2,
+   "family": "Slide Fonts",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "等线 Light.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\等线 Light.ttf",
+   "ext": "ttf",
+   "size_kb": 15068.6,
+   "family": "DengXian Light",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "等线.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\等线.ttf",
+   "ext": "ttf",
+   "size_kb": 15934.1,
+   "family": "DengXian",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "腾祥伯当行楷简.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板-Fonts\\腾祥伯当行楷简.ttf",
+   "ext": "ttf",
+   "size_kb": 7690.1,
+   "family": "Tensentype BoDangXingKaiJ",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "OPPOSans-B.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\红色蓝色棕色非遗保护\\字体\\OPPOSans-B.ttf",
+   "ext": "ttf",
+   "size_kb": 9665.2,
+   "family": "OPPOSans B",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "OPPOSans-R.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\红色蓝色棕色非遗保护\\字体\\OPPOSans-R.ttf",
+   "ext": "ttf",
+   "size_kb": 9914.8,
+   "family": "OPPOSans R",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "SlideBoom-Normal.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\红色蓝色棕色非遗保护\\字体\\SlideBoom-Normal.ttf",
+   "ext": "ttf",
+   "size_kb": 89904.0,
+   "family": "SlideBoom Normal",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "SourceHanSerifCN-Heavy.otf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\红色蓝色棕色非遗保护\\字体\\SourceHanSerifCN-Heavy.otf",
+   "ext": "otf",
+   "size_kb": 13211.1,
+   "family": "Source Han Serif CN Heavy",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "演示新手书.OTF",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\红色蓝色棕色非遗保护\\字体\\演示新手书.OTF",
+   "ext": "otf",
+   "size_kb": 14822.2,
+   "family": "Slide Fonts",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "演示镇魂行楷.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\红色蓝色棕色非遗保护\\字体\\演示镇魂行楷.ttf",
+   "ext": "ttf",
+   "size_kb": 27049.5,
+   "family": "SlideTownsoul",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "钟齐志莽行书.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\红色蓝色棕色非遗保护\\字体\\钟齐志莽行书.ttf",
+   "ext": "ttf",
+   "size_kb": 3968.3,
+   "family": "Zhi Mang Xing",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "Slidefontliuyun-Regular(5).ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\红金色工匠手艺传承\\使用字体（建议安装）\\Slidefontliuyun-Regular(5).ttf",
+   "ext": "ttf",
+   "size_kb": 12995.3,
+   "family": "Slidefontliuyun",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "微软雅黑.ttc",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\红金色工匠手艺传承\\使用字体（建议安装）\\微软雅黑.ttc",
+   "ext": "ttc",
+   "size_kb": 23054.4,
+   "family": "Microsoft YaHei",
+   "subfamily": "Normal"
+  },
+  {
+   "file": "优设标题黑.ttf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\黑金科技风智能AI\\字体包-按需下载\\优设标题黑.ttf",
+   "ext": "ttf",
+   "size_kb": 1381.6,
+   "family": "YouSheBiaoTiHei",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "思源黑体 CN Bold.otf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\黑金科技风智能AI\\字体包-按需下载\\思源黑体 CN Bold.otf",
+   "ext": "otf",
+   "size_kb": 8824.3,
+   "family": "Source Han Sans CN Bold",
+   "subfamily": "Regular"
+  },
+  {
+   "file": "思源黑体 CN Regular.otf",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\黑金科技风智能AI\\字体包-按需下载\\思源黑体 CN Regular.otf",
+   "ext": "otf",
+   "size_kb": 8168.8,
+   "family": "Source Han Sans CN Regular",
+   "subfamily": "Regular"
+  }
+ ]
+}

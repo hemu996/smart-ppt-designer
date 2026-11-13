@@ -1,0 +1,25 @@
+{
+  "total_pages": 170,
+  "mapped_pages": 132,
+  "coverage": 0.776,
+  "distribution": {
+    "cover-title": 19,
+    "layout-sidebar-nav": 89,
+    "layout-data-dash": 24,
+    "整页视觉（cover-full-image）": 38
+  },
+  "failures": [
+    {
+      "file": "Airflow·艾弗洛——医疗领域恒风量智能风机领跑者(1)(1)(1).pdf",
+      "error": "ValueError: PDF：请先用同设计的 pptx 分析（本脚本只解析 pptx）"
+    },
+    {
+      "file": "Airflow·艾弗洛——医疗领域恒风量智能风机领跑者(1)(1).pdf",
+      "error": "ValueError: PDF：请先用同设计的 pptx 分析（本脚本只解析 pptx）"
+    },
+    {
+      "file": "巧夺天工改.pptx",
+      "error": "ValueError: 文件损坏（仅 165 字节）"
+    }
+  ]
+}

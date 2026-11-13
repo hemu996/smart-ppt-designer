@@ -1,0 +1,171 @@
+{
+  "system_name": "ref-typo-closing",
+  "label": "大字结尾页·书法金句",
+  "mode": "dark",
+  "usage": "由参考稿《23. PPT结尾-弄潮起舞 踏浪前行.pptx》自动提取；大字结尾页·书法金句。适合场景请对照 style-index.json 的 keywords 选用，未确认前不要当默认。",
+  "colors": {
+    "primary": "#44546A",
+    "secondary": "#303C4C",
+    "accent": "#FFC000",
+    "background": "44546A",
+    "surface": "#44546A",
+    "text": "#F2F2F2",
+    "text_light": "#B9BDC7"
+  },
+  "fonts": {
+    "title": "宋体",
+    "body": "微软雅黑",
+    "title_size": [
+      36,
+      44
+    ],
+    "section_size": [
+      28,
+      32
+    ],
+    "page_title_size": [
+      20,
+      24
+    ],
+    "module_size": [
+      16,
+      18
+    ],
+    "body_size": [
+      12,
+      14
+    ],
+    "caption_size": [
+      10,
+      11
+    ],
+    "metric_size": [
+      36,
+      60
+    ]
+  },
+  "decorations": {
+    "title_bar": "rule",
+    "card_border": "hairline",
+    "section_divider": "band"
+  },
+  "navigation": {
+    "mode": "sidebar",
+    "active_color": "#FFC000",
+    "inactive_color": "#8C6900",
+    "text_active": "#F2F2F2",
+    "text_inactive": "#B9BDC7"
+  },
+  "grid": {
+    "columns": 12,
+    "margin_cols": 1,
+    "unit_cm": 0.3,
+    "unit_in": 0.1181,
+    "tolerance_in": 0.02,
+    "content_x_in": 1.38,
+    "content_w_in": 11.45
+  },
+  "icon_style": "solid",
+  "transition": "fade",
+  "layers": {
+    "L1_background": 0,
+    "L2_decoration": [
+      10,
+      19
+    ],
+    "L3_content": [
+      20,
+      29
+    ],
+    "L4_title": [
+      30,
+      39
+    ],
+    "notes": "构建脚本按 z_index 升序绘制；装饰层不得高于内容层（红线第 11 条）"
+  },
+  "image_style": "tech",
+  "chart_palette": [
+    "#4472C4",
+    "#ED7D31",
+    "#A5A5A5",
+    "#FFC000",
+    "#5B9BD5"
+  ],
+  "density": {
+    "max_modules_per_page": 5,
+    "max_bullets_per_module": 4
+  },
+  "extraction": {
+    "source_file": "23. PPT结尾-弄潮起舞 踏浪前行.pptx",
+    "method": "zipfile/XML 频次统计（pptx）或渲染帧取色（pdf）",
+    "date": "2026-11-05",
+    "confidence": "medium（页面无显式色值，配色取自主题/方案色）",
+    "signals": {
+      "pages": 1,
+      "canvas_in": [
+        13.333,
+        7.5
+      ],
+      "top_colors": [
+        {
+          "hex": "44546A",
+          "count": 6
+        },
+        {
+          "hex": "4472C4",
+          "count": 3
+        },
+        {
+          "hex": "ED7D31",
+          "count": 3
+        },
+        {
+          "hex": "A5A5A5",
+          "count": 3
+        },
+        {
+          "hex": "FFC000",
+          "count": 3
+        },
+        {
+          "hex": "5B9BD5",
+          "count": 3
+        },
+        {
+          "hex": "70AD47",
+          "count": 3
+        },
+        {
+          "hex": "E7E6E6",
+          "count": 2
+        }
+      ],
+      "fonts_raw": [
+        "Source Han Serif CN Heavy",
+        "演示夏行楷"
+      ],
+      "sizes_pt_top": [
+        14.0,
+        166.0,
+        199.0,
+        239.0
+      ],
+      "objects": {
+        "shapes": 15,
+        "tables": 0,
+        "charts": 0,
+        "media": 2
+      }
+    },
+    "note": "自动提取仅供调用起点；标签、适用场景与语义化命名建议人工校订后使用。"
+  },
+  "card_style": {
+    "icon_slot": true,
+    "title_strip": true,
+    "fill_alpha": 86,
+    "border": "hairline",
+    "corner_index": true,
+    "shadow": true,
+    "note": "v9.0 卡片精致度：深色系统卡片 = 近深半透明底（86%）+ 主题色细描边 + 左上角序号带 + 标题条 + 轻微投影"
+  }
+}

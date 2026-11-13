@@ -1,0 +1,33 @@
+# 依赖
+node_modules/
+__pycache__/
+*.pyc
+*.egg-info/
+
+# 生成的产物
+output/
+*.log
+
+# 大体积素材（不随源码分发：参考稿原文件 / 样本 PPT / 模板二进制）
+*.pptx
+*.ppt
+*.potx
+*.pptm
+*.ppsx
+*.pdf
+*.zip
+assets/sample-ppts/
+assets/templates/
+assets/target-cases/
+assets/template-library/*.pptx
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# 本地路径与密钥
+*.local.json
+.env
+.env.*

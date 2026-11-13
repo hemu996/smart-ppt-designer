@@ -1,0 +1,29 @@
+{
+  "name": "sidebar-nav",
+  "label": "侧边栏导航式",
+  "use_when": "项目背景、技术创新、方案说明、机制解释等内容页；需要评委随时知道进度",
+  "canvas": { "width_in": 13.333, "height_in": 7.5 },
+  "zones": {
+    "nav": { "x_in": 0, "y_in": 0, "w_in": 1.18, "h_in": 7.5, "role": "章节导航（母版内置，当前章高亮）" },
+    "header": { "x_in": 1.38, "y_in": 0.42, "w_in": 11.45, "h_in": 0.95, "role": "页面标题 + 副标题" },
+    "main": { "x_in": 1.38, "y_in": 1.6, "w_in": 11.45, "h_in": 5.15, "role": "主内容区" },
+    "footer": { "x_in": 1.38, "y_in": 6.2, "w_in": 11.45, "h_in": 0.85, "role": "结论 / 数据口径行（页脚左下）" }
+  },
+  "slots": {
+    "modules": [1, 4],
+    "module_gap_in": 0.3,
+    "bullet_max": 4,
+    "icon_supported": true
+  },
+  "typography": {
+    "title_pt": [24, 28],
+    "module_title_pt": [16, 18],
+    "body_pt": [13, 15],
+    "caption_pt": [10, 12]
+  },
+  "notes": [
+    "导航栏宽度固定 1.18in（约 3cm），不得被内容侵占",
+    "当前章节用视觉系统 navigation.active_color 填充 + 白色文字，其余章节浅灰",
+    "主内容区推荐 2–4 个模块；单页模块数上限见视觉系统 density"
+  ]
+}

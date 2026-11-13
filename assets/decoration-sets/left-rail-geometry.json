@@ -1,0 +1,133 @@
+{
+  "id": "left-rail-geometry",
+  "label": "左侧竖轨几何",
+  "note": "左侧页边距的竖轨 + 刻度块 + 细线，承担整份稿的纵向秩序感",
+  "canvas_in": {
+    "w": 13.333,
+    "h": 7.5
+  },
+  "zone": "页边距装饰（不进入内容安全区 x 1.38–12.73 / y 0.30–6.95，除非计划显式指定）",
+  "shape_count": 13,
+  "fill_tokens": [
+    "primary",
+    "accent",
+    "text_light"
+  ],
+  "shapes": [
+    {
+      "shape_type": "rect",
+      "x_in": 0,
+      "y_in": 0,
+      "w_in": 0.82,
+      "h_in": 7.5,
+      "fill": "primary",
+      "fill_transparency": 12
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0.82,
+      "y_in": 0,
+      "w_in": 0.1,
+      "h_in": 7.5,
+      "fill": "accent"
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0.18,
+      "y_in": 0.55,
+      "w_in": 0.46,
+      "h_in": 0.09,
+      "fill": "accent",
+      "fill_transparency": 25
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0.18,
+      "y_in": 1.75,
+      "w_in": 0.46,
+      "h_in": 0.09,
+      "fill": "accent",
+      "fill_transparency": 33
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0.18,
+      "y_in": 2.95,
+      "w_in": 0.46,
+      "h_in": 0.09,
+      "fill": "accent",
+      "fill_transparency": 41
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0.18,
+      "y_in": 4.15,
+      "w_in": 0.46,
+      "h_in": 0.09,
+      "fill": "accent",
+      "fill_transparency": 49
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0.18,
+      "y_in": 5.35,
+      "w_in": 0.46,
+      "h_in": 0.09,
+      "fill": "accent",
+      "fill_transparency": 57
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0.18,
+      "y_in": 6.55,
+      "w_in": 0.46,
+      "h_in": 0.09,
+      "fill": "accent",
+      "fill_transparency": 65
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0.18,
+      "y_in": 0.28,
+      "w_in": 0.46,
+      "h_in": 0.03,
+      "fill": "text_light",
+      "fill_transparency": 35
+    },
+    {
+      "shape_type": "ellipse",
+      "x_in": 0.31,
+      "y_in": 6.95,
+      "w_in": 0.2,
+      "h_in": 0.2,
+      "fill": "accent"
+    },
+    {
+      "shape_type": "line",
+      "x_in": 0.31,
+      "y_in": 1.35,
+      "w_in": 0.36,
+      "h_in": 0,
+      "line_color": "text_light",
+      "line_width_pt": 0.75
+    },
+    {
+      "shape_type": "line",
+      "x_in": 0.31,
+      "y_in": 4.75,
+      "w_in": 0.36,
+      "h_in": 0,
+      "line_color": "text_light",
+      "line_width_pt": 0.75
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0.18,
+      "y_in": 7.1,
+      "w_in": 0.24,
+      "h_in": 0.03,
+      "fill": "accent",
+      "fill_transparency": 40
+    }
+  ]
+}

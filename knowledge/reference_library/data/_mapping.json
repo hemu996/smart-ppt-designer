@@ -1,0 +1,14 @@
+{
+  "total_pages": 144,
+  "mapped_pages": 134,
+  "coverage": 0.931,
+  "distribution": {
+    "cover-title": 18,
+    "layout-sidebar-nav": 87,
+    "layout-data-dash": 21,
+    "整页视觉（cover-full-image）": 10,
+    "metric-highlight": 6,
+    "layout-two-column": 2
+  },
+  "failures": []
+}

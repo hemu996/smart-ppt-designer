@@ -1,0 +1,178 @@
+{
+  "system_name": "personal-huaxin-concise",
+  "label": "个人风格库·简洁商务（华芯科技标杆）",
+  "mode": "light",
+  "usage": "规格 v8.2 指定的「极简商务风格标杆（简洁版参考）」：每页元素少、留白大、表格承载数据、统一淡入转场。",
+  "colors": {
+    "primary": "#3C465A",
+    "secondary": "#2B3240",
+    "accent": "#FF8C32",
+    "background": "#FFFFFF",
+    "text": "#2E2620",
+    "text_light": "#7A6A5A"
+  },
+  "fonts": {
+    "title": "微软雅黑",
+    "body": "Arial",
+    "title_size": [
+      36,
+      44
+    ],
+    "section_size": [
+      28,
+      32
+    ],
+    "page_title_size": [
+      20,
+      24
+    ],
+    "module_size": [
+      16,
+      18
+    ],
+    "body_size": [
+      13,
+      15
+    ],
+    "caption_size": [
+      10,
+      11
+    ],
+    "metric_size": [
+      40,
+      60
+    ]
+  },
+  "decorations": {
+    "title_bar": "rule",
+    "card_border": "hairline",
+    "section_divider": "band"
+  },
+  "navigation": {
+    "mode": "sidebar",
+    "active_color": "#FF8C32",
+    "inactive_color": "#8C4D1B",
+    "text_active": "#2E2620",
+    "text_inactive": "#7A6A5A"
+  },
+  "grid": {
+    "columns": 12,
+    "margin_cols": 1,
+    "unit_cm": 0.3,
+    "unit_in": 0.1181,
+    "tolerance_in": 0.02,
+    "content_x_in": 1.38,
+    "content_w_in": 11.45
+  },
+  "icon_style": "solid",
+  "transition": "fade",
+  "layers": {
+    "L1_background": 0,
+    "L2_decoration": [
+      10,
+      19
+    ],
+    "L3_content": [
+      20,
+      29
+    ],
+    "L4_title": [
+      30,
+      39
+    ],
+    "notes": "构建脚本按 z_index 升序绘制；装饰层不得高于内容层（红线第 11 条）"
+  },
+  "image_style": "humanities",
+  "chart_palette": [
+    "#3C465A",
+    "#1E64DC",
+    "#000000",
+    "#14A064",
+    "#7486A8"
+  ],
+  "density": {
+    "max_modules_per_page": 5,
+    "max_bullets_per_module": 4
+  },
+  "extraction": {
+    "source_file": "华芯科技战略决策分析_加动画.pptx",
+    "method": "zipfile/XML 频次统计（pptx）或渲染帧取色（pdf）",
+    "date": "2026-11-05",
+    "confidence": "high",
+    "signals": {
+      "pages": 8,
+      "canvas_in": [
+        13.333,
+        7.5
+      ],
+      "top_colors": [
+        {
+          "hex": "3C465A",
+          "count": 108
+        },
+        {
+          "hex": "1E64DC",
+          "count": 82
+        },
+        {
+          "hex": "000000",
+          "count": 42
+        },
+        {
+          "hex": "14A064",
+          "count": 41
+        },
+        {
+          "hex": "7486A8",
+          "count": 40
+        },
+        {
+          "hex": "6478A0",
+          "count": 32
+        },
+        {
+          "hex": "FF8C32",
+          "count": 31
+        },
+        {
+          "hex": "DC3C3C",
+          "count": 29
+        }
+      ],
+      "fonts_raw": [
+        "Noto Sans SC",
+        "Arial"
+      ],
+      "sizes_pt_top": [
+        11.0,
+        12.0,
+        13.0,
+        14.0,
+        15.0,
+        16.0,
+        17.0,
+        18.0,
+        20.0,
+        22.0
+      ],
+      "objects": {
+        "shapes": 118,
+        "tables": 3,
+        "charts": 0,
+        "media": 2
+      }
+    },
+    "note": "自动提取仅供调用起点；标签、适用场景与语义化命名建议人工校订后使用。"
+  },
+  "keywords": [
+    "简洁版",
+    "商务",
+    "极简",
+    "深蓝灰",
+    "橙色强调",
+    "数据表格为主",
+    "个人风格库"
+  ],
+  "personal_source": "华芯科技战略决策分析_加动画.pptx（规格 v8.2 样本清单第 10 项）",
+  "notes": "由脚本从样本实测生成后存为个人风格库首条；实测 形/页 14.8、组/页 0、图/页 0.2、字/页 197.8、转场页 8/8、无自定义动画。"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "paper-tape",
+  "label": "纸胶带（贴边）",
+  "note": "去 AI 感：半透明胶带条 12° 斜贴 + 两侧略深压边，模拟贴纸/胶带撕口；建议压在图或背板边缘",
+  "canvas_in": {
+    "w": 13.333,
+    "h": 7.5
+  },
+  "zone": "贴纸类：可压在内容区边缘或角落，但不得压住正文文字",
+  "shape_count": 3,
+  "fill_tokens": [
+    "text_light"
+  ],
+  "shapes": [
+    {
+      "shape_type": "rect",
+      "x_in": 5.1,
+      "y_in": 0.06,
+      "w_in": 2.3,
+      "h_in": 0.3,
+      "fill": "text_light",
+      "fill_transparency": 42,
+      "rotation": 12
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 5.04,
+      "y_in": 0.04,
+      "w_in": 0.16,
+      "h_in": 0.3,
+      "fill": "text_light",
+      "fill_transparency": 20,
+      "rotation": 12
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 7.3,
+      "y_in": 0.1,
+      "w_in": 0.14,
+      "h_in": 0.3,
+      "fill": "text_light",
+      "fill_transparency": 25,
+      "rotation": 12
+    }
+  ]
+}

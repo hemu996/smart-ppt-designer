@@ -1,0 +1,118 @@
+{
+  "id": "corner-ticks",
+  "label": "四角刻线",
+  "note": "四角 L 形刻线与端点小圆，给画面加\"装帧\"的边界感",
+  "canvas_in": {
+    "w": 13.333,
+    "h": 7.5
+  },
+  "zone": "页边距装饰（不进入内容安全区 x 1.38–12.73 / y 0.30–6.95，除非计划显式指定）",
+  "shape_count": 12,
+  "fill_tokens": [
+    "primary",
+    "accent",
+    "text_light"
+  ],
+  "shapes": [
+    {
+      "shape_type": "rect",
+      "x_in": 0,
+      "y_in": 0,
+      "w_in": 0.32,
+      "h_in": 0.05,
+      "fill": "accent"
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0,
+      "y_in": 0,
+      "w_in": 0.05,
+      "h_in": 0.32,
+      "fill": "accent"
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 13.013,
+      "y_in": 0,
+      "w_in": 0.32,
+      "h_in": 0.05,
+      "fill": "accent"
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 13.283,
+      "y_in": 0,
+      "w_in": 0.05,
+      "h_in": 0.32,
+      "fill": "accent"
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0,
+      "y_in": 7.45,
+      "w_in": 0.32,
+      "h_in": 0.05,
+      "fill": "accent"
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 0,
+      "y_in": 7.18,
+      "w_in": 0.05,
+      "h_in": 0.32,
+      "fill": "accent"
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 13.013,
+      "y_in": 7.45,
+      "w_in": 0.32,
+      "h_in": 0.05,
+      "fill": "accent"
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 13.283,
+      "y_in": 7.18,
+      "w_in": 0.05,
+      "h_in": 0.32,
+      "fill": "accent"
+    },
+    {
+      "shape_type": "ellipse",
+      "x_in": 0.52,
+      "y_in": 0.055,
+      "w_in": 0.09,
+      "h_in": 0.09,
+      "fill": "accent",
+      "fill_transparency": 45
+    },
+    {
+      "shape_type": "ellipse",
+      "x_in": 12.72,
+      "y_in": 7.355,
+      "w_in": 0.09,
+      "h_in": 0.09,
+      "fill": "accent",
+      "fill_transparency": 45
+    },
+    {
+      "shape_type": "line",
+      "x_in": 0.9,
+      "y_in": 0.025,
+      "w_in": 0.34,
+      "h_in": 0,
+      "line_color": "accent",
+      "line_width_pt": 0.75
+    },
+    {
+      "shape_type": "line",
+      "x_in": 12.093,
+      "y_in": 7.475,
+      "w_in": 0.34,
+      "h_in": 0,
+      "line_color": "accent",
+      "line_width_pt": 0.75
+    }
+  ]
+}

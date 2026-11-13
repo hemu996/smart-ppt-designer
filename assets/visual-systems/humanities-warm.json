@@ -1,0 +1,107 @@
+{
+  "system_name": "humanities-warm",
+  "label": "人文暖色",
+  "mode": "light",
+  "usage": "面向社会服务、教育、公益、社区治理类项目；温暖、平实、有生活感",
+  "colors": {
+    "primary": "#8c5a2b",
+    "secondary": "#c08a4e",
+    "accent": "#3f6f5f",
+    "background": "#fdfaf5",
+    "text": "#3a3128",
+    "text_light": "#8d8377"
+  },
+  "fonts": {
+    "title": "微软雅黑",
+    "body": "微软雅黑",
+    "title_size": [
+      36,
+      44
+    ],
+    "section_size": [
+      28,
+      32
+    ],
+    "page_title_size": [
+      20,
+      24
+    ],
+    "module_size": [
+      16,
+      18
+    ],
+    "body_size": [
+      12,
+      14
+    ],
+    "caption_size": [
+      10,
+      11
+    ],
+    "metric_size": [
+      36,
+      60
+    ]
+  },
+  "decorations": {
+    "title_bar": "left_accent_bar",
+    "card_border": "rounded_light",
+    "section_divider": "warm_band"
+  },
+  "navigation": {
+    "mode": "sidebar",
+    "active_color": "#8c5a2b",
+    "inactive_color": "#e6dccd",
+    "text_active": "#ffffff",
+    "text_inactive": "#8d8377"
+  },
+  "grid": {
+    "columns": 12,
+    "margin_cols": 1,
+    "unit_cm": 0.3,
+    "unit_in": 0.1181,
+    "tolerance_in": 0.02,
+    "content_x_in": 1.38,
+    "content_w_in": 11.45
+  },
+  "icon_style": "solid",
+  "transition": "fade",
+  "layers": {
+    "L1_background": 0,
+    "L2_decoration": [
+      10,
+      19
+    ],
+    "L3_content": [
+      20,
+      29
+    ],
+    "L4_title": [
+      30,
+      39
+    ],
+    "notes": "构建脚本按 z_index 升序绘制；装饰层不得高于内容层（红线第 11 条）"
+  },
+  "image_style": "humanities",
+  "chart_palette": [
+    "#8c5a2b",
+    "#c08a4e",
+    "#3f6f5f",
+    "#d9b382",
+    "#8d8377"
+  ],
+  "density": {
+    "max_modules_per_page": 5,
+    "max_bullets_per_module": 4
+  },
+  "notes": "暖色系统下避免使用纯白底 + 纯黑字；正文用 text、辅助信息用 text_light",
+  "card_style": {
+    "icon_slot": true,
+    "title_strip": true,
+    "fill_alpha": 92,
+    "border": "hairline",
+    "corner_index": true,
+    "shadow": true,
+    "note": "v9.0 卡片精致度：浅色系统卡片 = 近白/浅灰底（92%）+ 主题色细描边 + 左上角序号带 + 标题条 + 轻微投影"
+  }
+}

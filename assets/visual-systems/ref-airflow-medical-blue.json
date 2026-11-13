@@ -1,0 +1,160 @@
+{
+  "system_name": "ref-airflow-medical-blue",
+  "label": "医疗产品路演·深蓝",
+  "mode": "dark",
+  "usage": "由参考稿《Airflow·艾弗洛——医疗领域恒风量智能风机领跑者(1)(1).pdf》自动提取；医疗产品路演·深蓝。适合场景请对照 style-index.json 的 keywords 选用，未确认前不要当默认。",
+  "colors": {
+    "primary": "#0F314C",
+    "secondary": "#0A2336",
+    "accent": "#2D6186",
+    "background": "0F314C",
+    "surface": "#0F314C",
+    "text": "#F2F2F2",
+    "text_light": "#B9BDC7"
+  },
+  "fonts": {
+    "title": "微软雅黑",
+    "body": "微软雅黑",
+    "title_size": [
+      36,
+      44
+    ],
+    "section_size": [
+      28,
+      32
+    ],
+    "page_title_size": [
+      20,
+      24
+    ],
+    "module_size": [
+      16,
+      18
+    ],
+    "body_size": [
+      12,
+      14
+    ],
+    "caption_size": [
+      10,
+      11
+    ],
+    "metric_size": [
+      36,
+      60
+    ]
+  },
+  "decorations": {
+    "title_bar": "rule",
+    "card_border": "hairline",
+    "section_divider": "band"
+  },
+  "navigation": {
+    "mode": "sidebar",
+    "active_color": "#2D6186",
+    "inactive_color": "#183549",
+    "text_active": "#F2F2F2",
+    "text_inactive": "#B9BDC7"
+  },
+  "grid": {
+    "columns": 12,
+    "margin_cols": 1,
+    "unit_cm": 0.3,
+    "unit_in": 0.1181,
+    "tolerance_in": 0.02,
+    "content_x_in": 1.38,
+    "content_w_in": 11.45
+  },
+  "icon_style": "solid",
+  "transition": "fade",
+  "layers": {
+    "L1_background": 0,
+    "L2_decoration": [
+      10,
+      19
+    ],
+    "L3_content": [
+      20,
+      29
+    ],
+    "L4_title": [
+      30,
+      39
+    ],
+    "notes": "构建脚本按 z_index 升序绘制；装饰层不得高于内容层（红线第 11 条）"
+  },
+  "image_style": "tech",
+  "chart_palette": [
+    "#2D6186",
+    "#18345A",
+    "#0F2C49",
+    "#114978",
+    "#0A375E"
+  ],
+  "density": {
+    "max_modules_per_page": 5,
+    "max_bullets_per_module": 4
+  },
+  "extraction": {
+    "source_file": "Airflow·艾弗洛——医疗领域恒风量智能风机领跑者(1)(1).pdf",
+    "method": "zipfile/XML 频次统计（pptx）或渲染帧取色（pdf）",
+    "date": "2026-11-05",
+    "confidence": "medium（PDF 由渲染帧取色，非矢量精确值）",
+    "signals": {
+      "pages": 35,
+      "canvas_in": [
+        10.0,
+        5.625
+      ],
+      "top_colors": [
+        {
+          "hex": "0F314C",
+          "count": 1735
+        },
+        {
+          "hex": "2D6186",
+          "count": 1728
+        },
+        {
+          "hex": "18345A",
+          "count": 1655
+        },
+        {
+          "hex": "0F2C49",
+          "count": 1597
+        },
+        {
+          "hex": "114978",
+          "count": 1583
+        },
+        {
+          "hex": "0A375E",
+          "count": 1464
+        },
+        {
+          "hex": "688090",
+          "count": 1421
+        },
+        {
+          "hex": "DCDCD9",
+          "count": 1418
+        }
+      ],
+      "fonts_raw": [],
+      "sizes_pt_top": [],
+      "objects": {
+        "note": "PDF：取渲染帧主色；不解析逐页矢量对象"
+      }
+    },
+    "note": "自动提取仅供调用起点；标签、适用场景与语义化命名建议人工校订后使用。"
+  },
+  "card_style": {
+    "icon_slot": true,
+    "title_strip": true,
+    "fill_alpha": 86,
+    "border": "hairline",
+    "corner_index": true,
+    "shadow": true,
+    "note": "v9.0 卡片精致度：深色系统卡片 = 近深半透明底（86%）+ 主题色细描边 + 左上角序号带 + 标题条 + 轻微投影"
+  }
+}

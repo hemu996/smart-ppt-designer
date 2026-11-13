@@ -1,0 +1,107 @@
+{
+  "system_name": "national-style",
+  "label": "国潮棕金",
+  "mode": "light",
+  "usage": "面向中医药、非遗、文化传承、区域文旅类项目；厚重、古典、有金线",
+  "colors": {
+    "primary": "#4a2c17",
+    "secondary": "#8c5a2b",
+    "accent": "#c9a227",
+    "background": "#fbf7f0",
+    "text": "#33261c",
+    "text_light": "#8a7a68"
+  },
+  "fonts": {
+    "title": "微软雅黑",
+    "body": "微软雅黑",
+    "title_size": [
+      36,
+      44
+    ],
+    "section_size": [
+      28,
+      32
+    ],
+    "page_title_size": [
+      20,
+      24
+    ],
+    "module_size": [
+      16,
+      18
+    ],
+    "body_size": [
+      12,
+      14
+    ],
+    "caption_size": [
+      10,
+      11
+    ],
+    "metric_size": [
+      36,
+      60
+    ]
+  },
+  "decorations": {
+    "title_bar": "seal_block",
+    "card_border": "pattern_frame",
+    "section_divider": "pattern_band"
+  },
+  "navigation": {
+    "mode": "sidebar",
+    "active_color": "#c9a227",
+    "inactive_color": "#ded3c2",
+    "text_active": "#33261c",
+    "text_inactive": "#8a7a68"
+  },
+  "grid": {
+    "columns": 12,
+    "margin_cols": 1,
+    "unit_cm": 0.3,
+    "unit_in": 0.1181,
+    "tolerance_in": 0.02,
+    "content_x_in": 1.38,
+    "content_w_in": 11.45
+  },
+  "icon_style": "solid",
+  "transition": "fade",
+  "layers": {
+    "L1_background": 0,
+    "L2_decoration": [
+      10,
+      19
+    ],
+    "L3_content": [
+      20,
+      29
+    ],
+    "L4_title": [
+      30,
+      39
+    ],
+    "notes": "构建脚本按 z_index 升序绘制；装饰层不得高于内容层（红线第 11 条）"
+  },
+  "image_style": "humanities",
+  "chart_palette": [
+    "#4a2c17",
+    "#8c5a2b",
+    "#c9a227",
+    "#a8845c",
+    "#8a7a68"
+  ],
+  "density": {
+    "max_modules_per_page": 5,
+    "max_bullets_per_module": 4
+  },
+  "notes": "金色（accent）只作线描与印章式点缀（≤5% 面积）；烫金标题效果走 assets/effect-templates/gold-calligraphy.json",
+  "card_style": {
+    "icon_slot": true,
+    "title_strip": true,
+    "fill_alpha": 92,
+    "border": "hairline",
+    "corner_index": true,
+    "shadow": true,
+    "note": "v9.0 卡片精致度：浅色系统卡片 = 近白/浅灰底（92%）+ 主题色细描边 + 左上角序号带 + 标题条 + 轻微投影"
+  }
+}

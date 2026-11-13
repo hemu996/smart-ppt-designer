@@ -1,0 +1,657 @@
+{
+  "_note": "风格库索引（v7.5）。选风格先看 keywords 与 mode；不设默认风格，未确认前必须先问用户或按内容推导；4 套规格系统见 assets/style-cards/。",
+  "generated": true,
+  "reference_root": "assets/templates/references/",
+  "style_count": 19,
+  "styles": [
+    {
+      "name": "business-blue",
+      "label": "商务蓝·通用",
+      "keywords": [
+        "商务",
+        "企业",
+        "汇报",
+        "通用",
+        "稳健"
+      ],
+      "built_in": true,
+      "mode": "light",
+      "colors": {
+        "primary": "#1a3a5c",
+        "secondary": "#2e7dbb",
+        "accent": "#f39c12",
+        "background": "#f8f9fa",
+        "text": "#2c3e50",
+        "text_light": "#7f8c8d"
+      },
+      "confidence": "curated（人工校订）",
+      "source_files": [],
+      "system_json": "assets/visual-systems/business-blue.json",
+      "card": null,
+      "originals": []
+    },
+    {
+      "name": "humanities-warm",
+      "label": "人文暖调",
+      "keywords": [
+        "人文",
+        "暖色",
+        "教育",
+        "公益",
+        "柔和"
+      ],
+      "built_in": true,
+      "mode": "light",
+      "colors": {
+        "primary": "#8c5a2b",
+        "secondary": "#c08a4e",
+        "accent": "#3f6f5f",
+        "background": "#fdfaf5",
+        "text": "#3a3128",
+        "text_light": "#8d8377"
+      },
+      "confidence": "curated（人工校订）",
+      "source_files": [],
+      "system_json": "assets/visual-systems/humanities-warm.json",
+      "card": null,
+      "originals": []
+    },
+    {
+      "name": "medical-tech-white",
+      "label": "医疗科技白",
+      "keywords": [
+        "医疗",
+        "器械",
+        "医药",
+        "健康",
+        "白底",
+        "产品路演",
+        "流程与图表"
+      ],
+      "built_in": true,
+      "mode": "light",
+      "colors": {
+        "primary": "#1565C0",
+        "secondary": "#0F314C",
+        "accent": "#2E6186",
+        "background": "#FFFFFF",
+        "text": "#1F2A36",
+        "text_light": "#6B7C8C"
+      },
+      "confidence": "spec（规格指定；已按样本校准）",
+      "source_files": [
+        "Airflow·艾弗洛——医疗领域恒风量智能风机领跑者.pptx"
+      ],
+      "system_json": "assets/visual-systems/medical-tech-white.json",
+      "card": "assets/style-cards/medical-tech-white.md",
+      "originals": [
+        "assets/sample-ppts/Airflow·艾弗洛——医疗领域恒风量智能风机领跑者.pptx"
+      ]
+    },
+    {
+      "name": "national-brown-gold",
+      "label": "国潮红金（棕金底）",
+      "keywords": [
+        "国潮",
+        "红金",
+        "非遗",
+        "文化传承",
+        "乡村振兴",
+        "党建政务",
+        "答辩"
+      ],
+      "built_in": true,
+      "mode": "light",
+      "colors": {
+        "primary": "#8B0000",
+        "secondary": "#5C0000",
+        "accent": "#D4AF37",
+        "background": "#FFF8DC",
+        "text": "#33261C",
+        "text_light": "#8A7A68"
+      },
+      "confidence": "spec（规格指定；已按样本校准）",
+      "source_files": [
+        "红色国风非遗文化.pptx",
+        "16页-国奖水准红金风格PPT-康帅制作.pptx",
+        "东方遗韵——源文件.pptx",
+        "刺绣文化.pptx",
+        "04 2022.6月 中国风 非遗乐器.pptx",
+        "红色党建帮助老人.pptx"
+      ],
+      "system_json": "assets/visual-systems/national-brown-gold.json",
+      "card": "assets/style-cards/national-brown-gold.md",
+      "originals": [
+        "assets/sample-ppts/红色国风非遗文化.pptx",
+        "assets/sample-ppts/16页-国奖水准红金风格PPT-康帅制作.pptx",
+        "assets/sample-ppts/东方遗韵——源文件.pptx",
+        "assets/sample-ppts/刺绣文化.pptx",
+        "assets/sample-ppts/04 2022.6月 中国风 非遗乐器.pptx",
+        "assets/sample-ppts/红色党建帮助老人.pptx"
+      ]
+    },
+    {
+      "name": "national-style",
+      "label": "国潮棕金",
+      "keywords": [
+        "国潮",
+        "中医",
+        "非遗",
+        "文化",
+        "棕金"
+      ],
+      "built_in": true,
+      "mode": "light",
+      "colors": {
+        "primary": "#4a2c17",
+        "secondary": "#8c5a2b",
+        "accent": "#c9a227",
+        "background": "#fbf7f0",
+        "text": "#33261c",
+        "text_light": "#8a7a68"
+      },
+      "confidence": "curated（人工校订）",
+      "source_files": [],
+      "system_json": "assets/visual-systems/national-style.json",
+      "card": null,
+      "originals": []
+    },
+    {
+      "name": "red-gold",
+      "label": "国奖红金·亮底稳重（精选）",
+      "keywords": [
+        "红金",
+        "路演",
+        "竞赛",
+        "政务",
+        "乡村振兴",
+        "稳重"
+      ],
+      "built_in": true,
+      "mode": "light",
+      "colors": {
+        "primary": "#9C2317",
+        "secondary": "#7A1A12",
+        "accent": "#C9A227",
+        "background": "#FFFFFF",
+        "text": "#2E2620",
+        "text_light": "#7A6A5A"
+      },
+      "confidence": "curated（人工校订）",
+      "source_files": [],
+      "system_json": "assets/visual-systems/red-gold.json",
+      "card": null,
+      "originals": []
+    },
+    {
+      "name": "tech-dark",
+      "label": "科技暗色",
+      "keywords": [
+        "科技",
+        "暗色",
+        "发布会",
+        "产品",
+        "前沿"
+      ],
+      "built_in": true,
+      "mode": "dark",
+      "colors": {
+        "primary": "#0f2f3f",
+        "secondary": "#1f7a8c",
+        "accent": "#3fd0c9",
+        "background": "#0b1620",
+        "text": "#eaf3f5",
+        "text_light": "#8fa8b2"
+      },
+      "confidence": "curated（人工校订）",
+      "source_files": [],
+      "system_json": "assets/visual-systems/tech-dark.json",
+      "card": null,
+      "originals": []
+    },
+    {
+      "name": "tech-deep-blue",
+      "label": "科技深蓝",
+      "keywords": [
+        "科技",
+        "深蓝",
+        "智慧矿山",
+        "创新大赛",
+        "装备制造",
+        "数据仪表盘",
+        "四宫格"
+      ],
+      "built_in": true,
+      "mode": "dark",
+      "colors": {
+        "primary": "#0D47A1",
+        "secondary": "#08306E",
+        "accent": "#FFC107",
+        "background": "#061A3D",
+        "text": "#FFFFFF",
+        "text_light": "#B9C6D8"
+      },
+      "confidence": "spec（规格指定；样本缺失，未校准）",
+      "source_files": [],
+      "system_json": "assets/visual-systems/tech-deep-blue.json",
+      "card": "assets/style-cards/tech-deep-blue.md",
+      "originals": []
+    },
+    {
+      "name": "tech-teal-green",
+      "label": "科技深青",
+      "keywords": [
+        "科技",
+        "深青",
+        "医药",
+        "检验检测",
+        "职业技能大赛",
+        "技术创新",
+        "侧边栏导航"
+      ],
+      "built_in": true,
+      "mode": "dark",
+      "colors": {
+        "primary": "#004D40",
+        "secondary": "#00332B",
+        "accent": "#00BCD4",
+        "background": "#0B1E1B",
+        "text": "#FFFFFF",
+        "text_light": "#B9C6C2"
+      },
+      "confidence": "spec（规格指定；样本缺失，未校准）",
+      "source_files": [],
+      "system_json": "assets/visual-systems/tech-teal-green.json",
+      "card": "assets/style-cards/tech-teal-green.md",
+      "originals": []
+    },
+    {
+      "name": "ref-airflow-medical-blue",
+      "label": "医疗产品路演·深蓝",
+      "keywords": [
+        "医疗",
+        "器械",
+        "风机",
+        "深蓝",
+        "产品路演",
+        "长篇",
+        "技术"
+      ],
+      "built_in": false,
+      "mode": "dark",
+      "colors": {
+        "primary": "#0F314C",
+        "secondary": "#0A2336",
+        "accent": "#2D6186",
+        "background": "0F314C",
+        "text": "#F2F2F2",
+        "text_light": "#B9BDC7"
+      },
+      "confidence": "medium（PDF 由渲染帧取色，非矢量精确值）",
+      "source_files": [
+        "Airflow·艾弗洛——医疗领域恒风量智能风机领跑者(1)(1).pdf",
+        "Airflow·艾弗洛——医疗领域恒风量智能风机领跑者(1)(1)(1).pdf",
+        "Airflow·艾弗洛——医疗领域恒风量智能风机领跑者(1)(1).pptx"
+      ],
+      "system_json": "assets/visual-systems/ref-airflow-medical-blue.json",
+      "card": "assets/style-cards/ref-airflow-medical-blue.md",
+      "originals": [
+        "assets/templates/references/Airflow·艾弗洛——医疗领域恒风量智能风机领跑者(1)(1).pdf",
+        "assets/templates/references/Airflow·艾弗洛——医疗领域恒风量智能风机领跑者(1)(1)(1).pdf",
+        "assets/templates/references/Airflow·艾弗洛——医疗领域恒风量智能风机领跑者(1)(1).pptx"
+      ]
+    },
+    {
+      "name": "ref-award-red-gold",
+      "label": "国奖红金·暗底烫金",
+      "keywords": [
+        "国奖",
+        "红金",
+        "暗底",
+        "烫金",
+        "答辩",
+        "竞赛路演",
+        "政务汇报",
+        "稳重"
+      ],
+      "built_in": false,
+      "mode": "light",
+      "colors": {
+        "primary": "#AB1F10",
+        "secondary": "#7B160B",
+        "accent": "#F5DE8E",
+        "background": "#FFFFFF",
+        "text": "#2E2620",
+        "text_light": "#7A6A5A"
+      },
+      "confidence": "high",
+      "source_files": [
+        "16页-国奖水准红金风格PPT-康帅制作.pptx",
+        "16页-国奖水准红金风格PPT-康帅制作(1).pptx"
+      ],
+      "system_json": "assets/visual-systems/ref-award-red-gold.json",
+      "card": "assets/style-cards/ref-award-red-gold.md",
+      "originals": [
+        "assets/templates/references/16页-国奖水准红金风格PPT-康帅制作.pptx",
+        "assets/templates/references/16页-国奖水准红金风格PPT-康帅制作(1).pptx"
+      ]
+    },
+    {
+      "name": "ref-blackgold-tech",
+      "label": "黑金科技·挑战杯通用",
+      "keywords": [
+        "科技",
+        "黑金",
+        "挑战杯",
+        "互联网+",
+        "深蓝",
+        "青色",
+        "通用模板"
+      ],
+      "built_in": false,
+      "mode": "dark",
+      "colors": {
+        "primary": "#B7472A",
+        "secondary": "#83331E",
+        "accent": "#1CADE4",
+        "background": "042A7E",
+        "text": "#F2F2F2",
+        "text_light": "#B9BDC7"
+      },
+      "confidence": "high",
+      "source_files": [
+        "【黑金版】编号0012科技风互联网加挑战杯通用PPT模板.pptx"
+      ],
+      "system_json": "assets/visual-systems/ref-blackgold-tech.json",
+      "card": "assets/style-cards/ref-blackgold-tech.md",
+      "originals": [
+        "assets/templates/references/【黑金版】编号0012科技风互联网加挑战杯通用PPT模板.pptx"
+      ]
+    },
+    {
+      "name": "ref-chip-industrial",
+      "label": "芯片工科·黑金工业",
+      "keywords": [
+        "芯片",
+        "工科",
+        "工业",
+        "黑金",
+        "技术",
+        "硬科技"
+      ],
+      "built_in": false,
+      "mode": "dark",
+      "colors": {
+        "primary": "#CE8140",
+        "secondary": "#945C2E",
+        "accent": "#65B4D5",
+        "background": "#111111",
+        "text": "#F2F2F2",
+        "text_light": "#B9BDC7"
+      },
+      "confidence": "high",
+      "source_files": [
+        "黑色-芯片工科模板.pptx"
+      ],
+      "system_json": "assets/visual-systems/ref-chip-industrial.json",
+      "card": "assets/style-cards/ref-chip-industrial.md",
+      "originals": [
+        "assets/templates/references/黑色-芯片工科模板.pptx"
+      ]
+    },
+    {
+      "name": "ref-heritage-earth",
+      "label": "国风非遗·棕金暗调",
+      "keywords": [
+        "国风",
+        "非遗",
+        "文化",
+        "棕金",
+        "暗底",
+        "厚重",
+        "传承"
+      ],
+      "built_in": false,
+      "mode": "light",
+      "colors": {
+        "primary": "#604626",
+        "secondary": "#45321B",
+        "accent": "#46130A",
+        "background": "#FFFFFF",
+        "text": "#2E2620",
+        "text_light": "#7A6A5A"
+      },
+      "confidence": "high",
+      "source_files": [
+        "红色国风非遗文化.pptx"
+      ],
+      "system_json": "assets/visual-systems/ref-heritage-earth.json",
+      "card": "assets/style-cards/ref-heritage-earth.md",
+      "originals": [
+        "assets/templates/references/红色国风非遗文化.pptx"
+      ]
+    },
+    {
+      "name": "ref-medical-blue",
+      "label": "医疗器械·蓝白专业",
+      "keywords": [
+        "医疗",
+        "器械",
+        "蓝白",
+        "学院蓝",
+        "专业",
+        "报告"
+      ],
+      "built_in": false,
+      "mode": "dark",
+      "colors": {
+        "primary": "#0E419C",
+        "secondary": "#0A2E70",
+        "accent": "#FFC000",
+        "background": "08243B",
+        "text": "#F2F2F2",
+        "text_light": "#B9BDC7"
+      },
+      "confidence": "high",
+      "source_files": [
+        "蓝白色医疗器械.pptx"
+      ],
+      "system_json": "assets/visual-systems/ref-medical-blue.json",
+      "card": "assets/style-cards/ref-medical-blue.md",
+      "originals": [
+        "assets/templates/references/蓝白色医疗器械.pptx"
+      ]
+    },
+    {
+      "name": "ref-redtour-red",
+      "label": "红旅赛道·正红亮金",
+      "keywords": [
+        "红旅",
+        "红色",
+        "赛道",
+        "正红",
+        "亮金",
+        "比赛",
+        "青年"
+      ],
+      "built_in": false,
+      "mode": "light",
+      "colors": {
+        "primary": "#C00000",
+        "secondary": "#8A0000",
+        "accent": "#FFC000",
+        "background": "#FFFFFF",
+        "text": "#2E2620",
+        "text_light": "#7A6A5A"
+      },
+      "confidence": "high",
+      "source_files": [
+        "红旅赛道PPT模板.pptx"
+      ],
+      "system_json": "assets/visual-systems/ref-redtour-red.json",
+      "card": "assets/style-cards/ref-redtour-red.md",
+      "originals": [
+        "assets/templates/references/红旅赛道PPT模板.pptx"
+      ]
+    },
+    {
+      "name": "ref-tea-green",
+      "label": "茶产业·茶绿清雅",
+      "keywords": [
+        "茶叶",
+        "农业",
+        "乡村振兴",
+        "茶绿",
+        "生态",
+        "产业方案"
+      ],
+      "built_in": false,
+      "mode": "light",
+      "colors": {
+        "primary": "#234D45",
+        "secondary": "#193731",
+        "accent": "#37722B",
+        "background": "#FFFFFF",
+        "text": "#2E2620",
+        "text_light": "#7A6A5A"
+      },
+      "confidence": "high",
+      "source_files": [
+        "茶产业振兴.pptx"
+      ],
+      "system_json": "assets/visual-systems/ref-tea-green.json",
+      "card": "assets/style-cards/ref-tea-green.md",
+      "originals": [
+        "assets/templates/references/茶产业振兴.pptx"
+      ]
+    },
+    {
+      "name": "ref-typo-closing",
+      "label": "大字结尾页·书法金句",
+      "keywords": [
+        "结尾页",
+        "大字",
+        "金句",
+        "书法",
+        "收尾",
+        "致辞"
+      ],
+      "built_in": false,
+      "mode": "dark",
+      "colors": {
+        "primary": "#44546A",
+        "secondary": "#303C4C",
+        "accent": "#FFC000",
+        "background": "44546A",
+        "text": "#F2F2F2",
+        "text_light": "#B9BDC7"
+      },
+      "confidence": "medium（页面无显式色值，配色取自主题/方案色）",
+      "source_files": [
+        "23. PPT结尾-弄潮起舞 踏浪前行.pptx"
+      ],
+      "system_json": "assets/visual-systems/ref-typo-closing.json",
+      "card": "assets/style-cards/ref-typo-closing.md",
+      "originals": [
+        "assets/templates/references/23. PPT结尾-弄潮起舞 踏浪前行.pptx"
+      ]
+    },
+    {
+      "name": "tech-gold-noir",
+      "label": "暗金夜·科技国金",
+      "keywords": [
+        "科技",
+        "暗金",
+        "金奖",
+        "互联网+",
+        "创赛",
+        "硬件",
+        "商业模式",
+        "财务",
+        "路演",
+        "国金"
+      ],
+      "built_in": false,
+      "mode": "dark",
+      "colors": {
+        "primary": "#1F1B16",
+        "secondary": "#3A2F1D",
+        "accent": "#E7B437",
+        "background": "#0B0B10",
+        "text": "#FFFFFF",
+        "text_light": "#C9BFAA"
+      },
+      "confidence": "case-derived（按目标案例图目视取色）",
+      "source_files": [
+        "case-07-huixin-keji.jpg",
+        "case-08-huixin-keji-finance.jpg",
+        "case-05-zhihui-kuangshan.jpg"
+      ],
+      "system_json": "assets/visual-systems/tech-gold-noir.json",
+      "card": "assets/style-cards/tech-gold-noir.md",
+      "originals": []
+    }
+  ],
+  "failures": [
+    {
+      "files": [
+        "巧夺天工改.pptx"
+      ],
+      "error": "文件损坏（仅 165 字节），无法解析与提取风格"
+    }
+  ],
+  "originals_manifest": [
+    {
+      "file": "16页-国奖水准红金风格PPT-康帅制作(1).pptx",
+      "bytes": 39487059
+    },
+    {
+      "file": "16页-国奖水准红金风格PPT-康帅制作.pptx",
+      "bytes": 42163207
+    },
+    {
+      "file": "23. PPT结尾-弄潮起舞 踏浪前行.pptx",
+      "bytes": 93018209
+    },
+    {
+      "file": "Airflow·艾弗洛——医疗领域恒风量智能风机领跑者(1)(1)(1).pdf",
+      "bytes": 2481316
+    },
+    {
+      "file": "Airflow·艾弗洛——医疗领域恒风量智能风机领跑者(1)(1).pdf",
+      "bytes": 2481316
+    },
+    {
+      "file": "Airflow·艾弗洛——医疗领域恒风量智能风机领跑者(1)(1).pptx",
+      "bytes": 18429535
+    },
+    {
+      "file": "【黑金版】编号0012科技风互联网加挑战杯通用PPT模板.pptx",
+      "bytes": 92900438
+    },
+    {
+      "file": "巧夺天工改.pptx",
+      "bytes": 165
+    },
+    {
+      "file": "红旅赛道PPT模板.pptx",
+      "bytes": 23326171
+    },
+    {
+      "file": "红色国风非遗文化.pptx",
+      "bytes": 64498303
+    },
+    {
+      "file": "茶产业振兴.pptx",
+      "bytes": 93221644
+    },
+    {
+      "file": "蓝白色医疗器械.pptx",
+      "bytes": 24976034
+    },
+    {
+      "file": "黑色-芯片工科模板.pptx",
+      "bytes": 31873153
+    }
+  ]
+}

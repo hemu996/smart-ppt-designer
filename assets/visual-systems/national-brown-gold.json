@@ -1,0 +1,128 @@
+{
+  "__spec_version": "v7.5",
+  "system_name": "national-brown-gold",
+  "label": "国潮红金（棕金底）",
+  "mode": "light",
+  "usage": "面向非遗、文化传承、乡村振兴、党建政务与竞赛答辩；厚重、有金线、可烫金书法标题",
+  "colors": {
+    "primary": "#8B0000",
+    "secondary": "#5C0000",
+    "accent": "#D4AF37",
+    "background": "#FFF8DC",
+    "text": "#33261C",
+    "text_light": "#8A7A68"
+  },
+  "fonts": {
+    "title": "宋体",
+    "body": "微软雅黑",
+    "title_size": [
+      36,
+      44
+    ],
+    "section_size": [
+      28,
+      32
+    ],
+    "page_title_size": [
+      20,
+      24
+    ],
+    "module_size": [
+      16,
+      18
+    ],
+    "body_size": [
+      12,
+      14
+    ],
+    "caption_size": [
+      10,
+      11
+    ],
+    "metric_size": [
+      36,
+      60
+    ]
+  },
+  "decorations": {
+    "title_bar": "seal_block",
+    "card_border": "pattern_frame",
+    "section_divider": "pattern_band"
+  },
+  "navigation": {
+    "mode": "sidebar",
+    "active_color": "#D4AF37",
+    "inactive_color": "#EBDBA5",
+    "text_active": "#33261C",
+    "text_inactive": "#8A7A68"
+  },
+  "grid": {
+    "columns": 12,
+    "margin_cols": 1,
+    "unit_cm": 0.3,
+    "unit_in": 0.1181,
+    "tolerance_in": 0.02,
+    "content_x_in": 1.38,
+    "content_w_in": 11.45
+  },
+  "icon_style": "solid",
+  "transition": "fade",
+  "layers": {
+    "L1_background": 0,
+    "L2_decoration": [
+      10,
+      19
+    ],
+    "L3_content": [
+      20,
+      29
+    ],
+    "L4_title": [
+      30,
+      39
+    ],
+    "notes": "构建脚本按 z_index 升序绘制；装饰层不得高于内容层（红线第 11 条）"
+  },
+  "image_style": "humanities",
+  "chart_palette": [
+    "#8B0000",
+    "#D4AF37",
+    "#B3743B",
+    "#604626",
+    "#8A7A68"
+  ],
+  "density": {
+    "max_modules_per_page": 6,
+    "max_bullets_per_module": 4
+  },
+  "calligraphy_default": "飞白书法（透明背景 PNG，作 L4 标题层；五型与 prompt 见 integrations/dsh-image.md）",
+  "source_samples": [
+    "红色国风非遗文化.pptx",
+    "16页-国奖水准红金风格PPT-康帅制作.pptx",
+    "东方遗韵——源文件.pptx",
+    "刺绣文化.pptx",
+    "04 2022.6月 中国风 非遗乐器.pptx",
+    "红色党建帮助老人.pptx"
+  ],
+  "calibration_note": "样本实测：深红 #800000 / #AB1F10、金 #D4AF37~#D8AD55、棕 #604626 / #875F3B、米白底；规格给定 #8B0000 + #D4AF37 + #FFF8DC；封面用 primary 铺底 + 金色标题，内容页用米白底",
+  "representative_layout": "三栏卡片、大背景封面、数据突出（样本布局）",
+  "keywords": [
+    "国潮",
+    "红金",
+    "非遗",
+    "文化传承",
+    "乡村振兴",
+    "党建政务",
+    "答辩"
+  ],
+  "notes": "规格 v7.5 指定系统；样本实测：深红 #800000 / #AB1F10、金 #D4AF37~#D8AD55、棕 #604626 / #875F3B、米白底；规格给定 #8B0000 + #D4AF37 + #FFF8DC；封面用 primary 铺底 + 金色标题，内容页用米白底",
+  "card_style": {
+    "icon_slot": true,
+    "title_strip": true,
+    "fill_alpha": 92,
+    "border": "hairline",
+    "corner_index": true,
+    "shadow": true,
+    "note": "v9.0 卡片精致度：浅色系统卡片 = 近白/浅灰底（92%）+ 主题色细描边 + 左上角序号带 + 标题条 + 轻微投影"
+  }
+}

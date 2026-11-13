@@ -1,0 +1,125 @@
+{
+  "id": "bottom-rule-band",
+  "label": "底部规则带",
+  "note": "页脚上方的收边色带与刻度，与顶部规则带形成上下封边",
+  "canvas_in": {
+    "w": 13.333,
+    "h": 7.5
+  },
+  "zone": "页边距装饰（不进入内容安全区 x 1.38–12.73 / y 0.30–6.95，除非计划显式指定）",
+  "shape_count": 12,
+  "fill_tokens": [
+    "primary",
+    "accent",
+    "text_light"
+  ],
+  "shapes": [
+    {
+      "shape_type": "rect",
+      "x_in": 0,
+      "y_in": 7.43,
+      "w_in": 13.333,
+      "h_in": 0.055,
+      "fill": "primary",
+      "fill_transparency": 12
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 1.38,
+      "y_in": 7.375,
+      "w_in": 2.6,
+      "h_in": 0.028,
+      "fill": "accent",
+      "fill_transparency": 70
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 7.2,
+      "y_in": 7.39,
+      "w_in": 0.5,
+      "h_in": 0.022,
+      "fill": "text_light",
+      "fill_transparency": 28
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 8.2,
+      "y_in": 7.39,
+      "w_in": 0.5,
+      "h_in": 0.022,
+      "fill": "text_light",
+      "fill_transparency": 34
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 9.2,
+      "y_in": 7.39,
+      "w_in": 0.5,
+      "h_in": 0.022,
+      "fill": "text_light",
+      "fill_transparency": 40
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 10.2,
+      "y_in": 7.39,
+      "w_in": 0.5,
+      "h_in": 0.022,
+      "fill": "text_light",
+      "fill_transparency": 46
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 11.2,
+      "y_in": 7.39,
+      "w_in": 0.5,
+      "h_in": 0.022,
+      "fill": "text_light",
+      "fill_transparency": 52
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 12.2,
+      "y_in": 7.39,
+      "w_in": 0.5,
+      "h_in": 0.022,
+      "fill": "text_light",
+      "fill_transparency": 58
+    },
+    {
+      "shape_type": "ellipse",
+      "x_in": 6.82,
+      "y_in": 7.38,
+      "w_in": 0.12,
+      "h_in": 0.12,
+      "fill": "accent"
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 11.9,
+      "y_in": 7.37,
+      "w_in": 0.72,
+      "h_in": 0.03,
+      "fill": "accent",
+      "fill_transparency": 50
+    },
+    {
+      "shape_type": "line",
+      "x_in": 0.82,
+      "y_in": 7.4,
+      "w_in": 0.56,
+      "h_in": 0,
+      "line_color": "accent",
+      "line_width_pt": 0.75
+    },
+    {
+      "shape_type": "rect",
+      "x_in": 6.5,
+      "y_in": 7.38,
+      "w_in": 0.24,
+      "h_in": 0.022,
+      "fill": "primary",
+      "fill_transparency": 40
+    }
+  ]
+}

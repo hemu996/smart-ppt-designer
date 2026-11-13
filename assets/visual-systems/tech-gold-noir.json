@@ -1,0 +1,128 @@
+{
+  "__spec_version": "v8.7",
+  "system_name": "tech-gold-noir",
+  "label": "暗金夜·科技国金",
+  "mode": "dark",
+  "usage": "面向创赛 / 互联网+ 金奖路演、硬科技与商业模式类项目；近黑底 + 金色强调 + 发光细线 + 金色描边卡片（对照目标案例库 case-05 智慧矿山 / case-07·08 慧芯科技 的成品观感）",
+  "colors": {
+    "primary": "#1F1B16",
+    "secondary": "#3A2F1D",
+    "accent": "#E7B437",
+    "background": "#0B0B10",
+    "surface": "#1F1B16",
+    "text": "#FFFFFF",
+    "text_light": "#C9BFAA"
+  },
+  "fonts": {
+    "title": "微软雅黑",
+    "body": "微软雅黑",
+    "title_size": [
+      36,
+      44
+    ],
+    "section_size": [
+      28,
+      32
+    ],
+    "page_title_size": [
+      20,
+      24
+    ],
+    "module_size": [
+      16,
+      18
+    ],
+    "body_size": [
+      12,
+      14
+    ],
+    "caption_size": [
+      10,
+      11
+    ],
+    "metric_size": [
+      36,
+      60
+    ]
+  },
+  "decorations": {
+    "title_bar": "glow_line",
+    "card_border": "gold_hairline",
+    "section_divider": "gold_facet"
+  },
+  "card_style": {
+    "icon_slot": true,
+    "title_strip": true,
+    "fill_alpha": 86,
+    "border": "gold_hairline",
+    "shadow": true,
+    "note": "卡片 = 近黑半透明底（86%）+ 金色细描边 + 左上图标位 + 标题条，对应目标案例库的卡片做派",
+    "corner_index": true
+  },
+  "navigation": {
+    "mode": "sidebar",
+    "active_color": "#E7B437",
+    "inactive_color": "#C9BFAA",
+    "text_active": "#0B0B10",
+    "text_inactive": "#C9BFAA"
+  },
+  "grid": {
+    "columns": 12,
+    "margin_cols": 1,
+    "unit_cm": 0.3,
+    "unit_in": 0.1181,
+    "tolerance_in": 0.02,
+    "content_x_in": 1.38,
+    "content_w_in": 11.45
+  },
+  "icon_style": "solid",
+  "transition": "fade",
+  "layers": {
+    "L1_background": 0,
+    "L2_decoration": [
+      10,
+      19
+    ],
+    "L3_content": [
+      20,
+      29
+    ],
+    "L4_title": [
+      30,
+      39
+    ],
+    "notes": "构建脚本按 z_index 升序绘制；装饰层不得高于内容层（红线第 11 条）"
+  },
+  "image_style": "tech",
+  "chart_palette": [
+    "#E7B437",
+    "#B8892B",
+    "#7A6A3A",
+    "#EDD9A3",
+    "#C9BFAA"
+  ],
+  "density": {
+    "max_modules_per_page": 6,
+    "max_bullets_per_module": 4
+  },
+  "source_samples": [
+    "case-07-huixin-keji.jpg",
+    "case-08-huixin-keji-finance.jpg",
+    "case-05-zhihui-kuangshan.jpg"
+  ],
+  "calibration_note": "依据用户提供的目标案例图（慧芯科技 金奖、智慧矿山）目视取色：近黑底 + 金色强调；未做像素级取色，属目视校准；补到原文件后应重新提取",
+  "representative_layout": "封面大字压图、四/六宫格卡片、数据卡 + 金色图表、财务与商业模式页",
+  "keywords": [
+    "科技",
+    "暗金",
+    "金奖",
+    "互联网+",
+    "创赛",
+    "硬件",
+    "商业模式",
+    "财务",
+    "路演",
+    "国金"
+  ],
+  "notes": "目标案例库驱动的视觉系统：正文一律白/浅沙色，金色只用于强调、描边与图表首色"
+}
