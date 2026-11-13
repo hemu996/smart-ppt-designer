@@ -1,0 +1,4 @@
+- insert:
+    - id: smart-ppt-studio
+      name: '@local/smart-ppt-studio'
+      config: {}

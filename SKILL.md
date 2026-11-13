@@ -85,6 +85,7 @@ description: 从简报、参考稿、PDF/DOCX 或已有 PPT 出发，生成达�
 | 26 | ✅ 页面构图两硬约束（用户指定）：每页至少 1 个非装饰元素面积 ≥ 页面 1/3；每页至少 2 个元素前后叠压（z_index 不同且几何重叠 >0.15in²）。第 3 条「错落感」经确认不启用 |
 | 27 | ✅ 去 AI 感与对齐纪律：手工感装饰（手绘线条/印章/便签/纸胶带/手绘箭头，一份稿 ≤4 处）+ 卡片差异化（同页 ≥2 种形态、大小分级、左上角序号）+ 标题可用 `runs` 放大 1–2 个关键字（≥1.4×）；**倾斜仅限贴纸类装饰 ≤12°**，正文/卡片/图片/图表/框架装饰/背板一律水平垂直对齐，破局感靠"1 个元素超出卡片边框 0.1–0.3in"实现 |
 | 28 | ✅ **封面强制 AI 书法体**（用户 2026-11-08 指定，不可关闭、不可降级）：封面主标必须且只能是 **AI 生成的书法 PNG**（透明底），不得用系统字体文本框冒充；仅该主标为图片，封面其余文字仍须原生可编辑。配置 `config.cover_title.enforced=true` / `allow_fallback_to_text=false`；缺图或仍有系统字主标时 `validate_plan.py` 报 **error**、`build_pptx.js` **抛错退出**，不产出残稿。提示词见 `assets/calligraphy-prompt.md`，**亮底禁用金色**（WCAG 1.38），改用深靛蓝 #1A3A5C 或墨褐 #1F1B16。 |
+| 29 | ✅ **AI 生图前置质检（用户 2026-11-13 指定，开工前必跑，跳过即返工）**：任何 AI 生图前，先调一次 `image_generate` 验证能力可用（能调用、返回真实绝对路径、确认尺寸/参考图参数）；不可用就先向用户反馈，退回模板原生元素或用户实拍，不硬造。**禁止先写提示词**——先读原元素（是什么部件、在哪个 part、坐标尺寸、周围底色/装饰/光效/材质/装饰母题），把主色 hex、材质、构图、`no text/no letters/no watermark` 写进提示词，尺寸匹配原元素比例。生成后必须肉眼质检（同色系、材质协调、无乱码、留白够、缩放清晰、插入不盖导航等不可动元素），任一条不过就重生成，不许将就。禁止用 PIL 画文字条冒充设计。完整流程见 `references/ai-image-gate.md` |
 
 某条在当前环境真做不到（如生图插件不可用），**先向用户反馈再调整，不要自行换路线**。
 
@@ -140,9 +141,29 @@ description: 从简报、参考稿、PDF/DOCX 或已有 PPT 出发，生成达�
 
 ### 动画素材库与模板生成模式（v9.0.6 合入官方 v9.9 前置功能）
 
+**动画素材库**：制作前先问「要不要加动画」——`design_brief.animation_mode` 三档：`none`（全静态）/ `basic`（默认，基础进场）/ `advanced`（开放素材库按内容选）。动画是可检索的素材（`assets/animations/animations.json`，**43 种**：进场 13 / 强调 12 / 出场 13 / 路径 5），计划里写 `elements[].animation = "anim-<key>"`，检索用 `python scripts/find_asset.py --kind animation <关键词>`。**本机适配**（用户明确要求）：每页 ≤5 个动画元素、同页风格统一、禁用夸张效果；**不要逐元素排队淡入**（用户嫌"一个个顺序出现太久、太繁琐"），优先整页一次性或只点结论；与 `animation_library`（ppt-effects 15 条动效配方、overlay/route 双模式）是两套东西，互不冲突。底层用 PptxGenJS 动画版 fork **`@bapunhansdah/pptxgenjs`（v9.0.6 已随包安装，`node -e require(...)` 实测加载 OK）**；端到端实跑：`animation_mode=advanced` + `elements[].animation="anim-zoom"` → 产物 slide1.xml 含 `<p:timing>`/`presetID`，`build_pptx.js` 报告「引擎 @bapunhansdah/pptxgenjs｜库 43 种｜带元素 2 个」，PowerPoint COM 真开通过。
+
 **模板生成模式**：生成前先问「用**自由生成**还是**模板填充**」——`free`（默认）按素材库检索风格自由设计；`fill` 照搬 `assets/user-templates/index.json` 里用户选定的模板，**只替换文字/数据/图片、版式不动**。选 fill 时先读索引挑 2–3 份候选给用户定 → 问封面字体「保持原样 / 升级书法烫金」→ 只读这一份 → 填充 → 素材补充 → 风格锁定。**本机适配**：选「升级书法烫金」走 `assets/calligraphy-prompt.md` + 红线 28；选「保持原样」沿用模板封面，但**红线 28（封面强制 AI 书法）不可关闭**，不得用系统字体冒充。规范见 `references/user-templates.md`。
 
 **素材体检**：`python scripts/check_assets.py`（只读、只提醒不阻断）列出缺失的模板原文件/字体/参考素材；`INSTALL.md` 说明装哪个包。完整包与精简包代码相同，只差参考素材。
+
+### 内置子技能：ppt-effects（动效配方库，v9.0.3 纳入 / v9.0.4 双模式 / v9.0.5 十条全通）
+
+`subskills/ppt-effects/` 是从 GitHub 纳入的 **PPT 动效配方库**（[HY-hue113/ppt-effects](https://github.com/HY-hue113/ppt-effects)，MIT，上游 v1.1.0 / commit dd00562，15 个效果），用途是「给素材出同款动画」，不必每次重新理解做法。**v9.0.4 起双模式，v9.0.5 起 10 条全部有归属，v9.0.7 合入上游 v1.1.0 新增 011–015，现 15 条全部有归属**（不再有"不能叠加"的排除项）：默认 `overlay` 叠加模式——本包 `build_pptx.js` 照常出稿，出稿后跑 `scripts/apply_motion.py` 把配方的**动画内核**（转场层 L1 + 延续对象层 L2）叠上去，**不换链、不加页、不改版式、不要求 25/33 页**；只有用户明确要整套固定版式（L3）时才 `route` 换链走 ppt-master。各 `recipe.md` 里的页数是原参考稿内容长度，不是动画门槛——动画参数已解耦到 `assets/motion-recipes.json`。
+
+- **先看目录**：`subskills/ppt-effects/index.md`（15 行：代号 / 名称 / 素材要求 / 动画要点 / 切换）。用户没说具体哪个效果时，**先给总览表再问**，不要直接开工。
+- **问「效果N 是啥」/ 要预览**：读该效果 `spec.json` 的 `summary` 与 `preview`（图在 `docs/preview/效果N_*.png`），**必须直接答复**，不要现做预览图。
+- **取用**：读 `effects/<三位序号>_<短名>/recipe.md`（人读的意图与坑）与 `spec.json`（机器读的精确参数：位置 / 时长 / 阴影 / 切换），以 `svg/` 为骨架替换素材与文案。
+- **先校验素材再动手**：`python subskills/ppt-effects/tools/check_materials.py 效果9 ./素材文件夹/`；`--list` 看全部要求。**退出码 1 = 阻断，不许硬套**；退出码 0 但带 `[!]` 的先跟用户说明。
+- **生成与导出**走 ppt-master 管线（命令见各 `recipe.md` 的「制作管线」），定稿后用 `tools/patch_effect.py` 做精确校正，再渲染核对。
+- **硬约束**：文本框数量 / 文案 / 字体 / 字号**必须先问用户**（库内字号只作建议默认）；素材随任务传入，**库内不含用户照片**；字体优先开源可商用（霞鹜文楷 / 思源黑体、宋体 / HarmonyOS Sans / MiSans / EB Garamond），商业字库须自行取得授权。
+- **许可**：MIT，版权声明原文保留在 `subskills/ppt-effects/LICENSE`。
+
+**启用方式（每次做 PPT 必做，v9.0.4 修订）**：**不要等用户点名**——第 2 步「设计规范确认」时，先跑 `python scripts/list_effects.py` 生成 15 行菜单（代号 / 名称 / 页数(仅参考) / 叠加方式 / 动画最少页数），把菜单**原样摆给用户自己任选一条**（菜单按「高级感/复杂度」排序并标星级，目标是增加高级感、优先复杂且单次形变到位；但**星级只是参考，不是默认值，绝不替用户选**），并明确给出第 11 个选项「不用，走常规构建」。用户选完才写计划：选「不用」→ `animation_library_enabled: false`（默认）；选某条 → `true` + `motion_mode: "overlay"` + `motion_recipe: "<代号>"`（同时保留 `animation_effect` 兼容 v9.0.3）。
+
+**overlay 叠加流程**：主链 `build_pptx.js` 正常出稿（本包版式/母版/导航/备注/封面 AI 书法强制全部照常生效）→ `python scripts/apply_motion.py --in 出稿.pptx --out 定稿.pptx --recipe <代号>`（幂等、自动备份 `.bak_motion`、可 `--restore` 回退）→ `PowerPoint COM 真开一次` + `--verify` 核对转场分布 → 交付说明留痕。`validate_plan.py` 会拒绝「overlay + L3 整套版式」，conditional 配方给 info 提示适用条件。菜单最后一列标了每条能否叠加；`references/animation-library.md` §六列了融入约束（浅亮底上玻璃/扇形物理失效、单页无 morph、克隆页须去 notesSlide 关系等 2026-11-08 实测教训）。
+
+**route 换链流程**（仅 L3）：按 `index.md → recipe.md / spec.json → check_materials.py 校验素材 → ppt-master 生成 → patch_effect.py 校正 → 渲染核对` 取用；本包视觉体系不参与该稿。包级 `config.animation_library.enabled = false`；要开必须显式写 `design_brief.animation_library_enabled: true`。**不开时主链完全不受影响**。规则与适配边界见 `references/animation-library.md`。
 
 ## 5. 依赖与前置检查
 
@@ -166,7 +187,7 @@ description: 从简报、参考稿、PDF/DOCX 或已有 PPT 出发，生成达�
  6. 生成双候选页面计划（每页布局、配图、导航高亮章节、元素 z_index 分层、行动标题、装饰组与组件引用）
  7. validate_plan.py 校验
  8. 样张确认        → 先只出 1 页封面样张交用户确认（不满意最多调 3 次），确认后才批量生成
- 9. 素材生成        → 生图前先搜网络参考图定风格；封面/章节生图、特效素材、内容插图/图标
+ 9. 素材生成        → **先跑 AI 生图前置质检（红线 29：能力可用？读原元素再写提示词？生成后肉眼质检？插入前算叠压？）**；封面/章节生图、特效素材、内容插图/图标
 10. build_pptx.js 构建（母版 + 导航 + 原生对象 + 视觉系统 + 备注 + 按 z_index 分层绘制）
 11. detect_layout.py 检测 + score_deck.py 自我评分（<75 分重写最弱 1–2 页（默认 2），最多 2 轮；另出评委审核四维度）
 12. 人工终审（严重错误→写 fail_case 回第 6 步；配图不满意→单独重生成；微调→经验回写卡片）
@@ -208,9 +229,11 @@ description: 从简报、参考稿、PDF/DOCX 或已有 PPT 出发，生成达�
 | 用装饰组提内页密度（组数、占比口径、组合建议） | `references/decoration-sets.md` |
 | 组件复用（计划级 components 与跨页整组复用） | `references/components.md` |
 | 形状／轮廓语言（圆角·切角·弧形该不该用；防加装饰凑精致） | `references/shape-language.md` |
+| 要不要用 ppt-effects 动效配方、开关怎么开、两条构建链的边界 | `references/animation-library.md` |
 | 模板填充模式 / 用户模板库 / 素材体检 | `references/user-templates.md` + `INSTALL.md` + `python scripts/check_assets.py` |
 | 模板封面人物形象不对（不是我们的人）怎么换 | `references/cover-persona-swap.md` 五步法：读图→拆描述→归类→类别文案生成→保同级效果 |
 | 工作区素材怎么按类别/人物线索/视觉级别检索 | `assets/ppt-assets-catalog.json` + `python scripts/find_asset.py --kind ppt_asset <关键词>` |
+| 页内元素动画素材库（43 种） | `assets/animations/animations.json` + `python scripts/find_asset.py --kind animation` |
 | 封面/目录/章节/结尾页的超大字号层级 | `references/cover-design.md` §七 |
 | 生成前扫失败模式、两种密度模式、图表类型匹配、Bento 卡片 | `references/failure-modes.md` |
 | 想套用预置整套模板（须替换 70% 以上内容） | `assets/template-library/_README.md` |
@@ -231,8 +254,64 @@ python scripts/extract_style.py assets/templates/references/xxx.pptx --name ref-
 #    参考稿手法实测（素材库分析）：逐份拆解 + 逐页映射到设计卡片，产出 knowledge/reference_analysis/data
 python scripts/analyze_reference.py
 
-# 6e. 【v9.0.6】素材体检 / 用户模板索引
+# 6b. 【必做】列出动效配方菜单交用户自己任选一条（含「不用」），选完再写 design_brief
+python scripts/list_effects.py                 # 人读 15 行表
+python scripts/list_effects.py --json         # 机读，侧边栏用
+python scripts/list_effects.py --id 效果9     # 单条详情
+### v9.0.7 · 上游 ppt-effects v1.1.0 合入（2026-11-12）
+上游 [HY-hue113/ppt-effects](https://github.com/HY-hue113/ppt-effects) 从 `e64d3e9` 推进到 `dd00562`（**v1.1.0**，2026-11-11），本包同步：
+- **新增 011 中式滑转 / 012 六边形旋转 / 013 模糊遮罩 / 014 立体图片轮播 / 015 枫叶飘动** 5 个效果（spec.json + recipe.md + tools/），`effects/` 现共 **15 个**；
+- `assets/motion-recipes.json` 补 5 条内核（15 条），按 A/B/C/D 归类，原 10 条**数值不变**；
+- `scripts/list_effects.py` 的 TIER 补 5 条，菜单自动列出 15 行，**星级仅排序、绝不替用户选**；
+- 上游 v1.0.1 的性能修复（预览图 jpg、`--brief`、`SKILL.md` 读取纪律）已吸收进 `references/visual-effects.md`；
+- 按 v1.0.1 读取纪律，**不下载大体积参考 pptx**（40MB→10.5MB 那批），只同步文本元数据；需要整套版式时走 `route` 换链。
+- 用户规矩不变：**做 PPT 时把 15 行菜单原样摆给用户自己挑**，第 16 个选项「不用，走常规构建」，不默认套用、不自动选。
+
+#### v9.0.8 · 回到原版效果（2026-11-12，用户指正后换方案）
+**用户口径（必须遵守）**：「除了我有特别说明、就是限制多少页以内，其他这些你都可以按照他原本那样来」——
+即**不要为了「不换链/不加页/不改版式」把动效削成只剩转场或占位形状**。v9.0.4 自定的 overlay 约束是内部规则，
+用户要原版效果时让位于效果。
+
+- **补齐参考件**：011–015 的 6 份基准件 pptx 全部装入 `subskills/ppt-effects/effects/*/reference/`。
+  原版效果全靠 `template-clone`：复制基准件 → 按角色换图 → 换字 → 调色；
+  **造型、层级、morph、页内 timing 一律不动**（015 实测含 animMotion/animRot/animScale/animEffect 5 类）。
+- **新增 `scripts/adapt_effect_template.py`**：以 013 参考件为骨架做样板，换《生涯发展报告》的 5 张图 +
+  真实文案，并把色调统一到该稿的宣纸米黄 `#DDD5C4` / 墨褐 `#23201A` / 朱砂 `#B7372A` / 金 `#C9A227`。
+  产物 5 页、morph 4 页保留、CRC OK、COM 真开、逐页渲染通过（均亮 155~190、无纯黑页）。
+- `assets/motion-recipes.json` 把 011–015 标为 `route: template-clone`；
+  `apply_effect_unit.py` 对这 5 条明确报错指路，不再用 v9.0.7 那两个简化注入器。
+- **教训**：结构验收（能打开/CRC/备注保留）≠ 效果验收。自写占位形状能骗过结构检查，
+  但用户一眼看出「加了没效果」。同一类错误在药安管家 PPT 已犯过一次。
+
+#### v9.0.7 执行层适配（2026-11-12，补上「列得出 → 用得上」）
+上一版只把 15 条列进菜单，新增 5 条在执行脚本里没有落点。本版补齐：
+- `scripts/apply_motion.py`：15 条全给明确落点——`conditional`（11/13）打印素材条件、
+  `unit_kind=B/C`（12/14/15）提示还需 `apply_effect_unit.py` 注入动画单元、
+  `equivalent`/`False` 明确报错；`effect=none` 的配方跳过转场写入。
+- `scripts/apply_effect_unit.py`：分发逻辑从**硬编码 4 个 id** 改为读 `assets/motion-recipes.json`
+  **数据驱动**；新增 `unit_B_spec`（从 `spec.json` 的 `hexagon.p1/p2` 读几何，注入 2 态 morph 页）
+  与 `unit_C_spec`（从 `spec.animation.motion.path` 读 `animMotion`，注入单页路径动画），
+  新 12/14/15 全部有可执行落点；`--list` 列出 15 条全落点。
+- **真跑验证**（`C:/Temp/dsh_ascii`，纯 ASCII 路径逐个隔离 COM）：
+  `apply_motion` 效果11/12/13/14/15 产物 15 页真开通过；
+  新注入器 效果12/14 产物 17 页、效果15 产物 16 页真开通过，备注/图表/媒体/CRC 全部保留。
+- **修掉一个真 bug**：两个脚本原先把 `p:transition` 追加到 `</p:sld>` 前，
+  违反 OOXML 顺序（`cSld → clrMapOvr → transition → timing`），会让 PowerPoint 拒绝打开。
+  现统一插到 `<p:clrMapOvr>` 之前。
+- **验证纪律（踩过的坑）**：PowerPoint COM **打不开含中文文件名的路径**，
+  报 `-2147024894`（文件未找到），极易误判成「产物损坏」。COM 真开必须先用
+  **纯 ASCII 文件名、逐个隔离新进程**；`Slide.Export` 另需可写目录，失败不代表文件坏。
+
+# 6c. 【v9.0.4】主链出稿后叠加动效内核（overlay 模式；不换链/不加页）
+python scripts/apply_motion.py --in output/deck.pptx --out output/final.pptx --recipe 效果5
+python scripts/apply_motion.py --in output/final.pptx --verify
+python scripts/apply_motion.py --in output/deck.pptx --restore   # 回退
+# 6d. 【v9.0.5 / v9.0.7】效果 2/4/6/7：注入动画单元（形变对象 / 页内 timing），15 条全部可用
+python scripts/apply_effect_unit.py --list
+python scripts/apply_effect_unit.py --in output/deck.pptx --out output/final.pptx --effect 效果7
+# 6e. 【v9.0.6】素材体检 / 动画素材库 / 用户模板索引
 python scripts/check_assets.py
+python scripts/build_animation_library.py
 python scripts/index_user_templates.py
 python scripts/build_layout_library.py            # 生成常见布局特征库
 python scripts/check_layout_similarity.py --plan output/plan.json --candidate A --strict
@@ -240,7 +319,7 @@ python scripts/check_layout_similarity.py --plan output/plan.json --candidate A 
 python scripts/find_asset.py --kind ppt_asset 传承人
 python scripts/find_asset.py --kind ppt_asset 乡村振兴
 
-# 7. 校验页面计划（字段/坐标/卡片/图标/模板/预算/导航/备注/风格理由）
+# 7. 校验页面计划（字段/坐标/卡片/图标/模板/预算/导航/备注/风格理由/动效代号）
 python scripts/validate_plan.py output/plan.json --knowledge knowledge
 
 # 8. 素材：配图（一级生图 → 二级图库 → 三级纯色）

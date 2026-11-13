@@ -1,0 +1,3811 @@
+{
+ "version": "9.0.8",
+ "note": "风格库索引（v7.5）。选风格先看 keywords 与 mode；不设默认风格，未确认前必须先问用户或按内容推导；4 套规格系统见 assets/style-cards/。",
+ "style_count": 19,
+ "styles": [
+  {
+   "name": "business-blue",
+   "label": "商务蓝·通用",
+   "keywords": [
+    "商务",
+    "企业",
+    "汇报",
+    "通用",
+    "稳健"
+   ],
+   "built_in": true,
+   "mode": "light",
+   "colors": {
+    "primary": "#1a3a5c",
+    "secondary": "#2e7dbb",
+    "accent": "#f39c12",
+    "background": "#f8f9fa",
+    "text": "#2c3e50",
+    "text_light": "#7f8c8d"
+   },
+   "confidence": "curated（人工校订）",
+   "system_json": "assets/visual-systems/business-blue.json",
+   "card": "",
+   "originals": []
+  },
+  {
+   "name": "humanities-warm",
+   "label": "人文暖调",
+   "keywords": [
+    "人文",
+    "暖色",
+    "教育",
+    "公益",
+    "柔和"
+   ],
+   "built_in": true,
+   "mode": "light",
+   "colors": {
+    "primary": "#8c5a2b",
+    "secondary": "#c08a4e",
+    "accent": "#3f6f5f",
+    "background": "#fdfaf5",
+    "text": "#3a3128",
+    "text_light": "#8d8377"
+   },
+   "confidence": "curated（人工校订）",
+   "system_json": "assets/visual-systems/humanities-warm.json",
+   "card": "",
+   "originals": []
+  },
+  {
+   "name": "medical-tech-white",
+   "label": "医疗科技白",
+   "keywords": [
+    "医疗",
+    "器械",
+    "医药",
+    "健康",
+    "白底",
+    "产品路演",
+    "流程与图表"
+   ],
+   "built_in": true,
+   "mode": "light",
+   "colors": {
+    "primary": "#1565C0",
+    "secondary": "#0F314C",
+    "accent": "#2E6186",
+    "background": "#FFFFFF",
+    "text": "#1F2A36",
+    "text_light": "#6B7C8C"
+   },
+   "confidence": "spec（规格指定；已按样本校准）",
+   "system_json": "assets/visual-systems/medical-tech-white.json",
+   "card": "assets/style-cards/medical-tech-white.md",
+   "originals": [
+    "assets/sample-ppts/Airflow·艾弗洛——医疗领域恒风量智能风机领跑者.pptx"
+   ]
+  },
+  {
+   "name": "national-brown-gold",
+   "label": "国潮红金（棕金底）",
+   "keywords": [
+    "国潮",
+    "红金",
+    "非遗",
+    "文化传承",
+    "乡村振兴",
+    "党建政务",
+    "答辩"
+   ],
+   "built_in": true,
+   "mode": "light",
+   "colors": {
+    "primary": "#8B0000",
+    "secondary": "#5C0000",
+    "accent": "#D4AF37",
+    "background": "#FFF8DC",
+    "text": "#33261C",
+    "text_light": "#8A7A68"
+   },
+   "confidence": "spec（规格指定；已按样本校准）",
+   "system_json": "assets/visual-systems/national-brown-gold.json",
+   "card": "assets/style-cards/national-brown-gold.md",
+   "originals": [
+    "assets/sample-ppts/红色国风非遗文化.pptx",
+    "assets/sample-ppts/16页-国奖水准红金风格PPT-康帅制作.pptx",
+    "assets/sample-ppts/东方遗韵——源文件.pptx",
+    "assets/sample-ppts/刺绣文化.pptx",
+    "assets/sample-ppts/04 2022.6月 中国风 非遗乐器.pptx",
+    "assets/sample-ppts/红色党建帮助老人.pptx"
+   ]
+  },
+  {
+   "name": "national-style",
+   "label": "国潮棕金",
+   "keywords": [
+    "国潮",
+    "中医",
+    "非遗",
+    "文化",
+    "棕金"
+   ],
+   "built_in": true,
+   "mode": "light",
+   "colors": {
+    "primary": "#4a2c17",
+    "secondary": "#8c5a2b",
+    "accent": "#c9a227",
+    "background": "#fbf7f0",
+    "text": "#33261c",
+    "text_light": "#8a7a68"
+   },
+   "confidence": "curated（人工校订）",
+   "system_json": "assets/visual-systems/national-style.json",
+   "card": "",
+   "originals": []
+  },
+  {
+   "name": "red-gold",
+   "label": "国奖红金·亮底稳重（精选）",
+   "keywords": [
+    "红金",
+    "路演",
+    "竞赛",
+    "政务",
+    "乡村振兴",
+    "稳重"
+   ],
+   "built_in": true,
+   "mode": "light",
+   "colors": {
+    "primary": "#9C2317",
+    "secondary": "#7A1A12",
+    "accent": "#C9A227",
+    "background": "#FFFFFF",
+    "text": "#2E2620",
+    "text_light": "#7A6A5A"
+   },
+   "confidence": "curated（人工校订）",
+   "system_json": "assets/visual-systems/red-gold.json",
+   "card": "",
+   "originals": []
+  },
+  {
+   "name": "tech-dark",
+   "label": "科技暗色",
+   "keywords": [
+    "科技",
+    "暗色",
+    "发布会",
+    "产品",
+    "前沿"
+   ],
+   "built_in": true,
+   "mode": "dark",
+   "colors": {
+    "primary": "#0f2f3f",
+    "secondary": "#1f7a8c",
+    "accent": "#3fd0c9",
+    "background": "#0b1620",
+    "text": "#eaf3f5",
+    "text_light": "#8fa8b2"
+   },
+   "confidence": "curated（人工校订）",
+   "system_json": "assets/visual-systems/tech-dark.json",
+   "card": "",
+   "originals": []
+  },
+  {
+   "name": "tech-deep-blue",
+   "label": "科技深蓝",
+   "keywords": [
+    "科技",
+    "深蓝",
+    "智慧矿山",
+    "创新大赛",
+    "装备制造",
+    "数据仪表盘",
+    "四宫格"
+   ],
+   "built_in": true,
+   "mode": "dark",
+   "colors": {
+    "primary": "#0D47A1",
+    "secondary": "#08306E",
+    "accent": "#FFC107",
+    "background": "#061A3D",
+    "text": "#FFFFFF",
+    "text_light": "#B9C6D8"
+   },
+   "confidence": "spec（规格指定；样本缺失，未校准）",
+   "system_json": "assets/visual-systems/tech-deep-blue.json",
+   "card": "assets/style-cards/tech-deep-blue.md",
+   "originals": []
+  },
+  {
+   "name": "tech-teal-green",
+   "label": "科技深青",
+   "keywords": [
+    "科技",
+    "深青",
+    "医药",
+    "检验检测",
+    "职业技能大赛",
+    "技术创新",
+    "侧边栏导航"
+   ],
+   "built_in": true,
+   "mode": "dark",
+   "colors": {
+    "primary": "#004D40",
+    "secondary": "#00332B",
+    "accent": "#00BCD4",
+    "background": "#0B1E1B",
+    "text": "#FFFFFF",
+    "text_light": "#B9C6C2"
+   },
+   "confidence": "spec（规格指定；样本缺失，未校准）",
+   "system_json": "assets/visual-systems/tech-teal-green.json",
+   "card": "assets/style-cards/tech-teal-green.md",
+   "originals": []
+  },
+  {
+   "name": "ref-airflow-medical-blue",
+   "label": "医疗产品路演·深蓝",
+   "keywords": [
+    "医疗",
+    "器械",
+    "风机",
+    "深蓝",
+    "产品路演",
+    "长篇",
+    "技术"
+   ],
+   "built_in": false,
+   "mode": "dark",
+   "colors": {
+    "primary": "#0F314C",
+    "secondary": "#0A2336",
+    "accent": "#2D6186",
+    "background": "0F314C",
+    "text": "#F2F2F2",
+    "text_light": "#B9BDC7"
+   },
+   "confidence": "medium（PDF 由渲染帧取色，非矢量精确值）",
+   "system_json": "assets/visual-systems/ref-airflow-medical-blue.json",
+   "card": "assets/style-cards/ref-airflow-medical-blue.md",
+   "originals": [
+    "assets/templates/references/Airflow·艾弗洛——医疗领域恒风量智能风机领跑者(1)(1).pdf",
+    "assets/templates/references/Airflow·艾弗洛——医疗领域恒风量智能风机领跑者(1)(1)(1).pdf",
+    "assets/templates/references/Airflow·艾弗洛——医疗领域恒风量智能风机领跑者(1)(1).pptx"
+   ]
+  },
+  {
+   "name": "ref-award-red-gold",
+   "label": "国奖红金·暗底烫金",
+   "keywords": [
+    "国奖",
+    "红金",
+    "暗底",
+    "烫金",
+    "答辩",
+    "竞赛路演",
+    "政务汇报",
+    "稳重"
+   ],
+   "built_in": false,
+   "mode": "light",
+   "colors": {
+    "primary": "#AB1F10",
+    "secondary": "#7B160B",
+    "accent": "#F5DE8E",
+    "background": "#FFFFFF",
+    "text": "#2E2620",
+    "text_light": "#7A6A5A"
+   },
+   "confidence": "high",
+   "system_json": "assets/visual-systems/ref-award-red-gold.json",
+   "card": "assets/style-cards/ref-award-red-gold.md",
+   "originals": [
+    "assets/templates/references/16页-国奖水准红金风格PPT-康帅制作.pptx",
+    "assets/templates/references/16页-国奖水准红金风格PPT-康帅制作(1).pptx"
+   ]
+  },
+  {
+   "name": "ref-blackgold-tech",
+   "label": "黑金科技·挑战杯通用",
+   "keywords": [
+    "科技",
+    "黑金",
+    "挑战杯",
+    "互联网+",
+    "深蓝",
+    "青色",
+    "通用模板"
+   ],
+   "built_in": false,
+   "mode": "dark",
+   "colors": {
+    "primary": "#B7472A",
+    "secondary": "#83331E",
+    "accent": "#1CADE4",
+    "background": "042A7E",
+    "text": "#F2F2F2",
+    "text_light": "#B9BDC7"
+   },
+   "confidence": "high",
+   "system_json": "assets/visual-systems/ref-blackgold-tech.json",
+   "card": "assets/style-cards/ref-blackgold-tech.md",
+   "originals": [
+    "assets/templates/references/【黑金版】编号0012科技风互联网加挑战杯通用PPT模板.pptx"
+   ]
+  },
+  {
+   "name": "ref-chip-industrial",
+   "label": "芯片工科·黑金工业",
+   "keywords": [
+    "芯片",
+    "工科",
+    "工业",
+    "黑金",
+    "技术",
+    "硬科技"
+   ],
+   "built_in": false,
+   "mode": "dark",
+   "colors": {
+    "primary": "#CE8140",
+    "secondary": "#945C2E",
+    "accent": "#65B4D5",
+    "background": "#111111",
+    "text": "#F2F2F2",
+    "text_light": "#B9BDC7"
+   },
+   "confidence": "high",
+   "system_json": "assets/visual-systems/ref-chip-industrial.json",
+   "card": "assets/style-cards/ref-chip-industrial.md",
+   "originals": [
+    "assets/templates/references/黑色-芯片工科模板.pptx"
+   ]
+  },
+  {
+   "name": "ref-heritage-earth",
+   "label": "国风非遗·棕金暗调",
+   "keywords": [
+    "国风",
+    "非遗",
+    "文化",
+    "棕金",
+    "暗底",
+    "厚重",
+    "传承"
+   ],
+   "built_in": false,
+   "mode": "light",
+   "colors": {
+    "primary": "#604626",
+    "secondary": "#45321B",
+    "accent": "#46130A",
+    "background": "#FFFFFF",
+    "text": "#2E2620",
+    "text_light": "#7A6A5A"
+   },
+   "confidence": "high",
+   "system_json": "assets/visual-systems/ref-heritage-earth.json",
+   "card": "assets/style-cards/ref-heritage-earth.md",
+   "originals": [
+    "assets/templates/references/红色国风非遗文化.pptx"
+   ]
+  },
+  {
+   "name": "ref-medical-blue",
+   "label": "医疗器械·蓝白专业",
+   "keywords": [
+    "医疗",
+    "器械",
+    "蓝白",
+    "学院蓝",
+    "专业",
+    "报告"
+   ],
+   "built_in": false,
+   "mode": "dark",
+   "colors": {
+    "primary": "#0E419C",
+    "secondary": "#0A2E70",
+    "accent": "#FFC000",
+    "background": "08243B",
+    "text": "#F2F2F2",
+    "text_light": "#B9BDC7"
+   },
+   "confidence": "high",
+   "system_json": "assets/visual-systems/ref-medical-blue.json",
+   "card": "assets/style-cards/ref-medical-blue.md",
+   "originals": [
+    "assets/templates/references/蓝白色医疗器械.pptx"
+   ]
+  },
+  {
+   "name": "ref-redtour-red",
+   "label": "红旅赛道·正红亮金",
+   "keywords": [
+    "红旅",
+    "红色",
+    "赛道",
+    "正红",
+    "亮金",
+    "比赛",
+    "青年"
+   ],
+   "built_in": false,
+   "mode": "light",
+   "colors": {
+    "primary": "#C00000",
+    "secondary": "#8A0000",
+    "accent": "#FFC000",
+    "background": "#FFFFFF",
+    "text": "#2E2620",
+    "text_light": "#7A6A5A"
+   },
+   "confidence": "high",
+   "system_json": "assets/visual-systems/ref-redtour-red.json",
+   "card": "assets/style-cards/ref-redtour-red.md",
+   "originals": [
+    "assets/templates/references/红旅赛道PPT模板.pptx"
+   ]
+  },
+  {
+   "name": "ref-tea-green",
+   "label": "茶产业·茶绿清雅",
+   "keywords": [
+    "茶叶",
+    "农业",
+    "乡村振兴",
+    "茶绿",
+    "生态",
+    "产业方案"
+   ],
+   "built_in": false,
+   "mode": "light",
+   "colors": {
+    "primary": "#234D45",
+    "secondary": "#193731",
+    "accent": "#37722B",
+    "background": "#FFFFFF",
+    "text": "#2E2620",
+    "text_light": "#7A6A5A"
+   },
+   "confidence": "high",
+   "system_json": "assets/visual-systems/ref-tea-green.json",
+   "card": "assets/style-cards/ref-tea-green.md",
+   "originals": [
+    "assets/templates/references/茶产业振兴.pptx"
+   ]
+  },
+  {
+   "name": "ref-typo-closing",
+   "label": "大字结尾页·书法金句",
+   "keywords": [
+    "结尾页",
+    "大字",
+    "金句",
+    "书法",
+    "收尾",
+    "致辞"
+   ],
+   "built_in": false,
+   "mode": "dark",
+   "colors": {
+    "primary": "#44546A",
+    "secondary": "#303C4C",
+    "accent": "#FFC000",
+    "background": "44546A",
+    "text": "#F2F2F2",
+    "text_light": "#B9BDC7"
+   },
+   "confidence": "medium（页面无显式色值，配色取自主题/方案色）",
+   "system_json": "assets/visual-systems/ref-typo-closing.json",
+   "card": "assets/style-cards/ref-typo-closing.md",
+   "originals": [
+    "assets/templates/references/23. PPT结尾-弄潮起舞 踏浪前行.pptx"
+   ]
+  },
+  {
+   "name": "tech-gold-noir",
+   "label": "暗金夜·科技国金",
+   "keywords": [
+    "科技",
+    "暗金",
+    "金奖",
+    "互联网+",
+    "创赛",
+    "硬件",
+    "商业模式",
+    "财务",
+    "路演",
+    "国金"
+   ],
+   "built_in": false,
+   "mode": "dark",
+   "colors": {
+    "primary": "#1F1B16",
+    "secondary": "#3A2F1D",
+    "accent": "#E7B437",
+    "background": "#0B0B10",
+    "text": "#FFFFFF",
+    "text_light": "#C9BFAA"
+   },
+   "confidence": "case-derived（按目标案例图目视取色）",
+   "system_json": "assets/visual-systems/tech-gold-noir.json",
+   "card": "assets/style-cards/tech-gold-noir.md",
+   "originals": []
+  }
+ ],
+ "red_lines": [
+  "❌ 禁止 HTML 转 PPTX，只用 PptxGenJS 原生对象",
+  "❌ 禁止图表用图片贴，必须原生 Chart 且带数据源（可编辑数据）",
+  "❌ 禁止表格用形状拼，必须原生 Table",
+  "❌ 禁止用 PowerPoint COM 自动修复排版（只检测、只报告）",
+  "❌ 禁止模型自由选字体/配色，必须取自视觉系统",
+  "❌ 禁止每页都生图，生图 3–5 张/份",
+  "❌ 禁止自实现生图，必须调用 DSH 已挂载的生图插件",
+  "❌ 禁止引入云知识库/向量库，全部本机文件",
+  "❌ 禁止用 PptxGenJS 硬做烫金/发光/渐变文字，统一用生图 PNG",
+  "✅ 核心内容必须原生可编辑（正文、图表、表格）",
+  "✅ 多图层堆叠：每页元素必须声明 `z_index`，按背景→装饰→内容→标题四层绘制，装饰不得遮挡文字",
+  "✅ 章节导航可用且可关（用户口径，v9.0）：制作前先问\"要不要章节导航\"——`design_brief.navigation_enabled` 布尔总开关，**包级默认 `false`（关闭）、计划级缺省即关闭，要开必须显式写 `true`**；`false` 即全篇不画（含母版侧栏底板）；要画按 `navigation_scope`（`full` / `sparse` **默认**：只画每章首个内容页 / `none`），逐页 `slides[].show_navigation` 优先级最高；章节过渡页不画（左侧留给 `section-rail` 装饰轨道）",
+  "✅ 必须基于统一视觉系统，整份配色/字体/装饰一致",
+  "✅ 每页必须有讲者备注",
+  "✅ 缺图补齐（用户 2026-11-08 指定）：**先复用本稿既有图 → 再 AI 按本页主题补图（须符合主题、融入风格、不突兀）→ 免费图库 → 纯色背景兜底**；补图后须与相邻页并排目检，交付说明留痕。不阻塞流程，但\"缺图→纯色\"不再是默认答案",
+  "✅ 字体层级统一：整份字号梯度严格按 H1–H4 / Body / Caption / Metric 规范，不能随意变",
+  "✅ 每页一个视觉焦点：核心主张/核心数据最突出，其他元素作辅助",
+  "✅ 图标风格统一：整份只用一种图标风格（本包为面性），不得线性/面性混搭，尺寸一致、颜色取辅助色",
+  "❌ 高级耀眼版禁止\"素\"：禁止大面积白/灰背景、禁止低饱和度色、禁止每页元素少于 6 个（简洁/极简版不受此约束）",
+  "❌ 高级耀眼版禁止\"极简\"：不能因为模型偏好就自动简化，必须按硬指标填满元素（简洁/极简版是用户主动选择，不受此约束）",
+  "❌ 禁止短剧式标题：标题不得文学化、情绪化（如“我最怕的不是计划不够漂亮”），必须是正式、结论式的汇报表达；党建/政务类项目的正式政治表达（如「凝心聚力促振兴」）属规范表达，不算短剧金句；判据与正反例见 `references/narrative.md`",
+  "❌ 正文禁止「AI 味」：正文不得像小红书文案 / 小说 / 短剧台词（断句太碎、口语化、每段结尾升华），要正式、朴实、像正经的项目汇报；「赋能 / 打造 / 构建 / 引领」在党建 / 政务 / 乡村振兴类项目中属正式政治语言，可正常使用，科技 / 商业类项目避免空泛使用；党建 / 政务 / 乡村振兴类项目的正常结尾升华属规范表达，商业 / 科技类才判为空泛升华；判据与正反例见 `references/narrative.md`",
+  "✅ 装饰组只做版面框架：只占页边距、包成真实 `<p:grpSp>` 组、`z_index` 锁 10–19、内容页 2–3 组且不进内容安全区；装饰组不计入点缀型装饰占比口径（红线 19/20）",
+  "✅ 组件复用必须定义在计划级 `components` 并跨页引用，落地为真实 `<p:grpSp>` 组；关键结构（卡片区、编号块、图例条）不得逐页重画",
+  "✅ 超大字号层级：封面 / 目录 / 章节过渡 / 结尾页标题走 `fonts.display_size`（120–287pt，耀眼版 ≥187pt），整份字号跨度 ≥5.7×；内页标题仍守 20–24pt 不放宽",
+  "✅ 页面构图两硬约束（用户指定）：每页至少 1 个非装饰元素面积 ≥ 页面 1/3；每页至少 2 个元素前后叠压（z_index 不同且几何重叠 >0.15in²）。第 3 条「错落感」经确认不启用",
+  "✅ 去 AI 感与对齐纪律：手工感装饰（手绘线条/印章/便签/纸胶带/手绘箭头，一份稿 ≤4 处）+ 卡片差异化（同页 ≥2 种形态、大小分级、左上角序号）+ 标题可用 `runs` 放大 1–2 个关键字（≥1.4×）；**倾斜仅限贴纸类装饰 ≤12°**，正文/卡片/图片/图表/框架装饰/背板一律水平垂直对齐，破局感靠\"1 个元素超出卡片边框 0.1–0.3in\"实现",
+  "✅ **封面强制 AI 书法体**（用户 2026-11-08 指定，不可关闭、不可降级）：封面主标必须且只能是 **AI 生成的书法 PNG**（透明底），不得用系统字体文本框冒充；仅该主标为图片，封面其余文字仍须原生可编辑。配置 `config.cover_title.enforced=true` / `allow_fallback_to_text=false`；缺图或仍有系统字主标时 `validate_plan.py` 报 **error**、`build_pptx.js` **抛错退出**，不产出残稿。提示词见 `assets/calligraphy-prompt.md`，**亮底禁用金色**（WCAG 1.38），改用深靛蓝 #1A3A5C 或墨褐 #1F1B16。",
+  "✅ **AI 生图前置质检（用户 2026-11-13 指定，开工前必跑，跳过即返工）**：任何 AI 生图前，先调一次 `image_generate` 验证能力可用（能调用、返回真实绝对路径、确认尺寸/参考图参数）；不可用就先向用户反馈，退回模板原生元素或用户实拍，不硬造。**禁止先写提示词**——先读原元素（是什么部件、在哪个 part、坐标尺寸、周围底色/装饰/光效/材质/装饰母题），把主色 hex、材质、构图、`no text/no letters/no watermark` 写进提示词，尺寸匹配原元素比例。生成后必须肉眼质检（同色系、材质协调、无乱码、留白够、缩放清晰、插入不盖导航等不可动元素），任一条不过就重生成，不许将就。禁止用 PIL 画文字条冒充设计。完整流程见 `references/ai-image-gate.md`"
+ ],
+ "workflow": [
+  "材料解析        → 提炼核心论点 + 关键数据（含口径）",
+  "叙事结构规划    → 金字塔：结论先行 → 3–5 个理由 → 证据；每页 45–60 秒",
+  "设计规范确认    → 视觉系统 / 密度模式（简洁版 或 高级耀眼版）/ 时长 / 受众 / 导航方式与开关（要不要） / 预算",
+  "确定视觉系统    → find_style.py 按内容检索选定（不设默认）；无命中读参考稿推导或先问用户，写明 style_rationale",
+  "检索布局模板 + 设计卡片 + 图表类型（按数据语义匹配，含反例核对）",
+  "生成双候选页面计划（每页布局、配图、导航高亮章节、元素 z_index 分层、行动标题、装饰组与组件引用）",
+  "validate_plan.py 校验",
+  "样张确认        → 先只出 1 页封面样张交用户确认（不满意最多调 3 次），确认后才批量生成",
+  "素材生成        → **先跑 AI 生图前置质检（红线 7a：能力可用？读原元素再写提示词？生成后肉眼质检？插入前算叠压？）**；封面/章节生图、特效素材、内容插图/图标",
+  "build_pptx.js 构建（母版 + 导航 + 原生对象 + 视觉系统 + 备注 + 按 z_index 分层绘制）",
+  "detect_layout.py 检测 + score_deck.py 自我评分（<75 分重写最弱 1–2 页（默认 2），最多 2 轮；另出评委审核四维度）",
+  "人工终审（严重错误→写 fail_case 回第 6 步；配图不满意→单独重生成；微调→经验回写卡片）",
+  "回写知识库（fail_cases / 卡片 / 个人风格库）"
+ ],
+ "commands": [
+  "python scripts/parse_source.py --input 材料.pdf --out output/source.md",
+  "python scripts/find_asset.py <关键词…>",
+  "python scripts/find_style.py 红金 乡村振兴          # 或 --list / --mode dark",
+  "python scripts/extract_style.py assets/templates/references/xxx.pptx --name ref-xxx",
+  "python scripts/analyze_reference.py",
+  "python scripts/list_effects.py                 # 人读 15 行表",
+  "python scripts/list_effects.py --json         # 机读，侧边栏用",
+  "python scripts/list_effects.py --id 效果9     # 单条详情",
+  "python scripts/apply_motion.py --in output/deck.pptx --out output/final.pptx --recipe 效果5",
+  "python scripts/apply_motion.py --in output/final.pptx --verify",
+  "python scripts/apply_motion.py --in output/deck.pptx --restore   # 回退",
+  "python scripts/apply_effect_unit.py --list",
+  "python scripts/apply_effect_unit.py --in output/deck.pptx --out output/final.pptx --effect 效果7",
+  "python scripts/check_assets.py",
+  "python scripts/build_animation_library.py",
+  "python scripts/index_user_templates.py",
+  "python scripts/build_layout_library.py            # 生成常见布局特征库",
+  "python scripts/check_layout_similarity.py --plan output/plan.json --candidate A --strict",
+  "python scripts/find_asset.py --kind ppt_asset 传承人",
+  "python scripts/find_asset.py --kind ppt_asset 乡村振兴",
+  "python scripts/validate_plan.py output/plan.json --knowledge knowledge",
+  "node scripts/generate_images.js --plan output/plan.json --candidate A --emit output/image_requests.json",
+  "node scripts/generate_images.js --plan output/plan.json --candidate A --fill output/images",
+  "node scripts/generate_effects.js --plan output/plan.json --candidate A --emit output/effect_requests.json",
+  "node scripts/generate_effects.js --plan output/plan.json --candidate A --fill output/effects",
+  "node scripts/search_photos.js --plan output/plan.json --candidate A --fill output/photos",
+  "node scripts/build_pptx.js --plan output/plan.json --candidate A --out output/deck.pptx",
+  "python scripts/detect_layout.py output/deck.pptx --config assets/config.json --out output/check_report.md",
+  "python scripts/score_deck.py --plan output/plan.json --candidate A --deck output/deck.pptx",
+  "python scripts/adapt_effect_template.py",
+  "python scripts/baseline_gate.py",
+  "python scripts/overlay_anim_on_original.py"
+ ],
+ "preferences": {
+  "cover_title_mode": "ai_calligraphy",
+  "cover_prompt": "手写书法字“{text}”，四个汉字横排，字体狂野奔放，笔画飘逸，富有动感张力，飞白，国风，中国书法，笔触流畅，白底黑字。纯白背景，纯黑墨迹，不要彩色，不要阴影，不要立体，不要透视，不要样机，不要边框，不要印章，不要落款，画面内不出现任何其他文字或图形，四周大幅留白，16:9 横版",
+  "cover_colors": {
+   "light": [
+    "#1A3A5C 深靛蓝（WCAG 6.5）",
+    "#1F1B16 墨褐（9.5）"
+   ],
+   "dark": [
+    "#C9A227 金渐变"
+   ],
+   "warn": "金色 #C9A227 在亮米白底上 WCAG 仅 1.38，禁止直接用；坚持用金须配 ≥6px 深墨描边"
+  },
+  "cover_mask_mode": "light",
+  "image_tool": "image_generate"
+ },
+ "motifs": [
+  "茶芽",
+  "叶脉线",
+  "茶渍纹"
+ ],
+ "effects": [
+  {
+   "id": "效果1",
+   "name": "湖景斜切滑入",
+   "tier": 1,
+   "tier_label": "★ 简洁",
+   "tier_reason": "标题自左、斜切色块自右滑入，2 页",
+   "overlayable": true,
+   "route_key": "overlay",
+   "motion_layer": "L1+L2",
+   "min_slides": 2,
+   "summary": "左侧灰底黑字标题自左滑入，右侧斜切彩色带自右滑入；2 页，平滑 1 秒。",
+   "pages": "2 页",
+   "pics": "1",
+   "requirement": "1 张 4:3 横构图风景照，且不能太暗（黑标题压底图，亮度低于 140 会看不见）",
+   "preview": "docs/preview/效果1_湖景斜切滑入.png",
+   "variants": [],
+   "dir": "subskills/ppt-effects/effects/001_湖景斜切"
+  },
+  {
+   "id": "效果2",
+   "name": "玻璃碎片散开",
+   "tier": 3,
+   "tier_label": "★★★ 复杂/高级",
+   "tier_reason": "四块玻璃叠起→散开→排成一行，整面一次性变换",
+   "overlayable": "unit",
+   "route_key": "overlay",
+   "motion_layer": "L1+L2",
+   "min_slides": 2,
+   "summary": "四块「玻璃」从中心叠起、散开、排成一行；短版 3 页 / 长版 19 页，平滑 2 秒。",
+   "pages": "3 页",
+   "pics": "1–5",
+   "requirement": "short：短版 1 张照片做整页背景，比例不限（拉伸铺满）；long：长版 1–5 张：按页段当背景；四栏拼贴页每栏各一张",
+   "preview": "docs/preview/效果2_玻璃碎片散开.png",
+   "variants": [
+    "short",
+    "long"
+   ],
+   "dir": "subskills/ppt-effects/effects/002_玻璃碎片"
+  },
+  {
+   "id": "效果3",
+   "name": "哲学字动（12页 typographic morph）",
+   "tier": 2,
+   "tier_label": "★★ 中等",
+   "tier_reason": "巨型字母位移 + 照片整页穿插，自动换片",
+   "overlayable": true,
+   "route_key": "overlay",
+   "motion_layer": "L1+L2",
+   "min_slides": 2,
+   "summary": "巨型字母位移 + 照片整页穿插，页数 = 图数×2+2；自动换片。",
+   "pages": "",
+   "pics": "1–5",
+   "requirement": "1–5 张照片（推荐 4–5 张），按画幅比例匹配槽位；页数 = 图数×2+2，标签数 = 图数",
+   "preview": "docs/preview/效果3_哲学字动.png",
+   "variants": [],
+   "dir": "subskills/ppt-effects/effects/003_哲学字动"
+  },
+  {
+   "id": "效果4",
+   "name": "扇形展开",
+   "tier": 3,
+   "tier_label": "★★★ 复杂/高级",
+   "tier_reason": "12 片扇形收拢后一下展开成扇面",
+   "overlayable": "unit",
+   "route_key": "overlay",
+   "motion_layer": "L1",
+   "min_slides": 2,
+   "summary": "12 片扇形收拢后 2 秒展开成扇面，竖排标题随后滑入。",
+   "pages": "",
+   "pics": "1",
+   "requirement": "1 张横构图照片（约 1.77），同一张铺满整页并切成 12 片扇形",
+   "preview": "docs/preview/效果4_扇形展开.png",
+   "variants": [],
+   "dir": "subskills/ppt-effects/effects/004_扇形展开"
+  },
+  {
+   "id": "效果5",
+   "name": "三段上滚",
+   "tier": 2,
+   "tier_label": "★★ 中等",
+   "tier_reason": "三页共用底图、正文随翻页上滚",
+   "overlayable": true,
+   "route_key": "overlay",
+   "motion_layer": "L1+L2",
+   "min_slides": 3,
+   "summary": "三页共用一张底图，正文随翻页上滚，配大号章节号与弧形线。",
+   "pages": "",
+   "pics": "1",
+   "requirement": "1 张照片做整页背景，三页共用，替换一次即可",
+   "preview": "docs/preview/效果5_三段上滚.png",
+   "variants": [],
+   "dir": "subskills/ppt-effects/effects/005_三段上滚"
+  },
+  {
+   "id": "效果6",
+   "name": "加载指针",
+   "tier": 1,
+   "tier_label": "★ 简洁",
+   "tier_reason": "单页指针旋转 + 标题淡入",
+   "overlayable": "unit",
+   "route_key": "overlay",
+   "motion_layer": "L3",
+   "min_slides": null,
+   "summary": "单页：深色底 + 七段变速旋转指针 + 标题淡入 + 百叶窗退场。",
+   "pages": "",
+   "pics": "1",
+   "requirement": "1 张深色照片（1200×900 槽位）；亮图会让白色标题与指针失去对比",
+   "preview": "docs/preview/效果6_加载指针.png",
+   "variants": [],
+   "dir": "subskills/ppt-effects/effects/006_加载指针"
+  },
+  {
+   "id": "效果7",
+   "name": "环形开场",
+   "tier": 3,
+   "tier_label": "★★★ 复杂/高级",
+   "tier_reason": "48 片刀片扫光 + 圆形取景 + 四字散排，单次形变量最大",
+   "overlayable": "unit",
+   "route_key": "overlay",
+   "motion_layer": "L3",
+   "min_slides": null,
+   "summary": "48 片刀片扫光开场 → 圆形取景 → 四字散排；整套 25 页。",
+   "pages": "25 页",
+   "pics": "1",
+   "requirement": "1 张照片（1200×900 槽位）；只做开场 8 页就只换 image1，做整套 25 页则 13 处媒体槽逐一替换（各自按原尺寸裁切）",
+   "preview": "docs/preview/效果7_环形开场.png",
+   "variants": [],
+   "dir": "subskills/ppt-effects/effects/007_环形开场"
+  },
+  {
+   "id": "效果8",
+   "name": "纯矢量动画",
+   "tier": 2,
+   "tier_label": "★★ 中等",
+   "tier_reason": "33 页纯矢量整份版式，不依赖照片",
+   "overlayable": "equivalent",
+   "route_key": "overlay",
+   "motion_layer": "L3",
+   "min_slides": null,
+   "summary": "33 页纯矢量版式（封面/转盘目录/四章/大数字/评估/时间轴），只换文字。",
+   "pages": "33 页",
+   "pics": "0（纯版式）",
+   "requirement": "不依赖照片（纯矢量），只换文字",
+   "preview": "docs/preview/效果8_纯矢量动画.png",
+   "variants": [],
+   "dir": "subskills/ppt-effects/effects/008_纯矢量动画"
+  },
+  {
+   "id": "效果9",
+   "name": "金边弧线",
+   "tier": 3,
+   "tier_label": "★★★ 复杂/高级",
+   "tier_reason": "深蓝弧线 + 圆形取景 + 超大数字，19 页慢速自动换片",
+   "overlayable": true,
+   "route_key": "overlay",
+   "motion_layer": "L1",
+   "min_slides": null,
+   "summary": "白底 + 深蓝弧线 + 圆形取景 + 超大数字；19 页，慢速切换 + 自动换片 2 秒。",
+   "pages": "19 页",
+   "pics": "16",
+   "requirement": "16 个槽位；少于 16 张可以重复使用同一张（按同图铺槽，不混旧图）",
+   "preview": "docs/preview/效果9_金边弧线.png",
+   "variants": [],
+   "dir": "subskills/ppt-effects/effects/009_金边弧线"
+  },
+  {
+   "id": "效果10",
+   "name": "暗红塔影",
+   "tier": 3,
+   "tier_label": "★★★ 复杂/高级",
+   "tier_reason": "金线稿塔 + 光晕光束 + 斜切带，层次最厚",
+   "overlayable": true,
+   "route_key": "overlay",
+   "motion_layer": "L1",
+   "min_slides": null,
+   "summary": "深红底 + 金色线稿 + 光晕光束；11 页，平滑 1.8 秒。",
+   "pages": "11 页",
+   "pics": "1",
+   "requirement": "白底主体图（塔/建筑剪影）**或已抠好的透明 PNG** 二选一；非白底、无透明通道的图做不出线稿",
+   "preview": "docs/preview/效果10_暗红塔影.png",
+   "variants": [],
+   "dir": "subskills/ppt-effects/effects/010_暗红塔影"
+  },
+  {
+   "id": "效果11",
+   "name": "中式滑转（多图版）",
+   "tier": 2,
+   "tier_label": "★★ 中等",
+   "tier_reason": "中式滑转：竖版面板滑动换页，N 图→N+1 页",
+   "overlayable": "template-clone",
+   "route_key": "template-clone",
+   "motion_layer": "L1+L2",
+   "min_slides": 2,
+   "summary": "每张图一块竖版面板，滑动换页；9 张图 → 10 页，适合多图集。",
+   "pages": "10 页",
+   "pics": "2–9",
+   "requirement": "每张图一块竖版面板（约 15.4×19.1cm，比例 0.81）；N 张图 → N+1 页；少于 2 张做不成，多于 9 张会多出面板。",
+   "preview": "docs/preview/效果11_中式滑转.jpg",
+   "variants": [],
+   "dir": "subskills/ppt-effects/effects/011_中式滑转"
+  },
+  {
+   "id": "效果12",
+   "name": "六边形旋转",
+   "tier": 3,
+   "tier_label": "★★★ 复杂/高级",
+   "tier_reason": "六边形旋转：白线外框旋转 + 图片填充内六边形，单次形变量大",
+   "overlayable": "template-clone",
+   "route_key": "template-clone",
+   "motion_layer": "L1+L2",
+   "min_slides": 2,
+   "summary": "6 页：满页底图 + 白线外六边形旋转 + 图片填充内六边形；每页一张图。",
+   "pages": "6 页",
+   "pics": "1–4",
+   "requirement": "每页一张图：铺满整页做底，同时裁进内六边形（两种比例都要用到）；给 1 张可重复用满 6 页，给 4 张则每页各不相同。",
+   "preview": "docs/preview/效果12_六边形旋转.jpg",
+   "variants": [],
+   "dir": "subskills/ppt-effects/effects/012_六边形旋转"
+  },
+  {
+   "id": "效果13",
+   "name": "模糊遮罩",
+   "tier": 2,
+   "tier_label": "★★ 中等",
+   "tier_reason": "模糊遮罩：模糊底图 + 大字三段位移，可 1–5 图",
+   "overlayable": "template-clone",
+   "route_key": "template-clone",
+   "motion_layer": "L1+L2",
+   "min_slides": 3,
+   "summary": "5 页：模糊满页底图 + 大字三段位移（飞入/停留/推出）；可单图共用，也可每页一张。",
+   "pages": "5 页",
+   "pics": "1–5",
+   "requirement": "1–5 张横构图照片：给 1 张即 5 页共用；给 N 张则第 1–5 页各用一张，不足循环复用。每页统一模糊做底，右侧竖条用同图清晰版切片。",
+   "preview": "docs/preview/效果13_模糊遮罩.jpg",
+   "variants": [],
+   "dir": "subskills/ppt-effects/effects/013_模糊遮罩"
+  },
+  {
+   "id": "效果14",
+   "name": "立体图片轮播",
+   "tier": 3,
+   "tier_label": "★★★ 复杂/高级",
+   "tier_reason": "立体图片轮播：01–10 标签 + 主图缩略图左右推拉，层次最厚",
+   "overlayable": "template-clone",
+   "route_key": "template-clone",
+   "motion_layer": "L1+L2",
+   "min_slides": 3,
+   "summary": "11 页立体轮播：顶部 01–10 标签、每页一张大图 + 缩略图，左右推拉。",
+   "pages": "11 页",
+   "pics": "3–10",
+   "requirement": "3–10 张横图（同一张会在本页主图与缩略图重复出现）；N 张 → N+1 页，标签数随之只减不增。",
+   "preview": "docs/preview/效果14_立体图片轮播.jpg",
+   "variants": [],
+   "dir": "subskills/ppt-effects/effects/014_图片轮播"
+  },
+  {
+   "id": "效果15",
+   "name": "枫叶飘动",
+   "tier": 1,
+   "tier_label": "★ 简洁",
+   "tier_reason": "枫叶飘动：单页满版底图 + 枫叶路径飘动",
+   "overlayable": "template-clone",
+   "route_key": "template-clone",
+   "motion_layer": "L3",
+   "min_slides": 1,
+   "summary": "单页：满页图片背景 + 枫叶路径飘动 + 大标题；只换背景图与文字。",
+   "pages": "",
+   "pics": "1",
+   "requirement": "1 张 16:9 横图作整页背景（会被拉伸铺满，不做裁切）；色调偏暖、主体偏一侧更好，中心留给标题。",
+   "preview": "docs/preview/效果15_枫叶飘动.jpg",
+   "variants": [],
+   "dir": "subskills/ppt-effects/effects/015_枫叶飘动"
+  }
+ ],
+ "templates": [
+  {
+   "id": "ut-001",
+   "name": "01-蒲公英教育",
+   "style_tags": [
+    "教育人文"
+   ],
+   "keywords": [
+    "01",
+    "蒲公英教育"
+   ],
+   "pages": 12,
+   "aspect": 1.778,
+   "size_mb": 62.94,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "0E2841",
+    "E8E8E8",
+    "156082",
+    "E97132",
+    "196B24",
+    "0F9ED5",
+    "A02B93",
+    "4EA72E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\01-主图款\\01-蒲公英教育.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-002",
+   "name": "02-寻迹传遗",
+   "style_tags": [
+    "未归类"
+   ],
+   "keywords": [
+    "02",
+    "寻迹传遗"
+   ],
+   "pages": 20,
+   "aspect": 1.778,
+   "size_mb": 130.13,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "0E2841",
+    "E8E8E8",
+    "156082",
+    "E97132",
+    "196B24",
+    "0F9ED5",
+    "A02B93",
+    "4EA72E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\01-主图款\\02-寻迹传遗.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-003",
+   "name": "03-薪火谣",
+   "style_tags": [
+    "未归类"
+   ],
+   "keywords": [
+    "03",
+    "薪火谣"
+   ],
+   "pages": 15,
+   "aspect": 1.778,
+   "size_mb": 86.45,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "0E2841",
+    "E8E8E8",
+    "156082",
+    "E97132",
+    "196B24",
+    "0F9ED5",
+    "A02B93",
+    "4EA72E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\01-主图款\\03-薪火谣.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-004",
+   "name": "04-传承的脉络",
+   "style_tags": [
+    "未归类"
+   ],
+   "keywords": [
+    "04",
+    "传承的脉络"
+   ],
+   "pages": 20,
+   "aspect": 1.778,
+   "size_mb": 77.18,
+   "theme_fonts": [
+    "HarmonyOS Sans SC Black",
+    "HarmonyOS Sans SC Medium"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "A3561D",
+    "EEC492",
+    "7C5F26",
+    "A5A5A5",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\01-主图款\\04-传承的脉络.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-005",
+   "name": "05绿果王",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "05绿果王"
+   ],
+   "pages": 8,
+   "aspect": 1.778,
+   "size_mb": 60.77,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "0E2841",
+    "E8E8E8",
+    "156082",
+    "E97132",
+    "196B24",
+    "0F9ED5",
+    "A02B93",
+    "4EA72E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\01-主图款\\05绿果王.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-006",
+   "name": "06-建画里乡村",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "06",
+    "建画里乡村"
+   ],
+   "pages": 17,
+   "aspect": 1.778,
+   "size_mb": 78.65,
+   "theme_fonts": [
+    "思源宋体 CN Heavy"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "FE391F",
+    "FAD77E",
+    "FFC000",
+    "C00000",
+    "AEABAB",
+    "3A3838"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\01-主图款\\06-建画里乡村.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-007",
+   "name": "07-保鲜膜",
+   "style_tags": [
+    "未归类"
+   ],
+   "keywords": [
+    "07",
+    "保鲜膜"
+   ],
+   "pages": 15,
+   "aspect": 1.778,
+   "size_mb": 33.06,
+   "theme_fonts": [
+    "Calibri"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "4874CB",
+    "EE822F",
+    "F2BA02",
+    "75BD42",
+    "30C0B4",
+    "E54C5E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\01-主图款\\07-保鲜膜.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-008",
+   "name": "08-非遗在传承",
+   "style_tags": [
+    "国潮棕金"
+   ],
+   "keywords": [
+    "08",
+    "非遗在传承"
+   ],
+   "pages": 15,
+   "aspect": 1.778,
+   "size_mb": 110.15,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "0E2841",
+    "E8E8E8",
+    "781C1D",
+    "E97132",
+    "196B24",
+    "0F9ED5",
+    "A02B93",
+    "4EA72E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\01-主图款\\08-非遗在传承.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-009",
+   "name": "09-慧瞰农域",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "09",
+    "慧瞰农域"
+   ],
+   "pages": 22,
+   "aspect": 1.778,
+   "size_mb": 68.72,
+   "theme_fonts": [
+    "OPPOSans B",
+    "OPPOSans R"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "04091E",
+    "05607D",
+    "54F8F8",
+    "4EE7FE",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\01-主图款\\09-慧瞰农域.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-010",
+   "name": "10-高空外墙清洁无人机",
+   "style_tags": [
+    "未归类"
+   ],
+   "keywords": [
+    "10",
+    "高空外墙清洁无人机"
+   ],
+   "pages": 22,
+   "aspect": 1.778,
+   "size_mb": 149.59,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "4472C4",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\01-主图款\\10-高空外墙清洁无人机.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-011",
+   "name": "11-畅行有方",
+   "style_tags": [
+    "未归类"
+   ],
+   "keywords": [
+    "11",
+    "畅行有方"
+   ],
+   "pages": 23,
+   "aspect": 1.778,
+   "size_mb": 150.06,
+   "theme_fonts": [
+    "Calibri Light",
+    "Calibri"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "5B9BD5",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "4472C4",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\01-主图款\\11-畅行有方.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-012",
+   "name": "12-水产养殖",
+   "style_tags": [
+    "未归类"
+   ],
+   "keywords": [
+    "12",
+    "水产养殖"
+   ],
+   "pages": 20,
+   "aspect": 1.778,
+   "size_mb": 51.11,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "4472C4",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\01-主图款\\12-水产养殖.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-013",
+   "name": "13-古籍",
+   "style_tags": [
+    "未归类"
+   ],
+   "keywords": [
+    "13",
+    "古籍"
+   ],
+   "pages": 15,
+   "aspect": 1.778,
+   "size_mb": 81.71,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "0E2841",
+    "E8E8E8",
+    "156082",
+    "E97132",
+    "196B24",
+    "0F9ED5",
+    "A02B93",
+    "4EA72E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\01-主图款\\13-古籍.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-014",
+   "name": "14-蓝白色医疗",
+   "style_tags": [
+    "科技深蓝",
+    "医疗科技白"
+   ],
+   "keywords": [
+    "14",
+    "蓝白色医疗"
+   ],
+   "pages": 15,
+   "aspect": 1.778,
+   "size_mb": 24.0,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "0E2841",
+    "E8E8E8",
+    "156082",
+    "E97132",
+    "196B24",
+    "0F9ED5",
+    "A02B93",
+    "4EA72E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\01-主图款\\14-蓝白色医疗.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-015",
+   "name": "15-齿轮AI",
+   "style_tags": [
+    "未归类"
+   ],
+   "keywords": [
+    "15",
+    "齿轮AI"
+   ],
+   "pages": 8,
+   "aspect": 1.778,
+   "size_mb": 23.66,
+   "theme_fonts": [
+    "Roboto Bold",
+    "演示新手书",
+    "演示流云楷"
+   ],
+   "theme_colors": [
+    "0070C0",
+    "C2DFFD",
+    "FFFFFF",
+    "2E75B5",
+    "A5A5A5",
+    "FFC000",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\01-主图款\\15-齿轮AI.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-016",
+   "name": "16-潜水衣",
+   "style_tags": [
+    "未归类"
+   ],
+   "keywords": [
+    "16",
+    "潜水衣"
+   ],
+   "pages": 10,
+   "aspect": 1.778,
+   "size_mb": 108.97,
+   "theme_fonts": [
+    "Arial Rounded MT Bold"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "4874CB",
+    "EE822F",
+    "F2BA02",
+    "75BD42",
+    "30C0B4",
+    "E54C5E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\01-主图款\\16-潜水衣.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-017",
+   "name": "17-乡村振兴",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "17",
+    "乡村振兴"
+   ],
+   "pages": 20,
+   "aspect": 1.778,
+   "size_mb": 107.24,
+   "theme_fonts": [
+    "Roboto Bold"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "2A6E3F",
+    "009900",
+    "002FA7",
+    "FFC000",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\01-主图款\\17-乡村振兴.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-018",
+   "name": "18-油有所治-Fonts",
+   "style_tags": [
+    "未归类"
+   ],
+   "keywords": [
+    "18",
+    "油有所治",
+    "Fonts"
+   ],
+   "pages": 15,
+   "aspect": 1.778,
+   "size_mb": 131.11,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "0E2841",
+    "E8E8E8",
+    "156082",
+    "E97132",
+    "196B24",
+    "0F9ED5",
+    "A02B93",
+    "4EA72E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\01-主图款\\18-油有所治-Fonts.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-019",
+   "name": "19-互联网＋",
+   "style_tags": [
+    "未归类"
+   ],
+   "keywords": [
+    "19",
+    "互联网"
+   ],
+   "pages": 10,
+   "aspect": 1.778,
+   "size_mb": 58.75,
+   "theme_fonts": [
+    "Arial"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "4472C4",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\01-主图款\\19-互联网＋.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-020",
+   "name": "20-青振兴农",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "20",
+    "青振兴农"
+   ],
+   "pages": 35,
+   "aspect": 1.778,
+   "size_mb": 55.18,
+   "theme_fonts": [
+    "Helvetica Neue",
+    "Source Han Sans SC Medium"
+   ],
+   "theme_colors": [
+    "000000",
+    "FFFFFF",
+    "778495",
+    "F0F0F0",
+    "235D3A",
+    "397D55",
+    "75BF8A",
+    "A9E18A"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\01-主图款\\20-青振兴农.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-021",
+   "name": "21-VR教学",
+   "style_tags": [
+    "未归类"
+   ],
+   "keywords": [
+    "21",
+    "VR教学"
+   ],
+   "pages": 10,
+   "aspect": 1.778,
+   "size_mb": 77.07,
+   "theme_fonts": [
+    "微软雅黑"
+   ],
+   "theme_colors": [
+    "0E2841",
+    "E8E8E8",
+    "156082",
+    "E97132",
+    "196B24",
+    "0F9ED5",
+    "A02B93",
+    "4EA72E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\01-主图款\\21-VR教学.pptm",
+   "available": true
+  },
+  {
+   "id": "ut-022",
+   "name": "24-火眼金睛蓝白",
+   "style_tags": [
+    "科技深蓝"
+   ],
+   "keywords": [
+    "24",
+    "火眼金睛蓝白"
+   ],
+   "pages": 23,
+   "aspect": 1.778,
+   "size_mb": 68.13,
+   "theme_fonts": [
+    "思源黑体 CN Regular"
+   ],
+   "theme_colors": [
+    "2D3847",
+    "E7E6E6",
+    "037EF3",
+    "D8D8D8",
+    "BFBFBF",
+    "A5A5A5",
+    "7F7F7F",
+    "595959"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\02-蓝色-科技\\24-火眼金睛蓝白.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-023",
+   "name": "25-蓝色模板",
+   "style_tags": [
+    "科技深蓝"
+   ],
+   "keywords": [
+    "25",
+    "蓝色模板"
+   ],
+   "pages": 22,
+   "aspect": 1.778,
+   "size_mb": 29.77,
+   "theme_fonts": [
+    "微软雅黑"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "4472C4",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\02-蓝色-科技\\25-蓝色模板.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-024",
+   "name": "26-高压绝缘",
+   "style_tags": [
+    "科技深蓝"
+   ],
+   "keywords": [
+    "26",
+    "高压绝缘"
+   ],
+   "pages": 12,
+   "aspect": 1.778,
+   "size_mb": 24.63,
+   "theme_fonts": [
+    "Calibri Light",
+    "Calibri"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "5B9BD5",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "4472C4",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\02-蓝色-科技\\26-高压绝缘.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-025",
+   "name": "28-茶产业振兴",
+   "style_tags": [
+    "国潮棕金",
+    "科技深蓝",
+    "乡村绿"
+   ],
+   "keywords": [
+    "28",
+    "茶产业振兴"
+   ],
+   "pages": 7,
+   "aspect": 1.778,
+   "size_mb": 88.9,
+   "theme_fonts": [
+    "汉呈王天喜榜书"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "C60D03",
+    "2E2E2E",
+    "000000"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\04-绿色-乡村振兴、科技\\28-茶产业振兴.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-026",
+   "name": "34-饶河旅韵（已脱敏）",
+   "style_tags": [
+    "科技深蓝",
+    "乡村绿"
+   ],
+   "keywords": [
+    "34",
+    "饶河旅韵",
+    "已脱敏"
+   ],
+   "pages": 10,
+   "aspect": 1.778,
+   "size_mb": 78.41,
+   "theme_fonts": [
+    "思源宋体 CN Heavy"
+   ],
+   "theme_colors": [
+    "000000",
+    "FFFFFF",
+    "44546A",
+    "017C46",
+    "70AD47",
+    "A5A5A5",
+    "FFC000",
+    "5B9BD5"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\04-绿色-乡村振兴、科技\\34-饶河旅韵（已脱敏）.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-027",
+   "name": "35-青囊一语",
+   "style_tags": [
+    "科技深蓝",
+    "乡村绿"
+   ],
+   "keywords": [
+    "35",
+    "青囊一语"
+   ],
+   "pages": null,
+   "aspect": "",
+   "size_mb": 162.94,
+   "theme_fonts": [],
+   "theme_colors": [],
+   "format": "legacy-ppt",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\04-绿色-乡村振兴、科技\\35-青囊一语.ppt",
+   "available": true
+  },
+  {
+   "id": "ut-028",
+   "name": "36-绿洁",
+   "style_tags": [
+    "科技深蓝",
+    "乡村绿"
+   ],
+   "keywords": [
+    "36",
+    "绿洁"
+   ],
+   "pages": 8,
+   "aspect": 1.778,
+   "size_mb": 35.05,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "0E2841",
+    "E8E8E8",
+    "156082",
+    "E97132",
+    "196B24",
+    "0F9ED5",
+    "A02B93",
+    "4EA72E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\04-绿色-乡村振兴、科技\\36-绿洁.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-029",
+   "name": "37-农品智联",
+   "style_tags": [
+    "科技深蓝",
+    "乡村绿"
+   ],
+   "keywords": [
+    "37",
+    "农品智联"
+   ],
+   "pages": 21,
+   "aspect": 1.778,
+   "size_mb": 84.73,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "0E2841",
+    "E8E8E8",
+    "156082",
+    "E97132",
+    "196B24",
+    "0F9ED5",
+    "A02B93",
+    "4EA72E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\04-绿色-乡村振兴、科技\\37-农品智联.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-030",
+   "name": "01-陶艺醉古今",
+   "style_tags": [
+    "国潮棕金"
+   ],
+   "keywords": [
+    "01",
+    "陶艺醉古今"
+   ],
+   "pages": 20,
+   "aspect": 1.778,
+   "size_mb": 50.2,
+   "theme_fonts": [
+    "思源黑体 CN Heavy"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "750505",
+    "5B3F10",
+    "A3561D",
+    "EEC492",
+    "5B271E",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\05-棕色-非遗\\01-陶艺醉古今.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-031",
+   "name": "02-咖啡",
+   "style_tags": [
+    "国潮棕金"
+   ],
+   "keywords": [
+    "02",
+    "咖啡"
+   ],
+   "pages": 15,
+   "aspect": 1.778,
+   "size_mb": 42.01,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "0E2841",
+    "E8E8E8",
+    "156082",
+    "E97132",
+    "196B24",
+    "0F9ED5",
+    "A02B93",
+    "4EA72E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\05-棕色-非遗\\02-咖啡.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-032",
+   "name": "03-瓷韵茶香",
+   "style_tags": [
+    "国潮棕金"
+   ],
+   "keywords": [
+    "03",
+    "瓷韵茶香"
+   ],
+   "pages": 4,
+   "aspect": 1.778,
+   "size_mb": 23.77,
+   "theme_fonts": [
+    "Roboto Black",
+    "Roboto"
+   ],
+   "theme_colors": [
+    "000000",
+    "FFFFFF",
+    "2D3847",
+    "E7E6E6",
+    "664325",
+    "402611",
+    "FDF9C2",
+    "E717CE"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\05-棕色-非遗\\03-瓷韵茶香.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-033",
+   "name": "04-釉见匠心",
+   "style_tags": [
+    "国潮棕金"
+   ],
+   "keywords": [
+    "04",
+    "釉见匠心"
+   ],
+   "pages": 20,
+   "aspect": 1.778,
+   "size_mb": 93.49,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "0E2841",
+    "E8E8E8",
+    "522D13",
+    "E97132",
+    "196B24",
+    "0F9ED5",
+    "A02B93",
+    "4EA72E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\05-棕色-非遗\\04-釉见匠心.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-034",
+   "name": "05-东方本草",
+   "style_tags": [
+    "国潮棕金"
+   ],
+   "keywords": [
+    "05",
+    "东方本草"
+   ],
+   "pages": 20,
+   "aspect": 1.778,
+   "size_mb": 46.46,
+   "theme_fonts": [
+    "Arial"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "A3561D",
+    "EEC492",
+    "E1CA1B",
+    "A5A5A5",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\05-棕色-非遗\\05-东方本草.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-035",
+   "name": "06-丹参中医",
+   "style_tags": [
+    "国潮棕金",
+    "医疗科技白"
+   ],
+   "keywords": [
+    "06",
+    "丹参中医"
+   ],
+   "pages": 5,
+   "aspect": 1.778,
+   "size_mb": 7.35,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "0E2841",
+    "E8E8E8",
+    "156082",
+    "E97132",
+    "196B24",
+    "0F9ED5",
+    "A02B93",
+    "4EA72E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\05-棕色-非遗\\06-丹参中医.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-036",
+   "name": "07-竹中见淡雅",
+   "style_tags": [
+    "国潮棕金"
+   ],
+   "keywords": [
+    "07",
+    "竹中见淡雅"
+   ],
+   "pages": 15,
+   "aspect": 1.778,
+   "size_mb": 99.27,
+   "theme_fonts": [
+    "Calibri"
+   ],
+   "theme_colors": [
+    "000000",
+    "FFFFFF",
+    "362B2A",
+    "EDE8E7",
+    "705B58",
+    "6B643D",
+    "B88A66",
+    "CBA767"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\05-棕色-非遗\\07-竹中见淡雅.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-037",
+   "name": "08-食醋传统文化",
+   "style_tags": [
+    "国潮棕金"
+   ],
+   "keywords": [
+    "08",
+    "食醋传统文化"
+   ],
+   "pages": 20,
+   "aspect": 1.778,
+   "size_mb": 87.29,
+   "theme_fonts": [
+    "Helvetica85-Heavy",
+    "Helvetica"
+   ],
+   "theme_colors": [
+    "000000",
+    "FFFFFF",
+    "190A03",
+    "BF6C3B",
+    "7B4123",
+    "401B0E",
+    "FFC000",
+    "EC5F74"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\05-棕色-非遗\\08-食醋传统文化.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-038",
+   "name": "09-寻乐",
+   "style_tags": [
+    "国潮棕金"
+   ],
+   "keywords": [
+    "09",
+    "寻乐"
+   ],
+   "pages": 23,
+   "aspect": 1.778,
+   "size_mb": 135.38,
+   "theme_fonts": [
+    "Roboto"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "217AFA",
+    "69D282",
+    "14A528",
+    "FEB450",
+    "FE8C14",
+    "FF432E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\05-棕色-非遗\\09-寻乐.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-039",
+   "name": "10-土黄国风戏曲",
+   "style_tags": [
+    "国潮棕金"
+   ],
+   "keywords": [
+    "10",
+    "土黄国风戏曲"
+   ],
+   "pages": 14,
+   "aspect": 1.778,
+   "size_mb": 66.37,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "4472C4",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\05-棕色-非遗\\10-土黄国风戏曲.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-040",
+   "name": "11-针织大师",
+   "style_tags": [
+    "国潮棕金"
+   ],
+   "keywords": [
+    "11",
+    "针织大师"
+   ],
+   "pages": 27,
+   "aspect": 1.778,
+   "size_mb": 54.06,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "4472C4",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\05-棕色-非遗\\11-针织大师.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-041",
+   "name": "12-薪火相传",
+   "style_tags": [
+    "国潮棕金"
+   ],
+   "keywords": [
+    "12",
+    "薪火相传"
+   ],
+   "pages": 32,
+   "aspect": 1.778,
+   "size_mb": 112.69,
+   "theme_fonts": [
+    "Bebas Neue",
+    "等线"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "743F18",
+    "DFBE67",
+    "A5A5A5",
+    "FFC000",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\05-棕色-非遗\\12-薪火相传.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-042",
+   "name": "14-东方遗韵",
+   "style_tags": [
+    "国潮棕金"
+   ],
+   "keywords": [
+    "14",
+    "东方遗韵"
+   ],
+   "pages": 5,
+   "aspect": 1.778,
+   "size_mb": 37.27,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "0E2841",
+    "E8E8E8",
+    "156082",
+    "E97132",
+    "196B24",
+    "0F9ED5",
+    "A02B93",
+    "4EA72E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\05-棕色-非遗\\14-东方遗韵.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-043",
+   "name": "15-巧夺天工",
+   "style_tags": [
+    "国潮棕金"
+   ],
+   "keywords": [
+    "15",
+    "巧夺天工"
+   ],
+   "pages": 12,
+   "aspect": 1.778,
+   "size_mb": 113.39,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "4472C4",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\05-棕色-非遗\\15-巧夺天工.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-044",
+   "name": "16-郭煌",
+   "style_tags": [
+    "国潮棕金"
+   ],
+   "keywords": [
+    "16",
+    "郭煌"
+   ],
+   "pages": 15,
+   "aspect": 1.778,
+   "size_mb": 38.06,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "4472C4",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\05-棕色-非遗\\16-郭煌.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-045",
+   "name": "01-智能AI",
+   "style_tags": [
+    "科技深蓝",
+    "科技黑金"
+   ],
+   "keywords": [
+    "01",
+    "智能AI"
+   ],
+   "pages": 20,
+   "aspect": 1.778,
+   "size_mb": 86.42,
+   "theme_fonts": [
+    "思源黑体 CN Regular"
+   ],
+   "theme_colors": [
+    "000000",
+    "FFFFFF",
+    "17406D",
+    "DBEFF9",
+    "E6C5A5",
+    "D09357",
+    "F5E7DB",
+    "7CCA62"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\06-黑金-科技\\01-智能AI.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-046",
+   "name": "02-泡菜",
+   "style_tags": [
+    "科技深蓝",
+    "科技黑金"
+   ],
+   "keywords": [
+    "02",
+    "泡菜"
+   ],
+   "pages": 10,
+   "aspect": 1.778,
+   "size_mb": 44.91,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "0E2841",
+    "E8E8E8",
+    "156082",
+    "E97132",
+    "196B24",
+    "0F9ED5",
+    "A02B93",
+    "4EA72E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\06-黑金-科技\\02-泡菜.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-047",
+   "name": "03-慧瞰农域",
+   "style_tags": [
+    "科技深蓝",
+    "科技黑金",
+    "乡村绿"
+   ],
+   "keywords": [
+    "03",
+    "慧瞰农域"
+   ],
+   "pages": 22,
+   "aspect": 1.778,
+   "size_mb": 60.07,
+   "theme_fonts": [
+    "OPPOSans B",
+    "OPPOSans R"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "190F09",
+    "C6A92C",
+    "EBB829",
+    "4EE7FE",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\06-黑金-科技\\03-慧瞰农域.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-048",
+   "name": "04-黄金搭档",
+   "style_tags": [
+    "科技深蓝",
+    "科技黑金"
+   ],
+   "keywords": [
+    "04",
+    "黄金搭档"
+   ],
+   "pages": 27,
+   "aspect": 1.778,
+   "size_mb": 96.09,
+   "theme_fonts": [
+    "汉仪中黑简",
+    "老報宋"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "4472C4",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\06-黑金-科技\\04-黄金搭档.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-049",
+   "name": "05-慈慧",
+   "style_tags": [
+    "科技深蓝",
+    "科技黑金"
+   ],
+   "keywords": [
+    "05",
+    "慈慧"
+   ],
+   "pages": 21,
+   "aspect": 1.778,
+   "size_mb": 119.88,
+   "theme_fonts": [
+    "汉仪中黑简",
+    "老報宋"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "4472C4",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\06-黑金-科技\\05-慈慧.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-050",
+   "name": "01-乡村振兴",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "01",
+    "乡村振兴"
+   ],
+   "pages": 20,
+   "aspect": 1.778,
+   "size_mb": 20.51,
+   "theme_fonts": [
+    "Arial"
+   ],
+   "theme_colors": [
+    "000000",
+    "FFFFFF",
+    "0F1423",
+    "6096E6",
+    "58B6E5",
+    "56CA95",
+    "FFBA55",
+    "F18870"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\07-乡村振兴PPT\\01-乡村振兴.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-051",
+   "name": "05-我的家乡",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "05",
+    "我的家乡"
+   ],
+   "pages": 20,
+   "aspect": 1.778,
+   "size_mb": 69.5,
+   "theme_fonts": [
+    "叶根友刀锋黑草2.0"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "4AA8C5",
+    "0563C1",
+    "954F72",
+    "000000"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\07-乡村振兴PPT\\05-我的家乡.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-052",
+   "name": "07-脱贫致富",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "07",
+    "脱贫致富"
+   ],
+   "pages": 15,
+   "aspect": 1.778,
+   "size_mb": 66.42,
+   "theme_fonts": [
+    "锦绣宋体"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "5B9BD5",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "4472C4",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\07-乡村振兴PPT\\07-脱贫致富.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-053",
+   "name": "09-乡村振兴",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "09",
+    "乡村振兴"
+   ],
+   "pages": 23,
+   "aspect": 1.778,
+   "size_mb": 42.34,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "4472C4",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\07-乡村振兴PPT\\09-乡村振兴.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-054",
+   "name": "10-乡村振兴工作汇报",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "10",
+    "乡村振兴工作汇报"
+   ],
+   "pages": 18,
+   "aspect": 1.778,
+   "size_mb": 38.04,
+   "theme_fonts": [
+    "MiSans Bold",
+    "MiSans Light"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "009946",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\07-乡村振兴PPT\\10-乡村振兴工作汇报.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-055",
+   "name": "11-乡村振兴",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "11",
+    "乡村振兴"
+   ],
+   "pages": 18,
+   "aspect": 1.778,
+   "size_mb": 53.88,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "4472C4",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\07-乡村振兴PPT\\11-乡村振兴.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-056",
+   "name": "12-美丽乡村",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "12",
+    "美丽乡村"
+   ],
+   "pages": 22,
+   "aspect": 1.778,
+   "size_mb": 28.48,
+   "theme_fonts": [
+    "方正兰亭超细黑简体"
+   ],
+   "theme_colors": [
+    "000000",
+    "FFFFFF",
+    "008A49"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\07-乡村振兴PPT\\12-美丽乡村.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-057",
+   "name": "13-农田农业",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "13",
+    "农田农业"
+   ],
+   "pages": 24,
+   "aspect": 1.778,
+   "size_mb": 13.08,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "5B9BD5",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "4472C4",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\07-乡村振兴PPT\\13-农田农业.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-058",
+   "name": "14-乡村",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "14",
+    "乡村"
+   ],
+   "pages": 26,
+   "aspect": 1.778,
+   "size_mb": 18.05,
+   "theme_fonts": [
+    "Calibri"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "5B9BD5",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "4472C4",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\07-乡村振兴PPT\\14-乡村.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-059",
+   "name": "15-乡村建设",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "15",
+    "乡村建设"
+   ],
+   "pages": 28,
+   "aspect": 1.778,
+   "size_mb": 77.7,
+   "theme_fonts": [
+    "阿里巴巴普惠体"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "00B050",
+    "00843B",
+    "EAB967",
+    "FFFFA6",
+    "0563C1",
+    "954F72"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\07-乡村振兴PPT\\15-乡村建设.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-060",
+   "name": "16-乡村赋能",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "16",
+    "乡村赋能"
+   ],
+   "pages": 24,
+   "aspect": 1.778,
+   "size_mb": 28.19,
+   "theme_fonts": [
+    "思源黑体 CN Normal"
+   ],
+   "theme_colors": [
+    "000000",
+    "FFFFFF",
+    "455F51",
+    "E3DED1",
+    "549E39",
+    "8AB833",
+    "6B9F25",
+    "BA6906"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\07-乡村振兴PPT\\16-乡村赋能.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-061",
+   "name": "17-乡村新生活",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "17",
+    "乡村新生活"
+   ],
+   "pages": 27,
+   "aspect": 1.778,
+   "size_mb": 49.07,
+   "theme_fonts": [
+    "思源宋体 CN Heavy",
+    "阿里巴巴普惠体"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "00B050",
+    "00843B",
+    "EAB967",
+    "FFFFA6",
+    "0563C1",
+    "954F72"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\07-乡村振兴PPT\\17-乡村新生活.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-062",
+   "name": "18-农业农村",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "18",
+    "农业农村"
+   ],
+   "pages": 27,
+   "aspect": 1.778,
+   "size_mb": 51.69,
+   "theme_fonts": [
+    "Calibri"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "00AAA2",
+    "199FF1",
+    "0563C1",
+    "954F72",
+    "000000"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\07-乡村振兴PPT\\18-农业农村.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-063",
+   "name": "19-走进贵州",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "19",
+    "走进贵州"
+   ],
+   "pages": 24,
+   "aspect": 1.778,
+   "size_mb": 112.05,
+   "theme_fonts": [
+    "思源宋体 CN Heavy",
+    "思源黑体 CN Bold"
+   ],
+   "theme_colors": [
+    "455F51",
+    "E2DFCC",
+    "99CB38",
+    "63A537",
+    "37A76F",
+    "44C1A3",
+    "4EB3CF",
+    "51C3F9"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\07-乡村振兴PPT\\19-走进贵州.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-064",
+   "name": "20-建设新农村",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "20",
+    "建设新农村"
+   ],
+   "pages": 31,
+   "aspect": 1.778,
+   "size_mb": 78.72,
+   "theme_fonts": [
+    "思源黑体 CN Regular"
+   ],
+   "theme_colors": [
+    "000000",
+    "FFFFFF",
+    "404040",
+    "E8E8E8",
+    "4EA72E",
+    "FFC000",
+    "467886",
+    "96607D"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\07-乡村振兴PPT\\20-建设新农村.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-065",
+   "name": "21-美丽乡村旅游",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "21",
+    "美丽乡村旅游"
+   ],
+   "pages": 37,
+   "aspect": 1.778,
+   "size_mb": 79.64,
+   "theme_fonts": [
+    "Agency FB",
+    "Arial"
+   ],
+   "theme_colors": [
+    "04617B",
+    "DBF5F9",
+    "409D93",
+    "3D8861",
+    "F49100",
+    "85DFD0",
+    "000000"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\07-乡村振兴PPT\\21-美丽乡村旅游.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-066",
+   "name": "22-乡村旅游",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "22",
+    "乡村旅游"
+   ],
+   "pages": 28,
+   "aspect": 1.778,
+   "size_mb": 101.5,
+   "theme_fonts": [
+    "阿里巴巴普惠体"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "4472C4",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\07-乡村振兴PPT\\22-乡村旅游.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-067",
+   "name": "23-现代农业",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "23",
+    "现代农业"
+   ],
+   "pages": 23,
+   "aspect": 1.778,
+   "size_mb": 35.33,
+   "theme_fonts": [
+    "思源黑体 CN Bold",
+    "思源黑体 CN Regular"
+   ],
+   "theme_colors": [
+    "000000",
+    "FFFFFF",
+    "0E2841",
+    "E8E8E8",
+    "4EA72E",
+    "FFC000",
+    "196B24",
+    "0F9ED5"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\07-乡村振兴PPT\\23-现代农业.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-068",
+   "name": "24-历史乡村",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "24",
+    "历史乡村"
+   ],
+   "pages": 27,
+   "aspect": 1.778,
+   "size_mb": 70.48,
+   "theme_fonts": [
+    "Calibri"
+   ],
+   "theme_colors": [
+    "595959",
+    "44546A",
+    "E7E6E6",
+    "245D69",
+    "81B203",
+    "0563C1",
+    "954F72",
+    "000000"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\07-乡村振兴PPT\\24-历史乡村.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-069",
+   "name": "25-绿色简约建设新时代美丽新农村",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "25",
+    "绿色简约建设新时代美丽新农村"
+   ],
+   "pages": 38,
+   "aspect": 1.778,
+   "size_mb": 168.96,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "079B51",
+    "A5A5A5",
+    "FFC000",
+    "5B9BD5",
+    "70AD47",
+    "0563C1"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\A113：创新创赛\\07-乡村振兴PPT\\25-绿色简约建设新时代美丽新农村.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-070",
+   "name": "16页-国奖水准红金风格PPT-康帅制作",
+   "style_tags": [
+    "国潮红金"
+   ],
+   "keywords": [
+    "16页",
+    "国奖水准红金风格PPT",
+    "康帅制作"
+   ],
+   "pages": 17,
+   "aspect": 1.778,
+   "size_mb": 40.21,
+   "theme_fonts": [
+    "微软雅黑"
+   ],
+   "theme_colors": [
+    "0E2841",
+    "E8E8E8",
+    "156082",
+    "E97132",
+    "196B24",
+    "0F9ED5",
+    "A02B93",
+    "4EA72E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0-15页-国奖水准红金风格PPT-康帅制作\\16页-国奖水准红金风格PPT-康帅制作.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-071",
+   "name": "土金色-非遗赛道",
+   "style_tags": [
+    "国潮红金",
+    "国潮棕金",
+    "科技深蓝"
+   ],
+   "keywords": [
+    "土金色",
+    "非遗赛道"
+   ],
+   "pages": 15,
+   "aspect": 1.778,
+   "size_mb": 107.54,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "0E2841",
+    "E8E8E8",
+    "522D13",
+    "E97132",
+    "196B24",
+    "0F9ED5",
+    "A02B93",
+    "4EA72E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0土金色&朱红色蓝染色非遗对外传播\\土金\\土金色-非遗赛道.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-072",
+   "name": "朱红色-非遗赛道",
+   "style_tags": [
+    "国潮红金",
+    "国潮棕金",
+    "科技深蓝"
+   ],
+   "keywords": [
+    "朱红色",
+    "非遗赛道"
+   ],
+   "pages": 15,
+   "aspect": 1.778,
+   "size_mb": 107.96,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "0E2841",
+    "E8E8E8",
+    "781C1D",
+    "E97132",
+    "196B24",
+    "0F9ED5",
+    "A02B93",
+    "4EA72E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0土金色&朱红色蓝染色非遗对外传播\\朱红\\朱红色-非遗赛道.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-073",
+   "name": "蓝染色-非遗赛道",
+   "style_tags": [
+    "国潮红金",
+    "国潮棕金",
+    "科技深蓝"
+   ],
+   "keywords": [
+    "蓝染色",
+    "非遗赛道"
+   ],
+   "pages": 17,
+   "aspect": 1.778,
+   "size_mb": 112.74,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "0E2841",
+    "E8E8E8",
+    "18489C",
+    "E97132",
+    "196B24",
+    "0F9ED5",
+    "A02B93",
+    "4EA72E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0土金色&朱红色蓝染色非遗对外传播\\蓝染\\蓝染色-非遗赛道.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-074",
+   "name": "慧瞰农域",
+   "style_tags": [
+    "科技深蓝",
+    "乡村绿"
+   ],
+   "keywords": [
+    "慧瞰农域"
+   ],
+   "pages": 22,
+   "aspect": 1.778,
+   "size_mb": 59.67,
+   "theme_fonts": [
+    "OPPOSans B",
+    "OPPOSans R"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "071B11",
+    "18954D",
+    "EBB829",
+    "4EE7FE",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0慧瞰农域（黄蓝绿）-Fonts\\慧瞰农域.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-075",
+   "name": "慧瞰农域（蓝色）",
+   "style_tags": [
+    "科技深蓝",
+    "乡村绿"
+   ],
+   "keywords": [
+    "慧瞰农域",
+    "蓝色"
+   ],
+   "pages": 22,
+   "aspect": 1.778,
+   "size_mb": 62.48,
+   "theme_fonts": [
+    "OPPOSans B",
+    "OPPOSans R"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "04091E",
+    "05607D",
+    "54F8F8",
+    "4EE7FE",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0慧瞰农域（黄蓝绿）-Fonts\\慧瞰农域（蓝色）.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-076",
+   "name": "慧瞰农域（黄色）",
+   "style_tags": [
+    "科技深蓝",
+    "乡村绿"
+   ],
+   "keywords": [
+    "慧瞰农域",
+    "黄色"
+   ],
+   "pages": 22,
+   "aspect": 1.778,
+   "size_mb": 60.07,
+   "theme_fonts": [
+    "OPPOSans B",
+    "OPPOSans R"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "190F09",
+    "C6A92C",
+    "EBB829",
+    "4EE7FE",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0慧瞰农域（黄蓝绿）-Fonts\\慧瞰农域（黄色）.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-077",
+   "name": "红色-非遗文化模板",
+   "style_tags": [
+    "国潮棕金"
+   ],
+   "keywords": [
+    "红色",
+    "非遗文化模板"
+   ],
+   "pages": 20,
+   "aspect": 1.778,
+   "size_mb": 43.71,
+   "theme_fonts": [
+    "Arial"
+   ],
+   "theme_colors": [
+    "000000",
+    "FFFFFF",
+    "250505",
+    "FFF1F1",
+    "F84848",
+    "DF581B",
+    "EA7A2E",
+    "FE900B"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0红色-非遗陶瓷传承\\红色-非遗文化模板.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-078",
+   "name": "绿色农业风格“青而易橘”",
+   "style_tags": [
+    "乡村绿"
+   ],
+   "keywords": [
+    "绿色农业风格",
+    "青而易橘"
+   ],
+   "pages": 16,
+   "aspect": 1.778,
+   "size_mb": 27.35,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "0E2841",
+    "E8E8E8",
+    "8BCB50",
+    "488543",
+    "FFC000",
+    "0F9ED5",
+    "A02B93",
+    "4EA72E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0绿色农业风水果供应\\绿色农业风格“青而易橘”.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-079",
+   "name": "蓝白色医疗器械",
+   "style_tags": [
+    "科技深蓝",
+    "医疗科技白"
+   ],
+   "keywords": [
+    "蓝白色医疗器械"
+   ],
+   "pages": 22,
+   "aspect": 1.778,
+   "size_mb": 23.82,
+   "theme_fonts": [
+    "Arial"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "5B9BD5",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "4472C4",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0蓝白医学风科技\\蓝白色医疗器械.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-080",
+   "name": "黑色-芯片工科模板",
+   "style_tags": [
+    "科技深蓝"
+   ],
+   "keywords": [
+    "黑色",
+    "芯片工科模板"
+   ],
+   "pages": 22,
+   "aspect": 1.778,
+   "size_mb": 30.4,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "44546A",
+    "FFFFFF",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "5B9BD5",
+    "70AD47",
+    "0563C1"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\0黑色-芯片工科模板\\黑色-芯片工科模板.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-081",
+   "name": "2204042-002 工职院石秋红组《任务2.1 高压绝缘故障诊断检修》课堂教学-PPT2美化-改2",
+   "style_tags": [
+    "科技深蓝",
+    "教育人文"
+   ],
+   "keywords": [
+    "2204042",
+    "002",
+    "工职院石秋红组",
+    "任务2",
+    "高压绝缘故障诊断检修",
+    "课堂教学",
+    "PPT2美化",
+    "改2"
+   ],
+   "pages": 12,
+   "aspect": 1.778,
+   "size_mb": 47.03,
+   "theme_fonts": [
+    "Calibri Light",
+    "Calibri"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "5B9BD5",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "4472C4",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\2204042-002 工职院石秋红组《任务2.1 高压绝缘故障诊断检修》课堂教学-PPT2美化-改2.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-082",
+   "name": "Airflow·艾弗洛——医疗领域恒风量智能风机领跑者(1)(1)(1)",
+   "style_tags": [
+    "医疗科技白"
+   ],
+   "keywords": [
+    "Airflow",
+    "艾弗洛",
+    "医疗领域恒风量智能风机领跑者"
+   ],
+   "pages": 35,
+   "aspect": 1.778,
+   "size_mb": 12.04,
+   "theme_fonts": [],
+   "theme_colors": [
+    "000000",
+    "FFFFFF",
+    "44546A",
+    "E7E6E6",
+    "4472C4",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\Airflow·艾弗洛——医疗领域恒风量智能风机领跑者(1)(1)(1).pptx",
+   "available": true
+  },
+  {
+   "id": "ut-083",
+   "name": "Airflow·艾弗洛——医疗领域恒风量智能风机领跑者(1)(1)",
+   "style_tags": [
+    "医疗科技白"
+   ],
+   "keywords": [
+    "Airflow",
+    "艾弗洛",
+    "医疗领域恒风量智能风机领跑者"
+   ],
+   "pages": 35,
+   "aspect": 1.778,
+   "size_mb": 17.58,
+   "theme_fonts": [],
+   "theme_colors": [
+    "000000",
+    "FFFFFF",
+    "44546A",
+    "E7E6E6",
+    "4472C4",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\Airflow·艾弗洛——医疗领域恒风量智能风机领跑者(1)(1).pptx",
+   "available": true
+  },
+  {
+   "id": "ut-084",
+   "name": "模板",
+   "style_tags": [
+    "科技深蓝"
+   ],
+   "keywords": [],
+   "pages": 20,
+   "aspect": 1.778,
+   "size_mb": 56.78,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "4472C4",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\低碳科技20页蓝色系\\模板.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-085",
+   "name": "创赛#锅炉增热",
+   "style_tags": [
+    "科技深蓝"
+   ],
+   "keywords": [
+    "创赛",
+    "锅炉增热"
+   ],
+   "pages": 22,
+   "aspect": 1.778,
+   "size_mb": 55.36,
+   "theme_fonts": [
+    "Arial"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "5B9BD5",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "4472C4",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\创赛#锅炉增热.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-086",
+   "name": "宣传模版——拾柒工作室",
+   "style_tags": [
+    "未归类"
+   ],
+   "keywords": [
+    "宣传模版",
+    "拾柒工作室"
+   ],
+   "pages": 2,
+   "aspect": 1.778,
+   "size_mb": 4.95,
+   "theme_fonts": [
+    "等线 Light",
+    "等线"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "4472C4",
+    "ED7D31",
+    "A5A5A5",
+    "FFC000",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\宣传模版——拾柒工作室.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-087",
+   "name": "巧夺天工改-a40c7f9ac121",
+   "style_tags": [
+    "未归类"
+   ],
+   "keywords": [
+    "巧夺天工改",
+    "a40c7f9ac121"
+   ],
+   "pages": null,
+   "aspect": "",
+   "size_mb": 0.0,
+   "theme_fonts": [],
+   "theme_colors": [],
+   "format": "legacy-ppt",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\巧夺天工改-a40c7f9ac121.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-088",
+   "name": "巧夺天工改",
+   "style_tags": [
+    "未归类"
+   ],
+   "keywords": [
+    "巧夺天工改"
+   ],
+   "pages": null,
+   "aspect": "",
+   "size_mb": 0.0,
+   "theme_fonts": [],
+   "theme_colors": [],
+   "format": "legacy-ppt",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\巧夺天工改.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-089",
+   "name": "煤火(1)",
+   "style_tags": [
+    "未归类"
+   ],
+   "keywords": [
+    "煤火"
+   ],
+   "pages": 8,
+   "aspect": 1.778,
+   "size_mb": 7.63,
+   "theme_fonts": [
+    "Calibri"
+   ],
+   "theme_colors": [
+    "1F497D",
+    "EEECE1",
+    "4F81BD",
+    "C0504D",
+    "9BBB59",
+    "8064A2",
+    "4BACC6",
+    "F79646"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\煤火(1).pptx",
+   "available": true
+  },
+  {
+   "id": "ut-090",
+   "name": "薪火相传【棕色】",
+   "style_tags": [
+    "国潮棕金",
+    "科技深蓝"
+   ],
+   "keywords": [
+    "薪火相传",
+    "棕色"
+   ],
+   "pages": 33,
+   "aspect": 1.778,
+   "size_mb": 116.6,
+   "theme_fonts": [
+    "Bebas Neue",
+    "等线"
+   ],
+   "theme_colors": [
+    "44546A",
+    "E7E6E6",
+    "743F18",
+    "DFBE67",
+    "A5A5A5",
+    "FFC000",
+    "5B9BD5",
+    "70AD47"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\红色蓝色棕色非遗保护\\薪火相传【棕色】.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-091",
+   "name": "薪火相传【红色】",
+   "style_tags": [
+    "国潮棕金",
+    "科技深蓝"
+   ],
+   "keywords": [
+    "薪火相传",
+    "红色"
+   ],
+   "pages": 33,
+   "aspect": 1.778,
+   "size_mb": 115.59,
+   "theme_fonts": [
+    "Bebas Neue",
+    "等线"
+   ],
+   "theme_colors": [
+    "1F497D",
+    "EEECE1",
+    "832120",
+    "DFBE67",
+    "9BBB59",
+    "8064A2",
+    "4BACC6",
+    "F79646"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\红色蓝色棕色非遗保护\\薪火相传【红色】.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-092",
+   "name": "薪火相传【蓝色】",
+   "style_tags": [
+    "国潮棕金",
+    "科技深蓝"
+   ],
+   "keywords": [
+    "薪火相传",
+    "蓝色"
+   ],
+   "pages": 33,
+   "aspect": 1.778,
+   "size_mb": 118.38,
+   "theme_fonts": [
+    "Bebas Neue",
+    "等线"
+   ],
+   "theme_colors": [
+    "1F497D",
+    "EEECE1",
+    "164778",
+    "DFBE67",
+    "215B8C",
+    "8064A2",
+    "4BACC6",
+    "F79646"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\红色蓝色棕色非遗保护\\薪火相传【蓝色】.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-093",
+   "name": "16页-国奖水准红金风格PPT-康帅制作",
+   "style_tags": [
+    "国潮红金",
+    "国潮棕金"
+   ],
+   "keywords": [
+    "16页",
+    "国奖水准红金风格PPT",
+    "康帅制作"
+   ],
+   "pages": 17,
+   "aspect": 1.778,
+   "size_mb": 37.66,
+   "theme_fonts": [
+    "微软雅黑"
+   ],
+   "theme_colors": [
+    "0E2841",
+    "E8E8E8",
+    "156082",
+    "E97132",
+    "196B24",
+    "0F9ED5",
+    "A02B93",
+    "4EA72E"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\红金色工匠手艺传承\\16页-国奖水准红金风格PPT-康帅制作.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-094",
+   "name": "财务云教育平台",
+   "style_tags": [
+    "教育人文"
+   ],
+   "keywords": [
+    "财务云教育平台"
+   ],
+   "pages": 4,
+   "aspect": 1.778,
+   "size_mb": 47.84,
+   "theme_fonts": [
+    "微软雅黑"
+   ],
+   "theme_colors": [
+    "2D3847",
+    "E7E6E6",
+    "00FFFF",
+    "016DFF",
+    "03A2FF",
+    "BFBFBF",
+    "A5A5A5",
+    "7F7F7F"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\财务云教育平台.pptx",
+   "available": true
+  },
+  {
+   "id": "ut-095",
+   "name": "【黑金版】编号0012科技风互联网加挑战杯通用PPT模板",
+   "style_tags": [
+    "科技深蓝",
+    "科技黑金"
+   ],
+   "keywords": [
+    "黑金版",
+    "编号0012科技风互联网加挑战杯通用PPT模板"
+   ],
+   "pages": 24,
+   "aspect": 1.778,
+   "size_mb": 88.6,
+   "theme_fonts": [
+    "思源黑体 CN Regular"
+   ],
+   "theme_colors": [
+    "000000",
+    "FFFFFF",
+    "17406D",
+    "DBEFF9",
+    "E6C5A5",
+    "D09357",
+    "F5E7DB",
+    "7CCA62"
+   ],
+   "format": "pptx",
+   "path": "D:\\文档\\deepseek-harness\\default-workspace\\ppt-assets\\国赛金奖ppt\\黑金科技风智能AI\\【黑金版】编号0012科技风互联网加挑战杯通用PPT模板.pptx",
+   "available": true
+  }
+ ],
+ "template_mode_default": "free"
+}
