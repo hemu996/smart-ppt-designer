@@ -1,8 +1,23 @@
 # smart-ppt-designer
 
-> 一个把「材料」变成「能讲的国赛级 PPT」的技能包：原生可编辑、视觉体系统一、风格按内容检索而非套模板。
+> 把「材料」变成「能讲的国赛级 PPT」的技能包：原生可编辑、视觉体系统一、风格按内容检索而非套模板。
 
-这不是一个"输入主题、吐一版 PPT"的生成器。它解决的是真实场景里最难的那一段：**你手里有材料（PDF / DOCX / 旧 PPT / 一堆参考图），要在有限时间里做出一份评委愿意看完、并且每个字都能改的演示稿。**
+[![license](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE) [![red-lines](https://img.shields.io/badge/%E7%BA%A2%E7%BA%BF-29-red.svg)](SKILL.md) [![workflow](https://img.shields.io/badge/%E5%B7%A5%E4%BD%9C%E6%B5%81-13%20%E6%AD%A5-blue.svg)](SKILL.md) [![styles](https://img.shields.io/badge/%E8%A7%86%E8%A7%89%E7%B3%BB%E7%BB%9F-19-orange.svg)](SKILL.md)
+
+**一句话：你给 PDF / DOCX / 旧 PPT / 参考图，它产出一份评委愿意看完、每个字都能在 PowerPoint 里直接改的演示稿——不做图片拼贴、不套固定模板、封面自动用 AI 书法烫金。**
+
+这不是"输入主题、吐一版 PPT"的生成器。它解决的是真实场景里最难的那一段：手里有材料，要在有限时间里做出能讲、能改、能过的 PPT。
+
+- 原生 PowerPoint 对象（形状 / 表格 / 图表 / 备注），双击即改，不崩
+- 19 套视觉系统按内容检索匹配，不写死默认风格
+- 29 条红线 + 13 步工作流，把踩过的坑固化成强制规范
+- 配套 `smart-ppt-studio` 插件：左侧栏直接检索、预览、一键导入模板
+
+## 目录
+
+- [它到底强在哪](#它到底强在哪)
+- [目录结构](#目录结构)
+- [配套插件 smart-ppt-studio](#配套插件smart-ppt-studio左侧栏设计台)
 
 ---
 
