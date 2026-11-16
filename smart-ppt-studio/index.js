@@ -113,10 +113,22 @@ function send(res, status, body, headers = {}) {
   res.end(body)
 }
 
-/** Build the route handler. Kept free of closure state so it is trivially testable. */
-function createThumbHandler() {
+/**
+ * Build the route handler. Kept free of closure state so it is trivially testable.
+ *
+ * `admit` is Connection's own Host/Origin + browser-authentication check. A
+ * route registered on `webServer` is served before that check runs, so applying
+ * it here is what makes this route as strict as the rest of the Web surface.
+ * It returns `401`, `403`, or `undefined` when the request may proceed.
+ */
+function createThumbHandler(admit) {
   return async (req, res) => {
     try {
+      const rejection = admit ? admit(req) : undefined
+      if (rejection) {
+        return send(res, rejection, 'rejected', { 'Content-Type': 'text/plain; charset=utf-8' })
+      }
+
       const url = new URL(req.url ?? '/', 'http://localhost')
       const file = url.searchParams.get('p')
       if (!file) return send(res, 400, 'missing p', { 'Content-Type': 'text/plain; charset=utf-8' })
@@ -156,7 +168,16 @@ export function apply(ctx) {
   const webServer = typeof ctx.reflect?.get === 'function' ? ctx.reflect.get('webServer') : ctx.get?.('webServer')
   if (!webServer) return
 
-  const handler = createThumbHandler()
+  // `connection` is optional too. A route registered straight on `webServer` is
+  // served before Connection's Host/Origin and browser-auth checks, so borrow
+  // them explicitly instead of inheriting the gap. Without the service (a
+  // headless or test host) the route keeps its old behaviour.
+  const connection = typeof ctx.reflect?.get === 'function' ? ctx.reflect.get('connection') : ctx.get?.('connection')
+  const admit = connection && typeof connection.requestRejection === 'function'
+    ? (req) => connection.requestRejection({ headers: req.headers })
+    : undefined
+
+  const handler = createThumbHandler(admit)
   const register = () => webServer.register({ kind: 'prefix', path: ROUTE, handler })
 
   if (typeof ctx.effect === 'function') {
