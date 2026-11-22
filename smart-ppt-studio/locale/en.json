@@ -1,11 +1,11 @@
 {
   "meta": {
     "title": "PPT Studio",
-    "description": "smart-ppt-designer 9.0.2: 19 visual systems, 28 red lines, 13-step workflow, preference-aware prompt builder."
+    "description": "smart-ppt-designer 9.0.8: 19 visual systems, 29 red lines, 13-step workflow, 32 commands, 15 animation recipes, 95 templates, preference-aware prompt builder."
   },
   "nav": "PPT Studio",
   "title": "PPT Studio",
-  "subtitle": "smart-ppt-designer 9.0.2 · Style library and workbench",
+  "subtitle": "smart-ppt-designer 9.0.8 · Style library and workbench",
   "tab.styles": "Styles",
   "tab.rules": "Red lines",
   "tab.workflow": "Workflow",
@@ -16,7 +16,7 @@
   "filter.dark": "Dark",
   "filter.builtin": "Built-in",
   "filter.extracted": "From references",
-  "styles.count": "18 visual systems · no default style",
+  "styles.count": "19 visual systems · no default style",
   "select.hint": "Select a style card to see its palette and binding",
   "style.system": "Visual system",
   "style.mode": "Mode",
@@ -34,9 +34,9 @@
   "prompt.title": "Prompt preview",
   "prompt.hint": "This prompt carries your chosen style and rationale to the smart-ppt-designer skill.",
   "rules.title": "Hard boundaries (red lines)",
-  "workflow.title": "13-step workflow (spec v9.0.2)",
+  "workflow.title": "13-step workflow (spec v9.0.8)",
   "commands.title": "Standard scripts",
   "commands.hint": "Run from the skill package root; image generation degrades to free photo libraries, then a solid background.",
   "about.title": "About this plugin",
-  "about.body": "Data comes from yesterday's smart-ppt-designer.zip (v5.6). This plugin only browses, checks and composes prompts; it does not modify the skill package or replace the generation pipeline."
+  "about.body": "Data comes from the installed smart-ppt-designer 9.0.8: style-index.json and SKILL.md are read live. This plugin only browses, checks and composes prompts; it does not modify the skill package or replace the generation pipeline."
 }

@@ -1,11 +1,11 @@
 {
   "meta": {
     "title": "PPT 设计台",
-    "description": "把 smart-ppt-designer 9.0.2 带进左侧栏：检索 19 套视觉系统、速查 28 条红线与 13 步工作流，并拼装带风格理由与用户偏好的生成指令。"
+    "description": "给 smart-ppt-designer 9.0.8 用的侧边栏设计台：检索 19 套视觉系统、速查 29 条红线、13 步工作流、32 条命令、15 条动效与 95 份模板，按用户偏好组装生成指令。"
   },
   "nav": "PPT 设计台",
   "title": "PPT 设计台",
-  "subtitle": "smart-ppt-designer 9.0.2 · 风格库与工作台",
+  "subtitle": "smart-ppt-designer 9.0.8 · 设计与工作台",
   "tab.styles": "风格库",
   "tab.rules": "红线与规范",
   "tab.workflow": "工作流",
@@ -16,7 +16,7 @@
   "filter.dark": "暗场",
   "filter.builtin": "内置",
   "filter.extracted": "参考稿提取",
-  "styles.count": "共 18 套视觉系统 · 不设默认风格",
+  "styles.count": "共 19 个视觉系统 · 不设默认风格",
   "select.hint": "点击任一风格卡片查看配色与调用信息",
   "style.system": "视觉系统",
   "style.mode": "明暗模式",
@@ -34,9 +34,9 @@
   "prompt.title": "生成指令预览",
   "prompt.hint": "以下指令会带上你选中的风格与理由，交给 smart-ppt-designer 技能执行。",
   "rules.title": "硬边界（红线，违反即返工）",
-  "workflow.title": "13 步工作流（规格 v9.0.2）",
+  "workflow.title": "13 步工作流（规范 v9.0.8）",
   "commands.title": "标准脚本命令",
   "commands.hint": "在技能包根目录执行；生图一级降级到免费图库，再退纯色背景。",
   "about.title": "关于这个插件",
-  "about.body": "数据源为已安装的 smart-ppt-designer 9.0.2（assets/style-index.json 与 SKILL.md 实时抽取）。"
+  "about.body": "数据来源为已安装的 smart-ppt-designer 9.0.8：assets/style-index.json 与 SKILL.md 实时读取。"
 }
