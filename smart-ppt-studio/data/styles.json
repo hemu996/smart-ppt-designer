@@ -3866,5 +3866,13 @@
       "available": true
     }
   ],
-  "template_mode_default": "free"
+  "template_mode_default": "free",
+  "template_library": {
+    "contact": "",
+    "contact_label": "",
+    "size_label": "6.2 GB",
+    "count": 95,
+    "note": "",
+    "_doc": "模板库索取方式。这些模板为个人购买、仅限学习使用，不公开分发。contact 填你的联系方式（邮箱/QQ/主页等）后，面板会显示「联系作者获取」；留空则只显示「模板需自备」说明。改完重启 DSH 生效。"
+  }
 }
