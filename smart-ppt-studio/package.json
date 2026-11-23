@@ -1,9 +1,8 @@
 {
-  "name": "@local/smart-ppt-studio",
-  "version": "1.7.0",
-  "private": true,
+  "name": "smart-ppt-studio",
+  "version": "1.8.0",
   "type": "module",
-  "description": "PPT 设计台：smart-ppt-designer 9.0.8 侧边栏，19 套风格 / 28 条红线 / 13 步工作流 / 15 条动效 / 95 份模板；视觉焕新 + 收藏 + 发送到对话 + 模板封面预览（宿主按需读取，导入即出图；HTTP 路由走 DSH Host/Origin 准入）。",
+  "description": "国赛/创赛级 PPT 设计台（DeepSeek Harness 侧边栏）：19 套视觉系统、29 条红线、13 步工作流、32 条命令、18 条动效、95 份模板清单；本地导入 .pptx 自动抽封面并生成结构速览。",
   "exports": {
     ".": "./index.js",
     "./client": "./client.js",
@@ -18,7 +17,10 @@
     "data/styles.json",
     "locale/*.json",
     "icon.svg",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md",
+    "screenshots.json",
+    "icon-180.png"
   ],
   "dsh": {
     "bundle": {
@@ -32,5 +34,21 @@
         "@deepseek-ai/dsh-client-locale"
       ]
     }
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hemu996/smart-ppt-designer.git",
+    "directory": "smart-ppt-studio"
+  },
+  "license": "MIT",
+  "keywords": [
+    "deepseek",
+    "dsh",
+    "dsh-plugin",
+    "ppt",
+    "pptx",
+    "presentation",
+    "design-system"
+  ],
+  "homepage": "https://github.com/hemu996/smart-ppt-designer/tree/main/smart-ppt-studio"
 }
