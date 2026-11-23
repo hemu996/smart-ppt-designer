@@ -3868,11 +3868,11 @@
   ],
   "template_mode_default": "free",
   "template_library": {
-    "contact": "hemu6686@hotmail.com",
+    "contact": "https://github.com/hemu996/smart-ppt-designer/issues/new",
     "contact_label": "模板索取",
     "size_label": "6.2 GB",
     "count": 95,
-    "note": "",
+    "note": "提交 Issue 说明需要的模板类型，我会联系你。",
     "_doc": "模板库索取方式。这些模板为个人购买、仅限学习使用，不公开分发。contact 填你的联系方式（邮箱/QQ/主页等）后，面板会显示「联系作者获取」；留空则只显示「模板需自备」说明。改完重启 DSH 生效。"
   }
 }
