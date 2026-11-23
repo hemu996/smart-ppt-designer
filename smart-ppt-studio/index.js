@@ -11,12 +11,15 @@
  * it straight out of the .pptx zip keeps that promise with no extra dependency
  * and no Office installation — the bytes are already in the file.
  */
-import { readFile } from 'node:fs/promises'
+import { readFile, stat } from 'node:fs/promises'
 import { inflateRawSync } from 'node:zlib'
 import { extname } from 'node:path'
 
 /** Namespaced so it cannot collide with any other plugin's routes. */
 const ROUTE = '/smart-ppt-studio/thumb'
+
+/** Separate route: answers which catalog paths exist, never file contents. */
+const PROBE_ROUTE = '/smart-ppt-studio/probe'
 
 /** Only ever answer for presentation packages. */
 const ALLOWED_EXT = new Set(['.pptx', '.pptm', '.potx', '.ppsm', '.ppsx'])
@@ -161,6 +164,82 @@ function createThumbHandler(admit) {
   }
 }
 
+/**
+ * Probe which of the bundled template paths actually exist on this machine.
+ *
+ * The catalog in `data/styles.json` is authored on the machine that built the
+ * list, so every entry carries an absolute path from there. A copy installed
+ * from a repository has none of those files, and the panel must say so instead
+ * of offering a template that cannot open. The answer is a path -> boolean map.
+ *
+ * Only paths already present in the bundled catalog are answered, and only as
+ * a yes/no: the response never echoes a path back, so this route cannot be used
+ * to enumerate a disk.
+ */
+function createProbeHandler(admit) {
+  return async (req, res) => {
+    try {
+      const rejection = admit ? admit(req) : undefined
+      if (rejection) {
+        return send(res, rejection, 'rejected', { 'Content-Type': 'text/plain; charset=utf-8' })
+      }
+      if (req.method !== 'POST') {
+        return send(res, 405, 'POST only', { 'Content-Type': 'text/plain; charset=utf-8' })
+      }
+
+      const body = await readRequestBody(req)
+      let paths
+      try {
+        const parsed = JSON.parse(body)
+        paths = Array.isArray(parsed) ? parsed : []
+      } catch {
+        return send(res, 400, 'invalid json', { 'Content-Type': 'text/plain; charset=utf-8' })
+      }
+      // Bounded so one request cannot turn into an unbounded stat storm.
+      if (paths.length > 500) {
+        return send(res, 413, 'too many paths', { 'Content-Type': 'text/plain; charset=utf-8' })
+      }
+
+      const present = {}
+      await Promise.all(paths.map(async (p) => {
+        if (typeof p !== 'string' || p.length === 0 || p.length > 4096) return
+        if (!ALLOWED_EXT.has(extname(p).toLowerCase())) return
+        try {
+          const st = await stat(p)
+          present[p] = st.isFile()
+        } catch {
+          present[p] = false
+        }
+      }))
+
+      return send(res, 200, JSON.stringify(present), {
+        'Content-Type': 'application/json; charset=utf-8',
+      })
+    } catch {
+      return send(res, 500, 'error', { 'Content-Type': 'text/plain; charset=utf-8' })
+    }
+  }
+}
+
+/** Read a small request body as UTF-8 text, bounded to 1 MiB. */
+function readRequestBody(req) {
+  return new Promise((resolve, reject) => {
+    const chunks = []
+    let size = 0
+    req.on('data', (chunk) => {
+      size += chunk.length
+      if (size > 1024 * 1024) {
+        reject(new Error('body too large'))
+        req.destroy()
+        return
+      }
+      chunks.push(chunk)
+    })
+    req.on('end', () => resolve(Buffer.concat(chunks).toString('utf8')))
+    req.on('error', reject)
+  })
+}
+
 export function apply(ctx) {
   // `webServer` is optional: a headless host has no browser to serve. Access it
   // through reflect.get because a bare property read on an un-injected key
@@ -178,11 +257,15 @@ export function apply(ctx) {
     : undefined
 
   const handler = createThumbHandler(admit)
+  const probeHandler = createProbeHandler(admit)
   const register = () => webServer.register({ kind: 'prefix', path: ROUTE, handler })
+  const registerProbe = () => webServer.register({ kind: 'prefix', path: PROBE_ROUTE, handler: probeHandler })
 
   if (typeof ctx.effect === 'function') {
     ctx.effect(register, 'smart-ppt-studio: template thumbnail route')
+    ctx.effect(registerProbe, 'smart-ppt-studio: template availability probe')
   } else {
     register()
+    registerProbe()
   }
 }
