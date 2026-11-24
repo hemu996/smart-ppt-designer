@@ -79,5 +79,40 @@ python scripts/check_assets.py --json out.json
 **Q：升级技能包会不会弄丢我的素材？**
 不会。模板原文件与字体都在**包外**（你自己的目录），升级只覆盖包内规范与脚本；用完整包覆盖安装时会带入参考原文件与样本（属正常）。
 
+---
+
+## 七、配套插件（smart-ppt-studio）怎么装
+
+### 先弄清一件事：这个仓库里有两个包
+
+| 位置 | 是什么 | 有 `dsh.bundle` 吗 |
+|---|---|---|
+| 仓库根目录 | 技能包（`SKILL.md` + `scripts/` + `references/`） | ❌ 没有 |
+| `smart-ppt-studio/` | DSH 插件（`index.js` + `client.js` + `cordis.patch.yml`） | ✅ 有 |
+
+DSH 只把声明了 `dsh.bundle` 的包当插件。**所以安装地址必须指到 `smart-ppt-studio` 子目录。**
+
+### 正确装法
+
+```bash
+dsh plugin --profile web add github:hemu996/smart-ppt-designer#path:/smart-ppt-studio
+```
+
+或在 DSH 界面里填：
+
+```
+https://github.com/hemu996/smart-ppt-designer/tree/main/smart-ppt-studio
+```
+
+### 常见报错对照
+
+| 报错 | 原因 | 怎么解 |
+|---|---|---|
+| **插件安装失败：这个包没有声明组合包，不能作为插件管理** | 地址填成了仓库根 | 地址末尾补 `/tree/main/smart-ppt-studio`；或用上面的命令行 |
+| 装上但左侧栏没有「PPT 设计台」 | 还没重启，或插件被禁用 | 重启 DSH；到设置里确认插件处于启用状态 |
+| 模板填充里全是「原文件不在本机」 | 正常现象：模板 `.pptx` 不随仓库分发 | 点「导入模板」选你本机的模板；或直接用「不用模板，自由生成」 |
+
+> 模板库默认是空的，这是设计如此，不是装坏了。面板会显示「本机可用 0 份」并给出导入入口。
+
 **Q：索引会不会过期？**
 素材目录变动后重跑一次 `python scripts/index_user_templates.py` 即可刷新；索引只是风格信息与路径，不复制原文件。

@@ -180,7 +180,27 @@ npm install     # 安装 jszip / pptxgenjs
 
 - 检索 19 套视觉系统、速查 29 条红线与 13 步工作流
 - **模板库支持一键导入**：本地 `.pptx` 拖入即自动抽取封面缩略图作预览（纯前端解包，无需后端）
-- 模板预览改为前端内联，不再依赖宿主缩略图路由，离线也能显示
+- 导入后生成**结构速览**：页面框架、需要的素材与数据、主题色（本地解析，不调模型）
+- **动效配方 18 条**（含学术模式）
 - 选风格 / 选模板后一键生成技能包可执行的生成指令
 
-详见 [`smart-ppt-studio/README.md`](smart-ppt-studio/README.md)。
+### 安装（注意：地址必须指到子目录）
+
+插件在 `smart-ppt-studio/` 子目录里。**填仓库根地址会报「这个包没有声明组合包」** —— 仓库根是一个技能包（`SKILL.md` + 脚本），不是插件包；`dsh.bundle` 只写在子目录的 `package.json` 里。
+
+正确的两种方式：
+
+```bash
+# 方式一：命令行（推荐）
+dsh plugin --profile web add github:hemu996/smart-ppt-designer#path:/smart-ppt-studio
+```
+
+方式二：在 DSH 的插件安装框里填下面这个地址（**末尾的子目录不能省**）：
+
+```
+https://github.com/hemu996/smart-ppt-designer/tree/main/smart-ppt-studio
+```
+
+从插件市场卡片点「安装」用的就是方式一的命令，不会遇到这个报错；手动填地址才会。
+
+详见 [`smart-ppt-studio/README.md`](smart-ppt-studio/README.md) 与 [`smart-ppt-studio/CHANGELOG.md`](smart-ppt-studio/CHANGELOG.md)。
