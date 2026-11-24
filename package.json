@@ -2,7 +2,7 @@
   "name": "smart-ppt-designer",
   "version": "1.0.0",
   "private": true,
-  "description": "Native PPTX build & asset-pipeline scripts for the smart-ppt-designer skill package.",
+  "description": "Native PPTX build & asset-pipeline scripts for the smart-ppt-designer skill package. This repository root is the SKILL package; the DSH plugin is in smart-ppt-studio/ and must be installed from that subdirectory: dsh plugin --profile web add github:hemu996/smart-ppt-designer#path:/smart-ppt-studio",
   "scripts": {
     "build": "node scripts/build_pptx.js",
     "assets": "node scripts/generate_assets.js"
@@ -10,5 +10,10 @@
   "dependencies": {
     "jszip": "^3.10.2",
     "pptxgenjs": "^3.12.0"
+  },
+  "dshPlugin": {
+    "path": "smart-ppt-studio",
+    "install": "dsh plugin --profile web add github:hemu996/smart-ppt-designer#path:/smart-ppt-studio",
+    "note": "安装地址必须包含 #path:/smart-ppt-studio；填仓库根地址会报「这个包没有声明组合包」。"
   }
 }
