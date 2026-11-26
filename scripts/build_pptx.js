@@ -16,7 +16,16 @@
  */
 const fs = require('fs');
 const path = require('path');
-const PptxGenJS = require('pptxgenjs');
+// v9.0.3：动画依赖动画版 fork；未安装时回落原有 pptxgenjs（此时动画不生效）
+let PptxGenJS;
+ANIM_ENGINE = 'pptxgenjs';
+try {
+  PptxGenJS = require('@bapunhansdah/pptxgenjs');
+  ANIM_ENGINE = '@bapunhansdah/pptxgenjs';
+} catch (e) {
+  PptxGenJS = require('pptxgenjs');
+  ANIM_ENGINE = 'pptxgenjs（未装动画版 fork，动画不生效）';
+}
 const JSZip = require('jszip');
 const cfg = require('../assets/pptxgenjs-config.js');
 
@@ -74,6 +83,7 @@ async function postProcessXml(file, report) {
 
   // (3) 统一淡入转场：每页写入 <p:transition spd="med"><p:fade/></p:transition>
   // v9.0.6 本机适配：动效内核（morph / 自动换片 / 延续对象）由出稿后的
+  // scripts/apply_motion.py 叠加，不换链、不加页、不改版式。
   // plan 显式声明 transition:none 时跳过 fade，交给后处理脚本全权决定。
   let transFixed = 0;
   // skipFade 由主流程写进 report.skip_fade 后传入（postProcessXml 作用域内没有 plan）
@@ -201,6 +211,41 @@ async function postProcessXml(file, report) {
 
   fs.writeFileSync(file, await zip.generateAsync({ type: 'nodebuffer', compression: 'DEFLATE' }));
   return { charts_scanned: charts.length, chart_categories_fixed: catFixed, gradients_written: gradFixed, transitions_written: transFixed, groups_written: grouped };
+}
+
+var ANIM_MODE;
+var ANIM_ENGINE;
+const ANIM_DEF = new Map();
+
+/** 加载动画素材库（assets/animations/animations.json，43 种） */
+function loadAnimLibrary() {
+  try {
+    const p = path.join(__dirname, '..', 'assets', 'animations', 'animations.json');
+    const doc = JSON.parse(fs.readFileSync(p, 'utf8'));
+    (doc.animations || []).forEach((a) => ANIM_DEF.set(String(a.id), a));
+    return doc;
+  } catch (e) {
+    return null;
+  }
+}
+
+/** v9.0.3：把 elements[].animation 解析成动画版 fork 的 animation 选项（none 档一律返回空） */
+function animOpt(el) {
+  if (!el || !el.animation || ANIM_MODE === 'none') return {};
+  const raw = el.animation;
+  const id = typeof raw === 'string' ? raw : String((raw || {}).id || '');
+  const def = ANIM_DEF.get(id);
+  const base = Object.assign({}, (def && def.fork) || {});
+  if (typeof raw === 'object' && raw) Object.assign(base, raw.fork || {});
+  if (!base.type) {
+    if (id.indexOf('anim-') === 0) base.type = id.slice(5);
+    else if (typeof raw === 'object' && raw && raw.type) base.type = raw.type;
+    else return {};
+  }
+  if (base.duration === undefined && def && def.duration_ms) base.duration = def.duration_ms;
+  if (base.trigger === undefined) base.trigger = 'afterPrevious';
+  if (el.delay !== undefined) base.delay = Number(el.delay);
+  return { animation: base };
 }
 
 function parseArgs(argv) {
@@ -343,7 +388,7 @@ function addTextEl(slide, el, vs, dark) {
       }))
     : String(el.text || '');
   slide.addText(_content, {
-    
+    ...animOpt(el),
     x: el.x_in, y: el.y_in, w: el.w_in, h: el.h_in,
     fontSize: el.font_pt,
     fontFace: cfg.resolveFont(el.font, vs),
@@ -417,7 +462,7 @@ function addComponentEl(slide, pptx, el, vs, report, plan, slideId) {
       if (sh.fill_transparency !== undefined) opts.fill.transparency = sh.fill_transparency;
       opts.line = sh.line_color ? { color: cfg.resolveToken(sh.line_color, vs), width: sh.line_width_pt || 1 } : { color: fill, width: 0 };
     }
-    slide.addShape(type, Object.assign({}, opts));
+    slide.addShape(type, Object.assign({}, opts, animOpt(el)));
   });
   report.components_used = (report.components_used || 0) + 1;
   report.component_shapes = (report.component_shapes || 0) + comp.shapes.length;
@@ -443,11 +488,98 @@ function addDecorationSetEl(slide, pptx, el, vs, report, slideId) {
       if (sh.fill_transparency !== undefined) opts.fill.transparency = sh.fill_transparency;
       opts.line = sh.line_color ? { color: cfg.resolveToken(sh.line_color, vs), width: sh.line_width_pt || 1 } : { color: fill, width: 0 };
     }
-    slide.addShape(type, Object.assign({}, opts));
+    slide.addShape(type, Object.assign({}, opts, animOpt(el)));
   });
   report.decoration_sets_used += 1;
   report.decoration_shapes += (set.shapes || []).length;
   return true;
+}
+
+/**
+ * v10 封面多层叠加（用户 2026-11-26 指定）：封面不得是"一张大图上压个标题"。
+ * 在背景/蒙版之后、元素之前铺设装饰锚点层，形成 5 层结构：
+ *   L0 背景图 → L1 渐变蒙版 → L2 基底纹理（细线框/点阵） → L3 视觉锚点（色块/弧线/印章位）
+ *   → L4 书法主标（effects/element z_index 12） → L5 副标与信息行（z_index 20+）
+ * 只在封面启用；section_divider / closing 保持原样，避免影响既有稿件节奏。
+ * 关闭方式：config.json 的 cover_layers.enabled = false。
+ */
+function drawCoverLayers(slide, pptx, cfg, vs, report, s) {
+  const cl = cfg.cover_layers || {};
+  if (cl.enabled === false) return 0;
+  const W = cfg.canvas.width_in;
+  const H = cfg.canvas.height_in;
+  const light = ((cfg.cover_mask || {}).mode === 'light');
+  const accent = cfg.toHex(vs.colors.accent);
+  const primary = cfg.toHex(vs.colors.primary);
+  const secondary = cfg.toHex(vs.colors.secondary || vs.colors.primary);
+  let drawn = 0;
+
+  // L2-a 细线框：向内收 0.42in 的描边矩形，给版面加"被设计过"的边界感
+  if (cl.frame !== false) {
+    slide.addShape(pptx.ShapeType.rect, {
+      x: 0.42, y: 0.34, w: W - 0.84, h: H - 0.68,
+      fill: { color: light ? 'FFFFFF' : primary, transparency: 100 },
+      line: { color: accent, width: 0.9, transparency: 62 },
+      objectName: 'COVERLAYER#frame',
+    });
+    drawn += 1;
+  }
+
+  // L2-b 顶部细带：左上角一条 accent 短横，作为阅读起点
+  if (cl.topRule !== false) {
+    slide.addShape(pptx.ShapeType.rect, {
+      x: 0.88, y: 1.06, w: 1.32, h: 0.075,
+      fill: { color: accent, transparency: 0 },
+      line: { color: accent, width: 0 },
+      objectName: 'COVERLAYER#toprule',
+    });
+    drawn += 1;
+  }
+
+  // L3-a 右侧大弧：半透明圆形，制造层次与方向感（压在图上但不遮主标）
+  if (cl.arc !== false) {
+    slide.addShape(pptx.ShapeType.ellipse, {
+      x: W - 3.55, y: -1.55, w: 5.2, h: 5.2,
+      fill: { color: secondary, transparency: light ? 88 : 82 },
+      line: { color: secondary, width: 0, transparency: 100 },
+      objectName: 'COVERLAYER#arc',
+    });
+    drawn += 1;
+  }
+
+  // L3-b 右下色块：低透明度矩形，压住画面右下角形成重量
+  if (cl.block !== false) {
+    slide.addShape(pptx.ShapeType.rect, {
+      x: W - 2.35, y: H - 1.85, w: 2.35, h: 1.85,
+      fill: { color: primary, transparency: light ? 92 : 86 },
+      line: { color: primary, width: 0, transparency: 100 },
+      objectName: 'COVERLAYER#block',
+    });
+    drawn += 1;
+  }
+
+  // L3-c 印章位：右上角小方块描边 + 内填，作为"落款"锚点
+  // v10.1 修正（装饰不得压正文）：原放左下会压住信息行，改到右上角，与顶部短线形成对角呼应
+  if (cl.seal !== false) {
+    slide.addShape(pptx.ShapeType.rect, {
+      x: W - 1.72, y: 0.42, w: 0.6, h: 0.6,
+      fill: { color: accent, transparency: 100 },
+      line: { color: accent, width: 1.6, transparency: 22 },
+      objectName: 'COVERLAYER#seal',
+    });
+    slide.addShape(pptx.ShapeType.rect, {
+      x: W - 1.62, y: 0.52, w: 0.4, h: 0.4,
+      fill: { color: accent, transparency: 74 },
+      line: { color: accent, width: 0, transparency: 100 },
+      objectName: 'COVERLAYER#sealfill',
+    });
+    drawn += 2;
+  }
+
+  if (report) {
+    report.cover_layers_drawn = (report.cover_layers_drawn || 0) + drawn;
+  }
+  return drawn;
 }
 
 function addShapeEl(slide, pptx, el, vs) {
@@ -476,7 +608,7 @@ function addShapeEl(slide, pptx, el, vs) {
   }
   if (el.object_name) opts.objectName = String(el.object_name);
   else if (cardLike) opts.objectName = 'CARD' + (++_cardSeq);   // v9.0：卡片打标，供后处理加投影
-  slide.addShape(type, Object.assign({}, opts));
+  slide.addShape(type, Object.assign({}, opts, animOpt(el)));
   // v9.0 卡片精致度：左上角序号带（细描边卡片专属，规格"左上角序号带设计感"）
   if (cardLike && cs.corner_index) {
     const _accent = cfg.resolveToken('accent', vs);
@@ -491,7 +623,7 @@ function addShapeEl(slide, pptx, el, vs) {
 function addImageEl(slide, el, extraDir) {
   const p = resolveAsset(el.image_path, extraDir);
   if (!p) return false;
-  slide.addImage({ path: p, x: el.x_in, y: el.y_in, w: el.w_in, h: el.h_in });
+  slide.addImage({ path: p, x: el.x_in, y: el.y_in, w: el.w_in, h: el.h_in, ...animOpt(el) });
   return true;
 }
 
@@ -505,7 +637,7 @@ function addImageFitEl(slide, pptx, el, extraDir, report, vs) {
   const size = readImageSize(p);
   const boxAspect = el.w_in / el.h_in;
   if (!size || !size.w || !size.h) {
-    slide.addImage({ path: p, x: el.x_in, y: el.y_in, w: el.w_in, h: el.h_in });
+    slide.addImage({ path: p, x: el.x_in, y: el.y_in, w: el.w_in, h: el.h_in, ...animOpt(el) });
     return true;
   }
   // v8.9 跨客户端兼容修复：无论图片比框更宽还是更窄，一律按原始宽高比放置（contain），
@@ -527,7 +659,7 @@ function addImageFitEl(slide, pptx, el, extraDir, report, vs) {
     stops: [{ pos: 0, color: bg, alpha: 100 }, { pos: 100, color: edge, alpha: 100 }],
     fallbackColor: edge, fallbackTransparency: 20,
   });
-  slide.addImage({ path: p, x: imgX, y: el.y_in + Math.max(0, (el.h_in - imgH) / 2), w: imgW, h: imgH });
+  slide.addImage({ path: p, x: imgX, y: el.y_in + Math.max(0, (el.h_in - imgH) / 2), w: imgW, h: imgH, ...animOpt(el) });
   report.image_fill = (report.image_fill || 0) + 1;
   return true;
 }
@@ -546,7 +678,7 @@ function addChartEl(slide, pptx, el, vs) {
   const data = (c.series || []).map((s) => ({ name: s.name || '系列', labels, values: (s.values || []).map(Number) }));
   const font = cfg.resolveFont(undefined, vs);
   slide.addChart(spec.type, data, {
-    
+    ...animOpt(el),
     x: el.x_in, y: el.y_in, w: el.w_in, h: el.h_in,
     barDir: spec.barDir,
     // v5.5 图表配色：单系列用中性灰，被 highlight_index 指定的重点数据点用强调色；多系列用调色板
@@ -588,7 +720,7 @@ function addTableEl(slide, el, vs) {
     },
   })));
   slide.addTable(rows, {
-    
+    ...animOpt(el),
     x: el.x_in, y: el.y_in, w: el.w_in, h: el.h_in,
     colW: t.col_widths_in && t.col_widths_in.length ? t.col_widths_in : undefined,
     rowH: el.h_in / Math.max(1, rows.length),
@@ -612,14 +744,14 @@ function addIconEl(slide, pptx, el, vs, library) {
     };
     if (p.rotation) opts.rotate = Number(p.rotation);
     if (p.flipH) opts.flipH = true;
-    slide.addShape(type, Object.assign({}, opts));
+    slide.addShape(type, Object.assign({}, opts, animOpt(el)));
   });
   return true;
 }
 
 function addFormulaEl(slide, el, vs, dark) {
   slide.addText(String(el.text || ''), {
-    
+    ...animOpt(el),
     x: el.x_in, y: el.y_in, w: el.w_in, h: el.h_in,
     fontSize: el.font_pt || 13,
     fontFace: cfg.resolveFont(undefined, vs),
@@ -649,6 +781,8 @@ async function build(plan, candidate, out, args) {
   // v8.9 导航范围：design_brief.navigation_scope 优先，其次配置默认；逐页 show_navigation 可覆盖
   const navScope = String((plan.design_brief || {}).navigation_scope || nav.scope || 'sparse');
   // v8.9 导航总开关：计划级 navigation_enabled（布尔）优先，其次包级 config.navigation.enabled
+  ANIM_MODE = String((plan.design_brief || {}).animation_mode || (cfg.config.animation || {}).mode || 'basic');
+  const _animDoc = loadAnimLibrary();
   const navEnabled = (typeof (plan.design_brief || {}).navigation_enabled === 'boolean')
     ? plan.design_brief.navigation_enabled
     : nav.enabled !== false;
@@ -673,6 +807,11 @@ async function build(plan, candidate, out, args) {
     style_rationale: (plan.design_brief || {}).style_rationale || null,
     navigation: navEnabled ? nav.mode : 'disabled',
     nav_scope: navScope, nav_enabled: navEnabled, nav_pages: [],
+    animation_engine: ANIM_ENGINE, animation_mode: ANIM_MODE,
+    animation_library: _animDoc ? (_animDoc.animations || []).length : 0,
+    skip_fade: String(cfg.animation_library?.motion_mode || 'overlay') === 'overlay'
+      && ((plan.design_brief || {}).transition === 'none'),
+    animated_elements: 0, anim_pages: 0,
     sections: (plan.design_brief || {}).sections || [],
     slides: [], notes_count: 0, images_used: 0, images_fallback: [], effects_used: 0, effects_fallback: [],
     decoration_sets_used: 0, decoration_shapes: 0, decoration_missing: [],
@@ -684,6 +823,10 @@ async function build(plan, candidate, out, args) {
 
   for (const s of candidate.slides || []) {
     report._current = (report.slides || []).length;
+    { // v9.0.3 动画统计：本页带动画的元素数
+      const _an = (s.elements || []).filter((e) => e && e.animation).length;
+      if (ANIM_MODE !== 'none' && _an) { report.animated_elements += _an; report.anim_pages += 1; }
+    }
     const isCoverLike = ['cover', 'toc', 'section_divider', 'closing'].includes(s.slide_type);
     // v9.0.6 本机适配（红线 28，用户 2026-11-08 指定）：封面强制 AI 书法体
     // 缺图 / 文件不存在 / 仍用系统字主标 → 直接抛错，不产出残稿；不可关闭、不可降级
@@ -750,6 +893,12 @@ async function build(plan, candidate, out, args) {
       });
       bgDesc = `纯色降级 #${solid}`;
       if (s.image_required) report.images_fallback.push({ slide_id: s.slide_id, reason: s.image_path ? '图片文件缺失' : '无 image_path（生图/图库不可用）', level: '纯色背景' });
+    }
+
+    // 1.5) v10 封面多层叠加（用户 2026-11-26 指定）：背景/蒙版之后铺装饰锚点层
+    if (s.slide_type === 'cover') {
+      const _nLayers = drawCoverLayers(slide, pptx, cfg, vs, report, s);
+      if (_nLayers) bgDesc += ` + ${_nLayers} 层封面锚点`;
     }
 
     // 2) 概念页插图（模型显式给了 image 元素则用元素坐标）
@@ -936,6 +1085,11 @@ async function main() {
     const _on = report.nav_pages.filter((x) => x.nav).length;
     console.log(`  卡片精致度：序号带 ${_cardIdxSeq} 个｜投影写入 ${report.card_shadow_pages || 0} 页`);
     console.log(`  导航：${report.nav_enabled ? '开启' : '关闭'}｜范围 ${report.nav_scope}｜带栏 ${_on}/${report.nav_pages.length} 页（关闭用 design_brief.navigation_enabled=false；逐页可用 slides[].show_navigation 覆盖）`);
+  }
+  if (report.animation_engine) {
+    console.log(`  动画：${report.animation_mode}｜引擎 ${report.animation_engine}｜库 ${report.animation_library} 种｜`
+      + `带元素 ${report.animated_elements} 个 / ${report.anim_pages} 页`
+      + (report.animation_mode === 'none' ? '（none 档：所有 animation 字段被忽略）' : ''));
   }
   if (report.font_stats) {
     const _fs = report.font_stats;

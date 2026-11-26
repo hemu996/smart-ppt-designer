@@ -1,6 +1,6 @@
 {
-  "name": "smart-ppt-studio",
-  "version": "1.8.0",
+  "name": "@local/smart-ppt-studio",
+  "version": "1.9.0",
   "type": "module",
   "description": "国赛/创赛级 PPT 设计台（DeepSeek Harness 侧边栏）：19 套视觉系统、29 条红线、13 步工作流、32 条命令、18 条动效、95 份模板清单；本地导入 .pptx 自动抽封面并生成结构速览。",
   "exports": {

@@ -13,13 +13,38 @@
  */
 import { readFile, stat } from 'node:fs/promises'
 import { inflateRawSync } from 'node:zlib'
-import { extname } from 'node:path'
+import { extname, join, resolve, basename, sep } from 'node:path'
+import { createHash } from 'node:crypto'
+import { spawn } from 'node:child_process'
+import { existsSync, mkdirSync } from 'node:fs'
 
 /** Namespaced so it cannot collide with any other plugin's routes. */
 const ROUTE = '/smart-ppt-studio/thumb'
 
 /** Separate route: answers which catalog paths exist, never file contents. */
 const PROBE_ROUTE = '/smart-ppt-studio/probe'
+
+/**
+ * Page-preview routes. The Client cannot rasterize a .pptx, so whichever page
+ * grid it draws is backed by PNGs produced here.
+ *
+ * `PREVIEW_ROUTE` renders on demand (POST {path} -> {ok, slides, files}) and
+ * `PREVIEW_ASSET` serves the resulting PNGs back. Rendering shells out to
+ * PowerPoint through the skill's `render_slides.py`; when that is unavailable
+ * the route reports `ok:false` with a reason instead of drawing a blank grid.
+ */
+const PREVIEW_ROUTE = '/smart-ppt-studio/preview'
+const PREVIEW_ASSET = '/smart-ppt-studio/preview-asset'
+
+/**
+ * Where rendered page images live. Kept under the user's home rather than the
+ * project so a deck keeps its preview after the working copy moves, and outside
+ * `data/` so an update never ships stale images.
+ */
+const PREVIEW_CACHE_DIR = (() => {
+  const home = process.env.USERPROFILE || process.env.HOME || '.'
+  return join(home, '.dsh', 'cache', 'spps-preview')
+})()
 
 /** Only ever answer for presentation packages. */
 const ALLOWED_EXT = new Set(['.pptx', '.pptm', '.potx', '.ppsm', '.ppsx'])
@@ -221,6 +246,190 @@ function createProbeHandler(admit) {
   }
 }
 
+/**
+ * A deck path maps to one cache directory, keyed by the absolute path plus the
+ * file's size and mtime. Re-rendering a deck that changed produces a new key
+ * instead of serving the previous version's pages.
+ */
+function previewKey(file) {
+  return createHash('sha1').update(file).digest('hex').slice(0, 16)
+}
+
+/** Locate the skill's renderer without assuming a fixed install root. */
+function findRenderer() {
+  const candidates = [
+    process.env.SPPS_RENDERER,
+    join(process.env.USERPROFILE || process.env.HOME || '.', '.dsh', 'skills', 'smart-ppt-designer', 'scripts', 'render_slides.py'),
+  ].filter(Boolean)
+  for (const p of candidates) {
+    try { if (existsSync(p)) return p } catch { /* keep looking */ }
+  }
+  return null
+}
+
+/** Prefer the interpreter that has pywin32; fall back to `python`. */
+function findPython() {
+  const listed = process.env.SPPS_PYTHON
+  if (listed && existsSync(listed)) return listed
+  const local = join(process.env.LOCALAPPDATA || '', 'Programs', 'Python', 'Python311', 'python.exe')
+  if (existsSync(local)) return local
+  return 'python'
+}
+
+/**
+ * Run the renderer and collect its single-line JSON answer.
+ *
+ * `render_slides.py` copies the deck into an ASCII temp directory first: COM's
+ * Slide.Export fails outright on a path containing CJK characters, and most
+ * decks on this machine live under a Chinese folder name.
+ */
+function runRenderer(python, renderer, pptx, outDir, force) {
+  return new Promise((resolvePromise) => {
+    const args = [renderer, pptx, outDir]
+    if (force) args.push('--force')
+    let done = false
+    const finish = (value) => { if (!done) { done = true; resolvePromise(value) } }
+    let child
+    try {
+      child = spawn(python, args, { windowsHide: true })
+    } catch (error) {
+      return finish({ ok: false, error: 'spawn failed: ' + String(error && error.message) })
+    }
+    let out = ''
+    let err = ''
+    const timer = setTimeout(() => {
+      try { child.kill() } catch { /* already gone */ }
+      finish({ ok: false, error: 'renderer timed out after 300s' })
+    }, 300000)
+    child.stdout.on('data', (b) => { out += b.toString('utf8') })
+    child.stderr.on('data', (b) => { err += b.toString('utf8') })
+    child.on('error', (e) => {
+      clearTimeout(timer)
+      finish({ ok: false, error: 'spawn error: ' + String(e && e.message) })
+    })
+    child.on('close', () => {
+      clearTimeout(timer)
+      const line = out.trim().split(/\r?\n/).filter(Boolean).pop() || ''
+      try {
+        finish(JSON.parse(line))
+      } catch {
+        finish({ ok: false, error: (line || err || 'renderer produced no output').slice(0, 400) })
+      }
+    })
+  })
+}
+
+/**
+ * Render a deck's pages, then answer with the page count and the cache key the
+ * Client needs to request each image.
+ */
+function createPreviewHandler(admit) {
+  return async (req, res) => {
+    try {
+      const rejection = admit ? admit(req) : undefined
+      if (rejection) {
+        return send(res, rejection, 'rejected', { 'Content-Type': 'text/plain; charset=utf-8' })
+      }
+      if (req.method !== 'POST') {
+        return send(res, 405, 'POST only', { 'Content-Type': 'text/plain; charset=utf-8' })
+      }
+
+      const body = await readRequestBody(req)
+      let file = ''
+      let force = false
+      try {
+        const parsed = JSON.parse(body)
+        file = typeof parsed.path === 'string' ? parsed.path : ''
+        force = parsed.force === true
+      } catch {
+        return send(res, 400, 'invalid json', { 'Content-Type': 'text/plain; charset=utf-8' })
+      }
+
+      if (!file) return send(res, 400, 'missing path', { 'Content-Type': 'text/plain; charset=utf-8' })
+      if (!ALLOWED_EXT.has(extname(file).toLowerCase())) {
+        return send(res, 415, 'unsupported', { 'Content-Type': 'text/plain; charset=utf-8' })
+      }
+      const abs = resolve(file)
+      try {
+        const st = await stat(abs)
+        if (!st.isFile()) return send(res, 400, 'not a file', { 'Content-Type': 'text/plain; charset=utf-8' })
+      } catch {
+        return send(res, 404, 'file not found', { 'Content-Type': 'text/plain; charset=utf-8' })
+      }
+
+      const renderer = findRenderer()
+      if (!renderer) {
+        // Say why, so the panel can show an instruction instead of an empty grid.
+        return send(res, 200, JSON.stringify({
+          ok: false, error: '找不到 render_slides.py（可用环境变量 SPPS_RENDERER 指定）',
+        }), { 'Content-Type': 'application/json; charset=utf-8' })
+      }
+
+      const key = previewKey(abs)
+      const outDir = join(PREVIEW_CACHE_DIR, key)
+      try { mkdirSync(outDir, { recursive: true }) } catch { /* created below by renderer */ }
+
+      const result = await runRenderer(findPython(), renderer, abs, outDir, force)
+      const payload = result && result.ok
+        ? { ok: true, slides: result.slides, key, cached: result.cached === true, elapsed: result.elapsed }
+        : { ok: false, error: (result && result.error) || '渲染失败' }
+      return send(res, 200, JSON.stringify(payload), {
+        'Content-Type': 'application/json; charset=utf-8',
+      })
+    } catch {
+      return send(res, 500, 'error', { 'Content-Type': 'text/plain; charset=utf-8' })
+    }
+  }
+}
+
+/**
+ * Serve one rendered page back to the panel.
+ *
+ * `key` is a 16-hex-char digest and `n` is a page number, so neither can name a
+ * path outside the cache: the route never accepts a caller-supplied directory.
+ */
+function createPreviewAssetHandler(admit) {
+  return async (req, res) => {
+    try {
+      const rejection = admit ? admit(req) : undefined
+      if (rejection) {
+        return send(res, rejection, 'rejected', { 'Content-Type': 'text/plain; charset=utf-8' })
+      }
+      const url = new URL(req.url ?? '/', 'http://localhost')
+      const key = url.searchParams.get('k') || ''
+      const n = url.searchParams.get('n') || ''
+      if (!/^[0-9a-f]{16}$/.test(key)) {
+        return send(res, 400, 'bad key', { 'Content-Type': 'text/plain; charset=utf-8' })
+      }
+      if (!/^\d{1,3}$/.test(n)) {
+        return send(res, 400, 'bad page', { 'Content-Type': 'text/plain; charset=utf-8' })
+      }
+      const name = 'p' + String(Number(n)).padStart(2, '0') + '.png'
+      const file = join(PREVIEW_CACHE_DIR, key, name)
+      // Belt and braces: the join must stay inside the cache directory.
+      const root = resolve(PREVIEW_CACHE_DIR) + sep
+      if (!resolve(file).startsWith(root)) {
+        return send(res, 400, 'bad path', { 'Content-Type': 'text/plain; charset=utf-8' })
+      }
+
+      const data = await readFile(file)
+      if (!data || data.length === 0) {
+        return send(res, 404, 'no page', { 'Content-Type': 'text/plain; charset=utf-8' })
+      }
+      const etag = `"${key}-${name}-${data.length}"`
+      if (req.headers['if-none-match'] === etag) return send(res, 304, '')
+      return send(res, 200, data, {
+        'Content-Type': 'image/png',
+        'Content-Length': String(data.length),
+        ETag: etag,
+      })
+    } catch (error) {
+      const code = error && error.code === 'ENOENT' ? 404 : 500
+      return send(res, code, 'error', { 'Content-Type': 'text/plain; charset=utf-8' })
+    }
+  }
+}
+
 /** Read a small request body as UTF-8 text, bounded to 1 MiB. */
 function readRequestBody(req) {
   return new Promise((resolve, reject) => {
@@ -258,14 +467,27 @@ export function apply(ctx) {
 
   const handler = createThumbHandler(admit)
   const probeHandler = createProbeHandler(admit)
+  const previewHandler = createPreviewHandler(admit)
+  const previewAssetHandler = createPreviewAssetHandler(admit)
   const register = () => webServer.register({ kind: 'prefix', path: ROUTE, handler })
   const registerProbe = () => webServer.register({ kind: 'prefix', path: PROBE_ROUTE, handler: probeHandler })
+  // Order matters: '/smart-ppt-studio/preview' is a prefix of
+  // '/smart-ppt-studio/preview-asset', so the longer path must register first
+  // or the render handler answers the image requests (and rejects them as
+  // non-POST). Both are exact-prefix registrations, so the resolver hands the
+  // first match the request.
+  const registerPreviewAsset = () => webServer.register({ kind: 'prefix', path: PREVIEW_ASSET, handler: previewAssetHandler })
+  const registerPreview = () => webServer.register({ kind: 'prefix', path: PREVIEW_ROUTE, handler: previewHandler })
 
   if (typeof ctx.effect === 'function') {
     ctx.effect(register, 'smart-ppt-studio: template thumbnail route')
     ctx.effect(registerProbe, 'smart-ppt-studio: template availability probe')
+    ctx.effect(registerPreview, 'smart-ppt-studio: page preview render route')
+    ctx.effect(registerPreviewAsset, 'smart-ppt-studio: page preview image route')
   } else {
     register()
     registerProbe()
+    registerPreview()
+    registerPreviewAsset()
   }
 }
